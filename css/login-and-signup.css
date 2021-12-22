@@ -1,0 +1,35 @@
+.login-and-signup {
+    height: 100vh;
+}
+
+.pc-minori-title {
+    color: #95720C; 
+}
+
+.login-and-signup form{
+    width: 100%;
+}
+
+/* sign out 更改登入後使用者的名字顏色 */
+.pc-user a{
+    color: #95720C; 
+}
+
+/* 會員中心left */
+.pc-memberCenter {
+    height: 100vh;
+}
+
+.pc-memberCenter .container{
+    width: 80%;
+}
+
+.pc-memberCenter-item {
+    margin-left: 100px;
+    padding-top: 24px;
+}
+
+.pc-memberCenter-item a{
+    text-decoration: none;
+    color: white;
+}
