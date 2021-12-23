@@ -20,7 +20,7 @@
     height: 100vh;
 }
 
-.pc-memberCenter .container{
+.pc-memberCenter-content{
     width: 80%;
 }
 
@@ -32,4 +32,18 @@
 .pc-memberCenter-item a{
     text-decoration: none;
     color: white;
+}
+
+
+/* 登入頁 */
+.signupPage{
+    height: 100vh;
+}
+
+.signupPage-content{
+    width: 80%;
+}
+
+.signupPage-title{
+    color: #95720C; 
 }

@@ -11,13 +11,8 @@ $obj['info'] = '註冊失敗';
 //確認所有傳過來的表單資料是否完整
 if (
     isset($_POST['name']) &&
-    isset($_POST['birthdate']) &&
-    isset($_POST['phonenum']) &&
-    isset($_POST['address']) &&
     isset($_POST['email']) &&
     isset($_POST['pwd']) 
-
-    // print_r($_POST);
 ) {
     
     //設定密碼雜湊值
@@ -29,17 +24,13 @@ if (
     
     try {
         //新增使用者(先不新增地址)
-        $sql = "INSERT INTO `users` (`name`, `birthdate`, `phonenum`, `address`, `email`, `pwd`, `verified_code`) 
+        $sql = "INSERT INTO `users` (`name`, `email`, `pwd`, `verified_code`) 
             VALUES (
                 '{$_POST['name']}',
-                '{$_POST['birthdate']}',
-                '{$_POST['phonenum']}',
-                '{$_POST['address']}',
                 '{$_POST['email']}',
                 '{$pwd}',
                 '{$verified_code}'
             ) ";
-
         
         //執行SQL語法
         $stmt = $pdo->query($sql);

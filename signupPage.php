@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>loginPage</title>
+    <title>signupPage</title>
     <!-- bootstrap@4.6 -->
     <link rel="stylesheet" href="./lib/bootstrap.min.css">
     <!-- fontawesome -->
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login-and-signup.css">
     <!--jquery UI-->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./lib/jquery-ui.css">
 </head>
 
 <body>
@@ -226,23 +226,7 @@
             <div class="left-side">
                 <div class="left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover;">
                     <!-- ======================================================================================= add content -->
-                    <div class="pc-memberCenter-item d-flex  justify-content-around">
-                        <div class="pc-item">
-                            <a href="#">
-                                個人資料
-                            </a>
-                        </div>
-                        <div class="pc-item">
-                            <a a href="orders.php" id="products_order">
-                                訂單查詢
-                            </a>
-                        </div>
-                        <div class="pc-item">
-                            <a href="#">
-                                優惠券
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <!-- rightSide page -->
@@ -250,7 +234,7 @@
                 <div class="right-side-content">
                     <!-- right header -->
                     <div class="right-side-header">
-                        <!-- main icon -->
+                        <!-- main icon  每一頁都要放不更動-->
                         <div class="r-side-header-container main-icons">
                             <div class="main-icon"><button class="icon-btn user-btn"><i class="fas fa-user"></i></button></div>
                             <div class="main-icon shopping-card">
@@ -274,15 +258,21 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- sign out -->
+                        <!-- sign out  每一頁都要放不更動-->
                         <div class="signOut-menu dropdown-menu-sw">
                             <div class="signOut-menu-container">
+                                <!-- 要登入才會顯現會員名稱 -->
                                 <?php if (isset($_SESSION['name'])) { ?>
                                     <div class="pc-user signOut-list">
                                         <a href="javascript:;">
                                             <?= $_SESSION['name'] ?></a>
                                     </div>
                                 <?php } ?>
+                                <div class="signOut-list">
+                                    <div class="signOut-second-list">
+                                        <a href="javascript:;">登入/註冊</a>
+                                    </div>
+                                </div>
                                 <?php if (isset($_SESSION['name'])) { ?>
                                     <div class="signOut signOut-list">
                                         <a href="#" id="logout">登出</a>
@@ -292,25 +282,13 @@
                         </div>
                     </div>
                     <!-- ================================================= 新頁面加入 -->
-                    <div class="pc-memberCenter d-flex flex-column justify-content-center">
-                        <div class="pc-memberCenter-content container">
-                            <h2 class="pc-minori-title text-center">個人資料</h2>
+                    <div class="signupPage d-flex flex-column justify-content-center">
+                        <div class="signupPage-content container">
+                            <h2 class="signupPage-title text-center">MINORI</h2>
                             <form class="row g-3" id="myForm">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
                                     <input type="text" class="form-control" id="name" placeholder="請填寫您的姓名">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
-                                    <input type="text" class="form-control" id="birthdate" placeholder="請填寫您的生日">
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
-                                    <input type="text" class="form-control" id="phonenum" placeholder="請填寫您的手機號碼">
-                                </div>
-                                <div class="col-12 mt-2">
-                                    <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
-                                    <input type="text" class="form-control" id="address" placeholder="請填寫您的通訊地址">
                                 </div>
                                 <div class="col-md-12 mt-2">
                                     <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
@@ -321,7 +299,7 @@
                                     <input type="password" class="form-control" id="pwd" placeholder="請填寫您的密碼">
                                 </div>
                                 <div class="col-12 mt-3 text-right">
-                                    <button type="submit" class="btn btn-outline-warning px-4" id="btn_register">儲存</button>
+                                    <button type="submit" class="btn btn-outline-warning px-5" id="btn_register">註冊</button>
                                 </div>
                             </form>
                         </div>
@@ -439,9 +417,9 @@
         <script src="./lib/awesome.all.min.js"></script>
         <!-- bootstrap@4.6 -->
         <script src="./lib/bootstrap.bundle.min.js"></script>
+        <!-- 要裝bundle才行 -->
         <!-- js -->
         <script src="./js/index.js"></script>
-
 </body>
 
 </html>

@@ -51,7 +51,6 @@ window.onload = function () {
     const signMenu = document.querySelector(".signOut-menu");
 
     userBtn.addEventListener('click', function () {
-        console.log('signOut-dropdown-active');
         signMenu.classList.toggle('signOut-dropdown-active');
     });
     // ==================== header-m user btn
@@ -70,10 +69,10 @@ window.onload = function () {
 };
 
 
-//選擇生日
-// $('input#birthdate').datepicker({
-//     dateFormat: 'yy-mm-dd'
-// });
+// 選擇生日
+$('input#birthdate').datepicker({
+    dateFormat: 'yy-mm-dd'
+});
 
 
 //註冊
@@ -170,7 +169,7 @@ $('button#btn_register').click(function (event) {
             //當成功訊息執行時，等1秒後，執行自訂程式
             setTimeout(function(){
                 // location.reload();
-                location.href = 'loginPage.php';
+                location.href = 'signupFinish.php';
             }, 1000);
         } else {
             alert(`${obj['info']}`);
@@ -183,7 +182,6 @@ $('button#btn_register').click(function (event) {
 //要先fn+ctrl+F5 清除快取
 $('button#btn_login').click(function (event) {
     event.preventDefault();
-    console.log('button#btn_login clicked');
 
     // 各自將 input 帶入變數中
     let input_email = $('input#email_login');
@@ -214,7 +212,7 @@ $('button#btn_login').click(function (event) {
             alert(`${obj['info']}`);
             //當成功訊息執行時，等數秒，執行自訂程式
             setTimeout(function () {
-                location.href = 'loginPage.php';
+                location.href = 'memberInfo.php';
             }, 1000);
         } else {
             alert(`${obj['info']}`);
@@ -237,10 +235,15 @@ $('a#logout').click(function(event){
             $('a#products_order').hide();
 
             setTimeout(function() {
-                location.href = 'index.php';
+                location.href = 'loginSignup.php';
             }, 500);
         }
     }, 'json');
+});
+
+// loginSignup頁進入註冊頁面
+$('a#pc-signup').click(function(event){
+    location.href = 'signupPage.php';
 });
 
 

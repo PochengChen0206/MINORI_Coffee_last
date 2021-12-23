@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login-and-signup.css">
     <!--jquery UI-->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./lib/jquery-ui.css">
 </head>
 
 <body>
@@ -311,8 +311,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="sign-up mt-2">
-                                            <a type="button" class="btn btn-outline-warning px-5" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">註冊</a>
+                                        <div class="mt-2">
+                                            <a type="button" class="btn btn-outline-warning px-5" href="#" id="pc-signup">註冊</a>
                                         </div>
                                     </div>
                                 </div>
@@ -422,11 +422,11 @@
             </div>
         </div>
 
-        <?php require_once 'tpl/foot.inc.php'; ?>
-
         <!--//////////////////////////////////////// script -->
          <!-- jQ -->
         <script src="./lib/jquery-3.6.0.min.js"></script>
+        <!-- jquery UI-->
+        <script src="./lib/jquery-ui.min.js"></script>
         <!-- fontawesome -->
         <script src="./lib/awesome.all.min.js"></script>
         <!-- bootstrap@4.6 -->
