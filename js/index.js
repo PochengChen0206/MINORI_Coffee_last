@@ -212,7 +212,7 @@ $('button#btn_login').click(function (event) {
             alert(`${obj['info']}`);
             //當成功訊息執行時，等數秒，執行自訂程式
             setTimeout(function () {
-                location.href = 'memberInfo.php';
+                location.href = 'memberData.php';
             }, 1000);
         } else {
             alert(`${obj['info']}`);
@@ -232,7 +232,10 @@ $('a#logout').click(function(event){
         if(obj['success']){
             alert(`${obj['info']}`);
 
+            $('a#my_data').hide();
             $('a#products_order').hide();
+            $('a#my_coupon').hide();
+
 
             setTimeout(function() {
                 location.href = 'loginSignup.php';

@@ -1,66 +1,115 @@
-<!-- div.container-fluid 的結尾-->
-<!-- </div> -->
-
-<!-- 浮動視窗 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-      <div class="modal-content" style="background: #1C1C1C;">
-         <div class="modal-header" style="border-bottom: 1px solid #95720C;">
-            <h5 class="modal-title" id="exampleModalLabel" style="color: #95720C;">註冊帳號</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         </div>
-         <div class="modal-body">
-            <form class="row g-3" id="myForm">
-               <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
-                  <input type="text" class="form-control" id="name" placeholder="請填寫您的姓名">
-               </div>
-               <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
-                  <input type="text" class="form-control" id="birthdate" placeholder="請填寫您的生日">
-               </div>
-               <div class="col-md-12 mt-2">
-                  <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
-                  <input type="text" class="form-control" id="phonenum" placeholder="請填寫您的手機號碼">
-               </div>
-               <div class="col-12 mt-2">
-                  <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
-                  <input type="text" class="form-control" id="address" placeholder="請填寫您的通訊地址">
-               </div>
-               <div class="col-md-12 mt-2">
-                  <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
-                  <input type="email" class="form-control" id="email" placeholder="請填寫您的Email">
-               </div>
-               <div class="col-12 mt-2">
-                  <label for="inputPassword4" class="form-label" style="color: #95720C;">密碼</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="請填寫您的密碼">
-               </div>
-               <div class="col-12 mt-3 text-right">
-                  <button type="submit" class="btn btn-outline-warning px-4" id="btn_register">註冊</button>
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
+<!-- footer -->
+<div class="footer" style="background: url(./img/footer_bg.jpg) no-repeat;">
+    <div class="footer_container">
+        <div div class="col-lg-12 footer-content">
+            <div class="footer-logo" style="width:20%">
+                <a href=""><img src="./img/logo.png" alt="" style="width: 100%;"></a>
+            </div>
+            <ul class="text-center d-flex flex-column ">
+                <li class="link_list">
+                    <a href="javascript:;">關於我們</a>
+                </li>
+                <li class="link_list">
+                    <a href="javascript:;">最新消息</a>
+                </li>
+                <li class="link_list">
+                    <a href="javascript:;">會員中心</a>
+                </li>
+                <li class="link_list">
+                    <a href="javascript:;">常見問題</a>
+                </li>
+            </ul>
+            <ul class="text-center d-flex flex-column ">
+                <li class="link_list">
+                    <a href="javascript:;">所有商品</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">豆單</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">嚴選商品</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">熱銷排行</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">咖啡器材</a>
+                </li>
+            </ul>
+            <ul class="text-center d-flex flex-column ">
+                <li class="link_list">
+                    <a href="javascript:;">課程資訊</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">企業包班</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">團體課程</a>
+                </li>
+                <li class="link_list" style="font-size:12px;">
+                    <a href="javascript:;">個人課程</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom" style="font-size:10px;">
+            <p>版權所有 © minori. All Rights Reserved.</p>
+        </div>
+    </div>
 </div>
-
-<!--jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<!-- footer-m -->
+<footer class="footer-m" style="background: url(./img/footer_bg.jpg) no-repeat;">
+    <div class="footer-m-content">
+        <div class="col-md-6 col-12 footer-img pt-5 pb-5">
+            <div class="img-container" style="width: 25%; margin: 0 auto;">
+                <a href=""><img src="./img/logo.png" alt="" style="width: 100%;"></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-12 d-flex text-center pb-5">
+            <div class="col">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">關於我們</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">最新消息</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">會員中心</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">常見問題</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">所有商品</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">豆單</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">嚴選商品</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">熱銷排行</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">咖啡器材</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">課程資訊</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">企業包班</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">團體課程</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">個人課程</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-m-bottom d-flex justify-content-center" style="color: #fff; font-size: 12px;">
+        <p>版權所有 © minori. All Rights Reserved.</p>
+    </div>
+</footer>
+</div>
+</div>
+</div>
+<!--//////////////////////////////////////// script -->
+<!-- jQ -->
+<script src="./lib/jquery-3.6.0.min.js"></script>
 <!-- jquery UI-->
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
-<!-- awesome-->
-<script src="js/all.min.js"></script>
-
-<!-- lightbox-->
-<script src="js/lightbox.js"></script>
-
-<!-- custom -->
-<script src="js/custom.js"></script>
+<script src="./lib/jquery-ui.min.js"></script>
+<!-- fontawesome -->
+<script src="./lib/awesome.all.min.js"></script>
+<!-- bootstrap@4.6 -->
+<script src="./lib/bootstrap.bundle.min.js"></script>
+<!-- js -->
+<script src="./js/index.js"></script>
 </body>
 
 </html>

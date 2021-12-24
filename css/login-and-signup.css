@@ -1,13 +1,19 @@
 .login-and-signup {
     height: 100vh;
-}
 
-.pc-minori-title {
-    color: #95720C; 
+}
+.pc-bg-logo{
+    background: url(../img/logo-bg.svg) no-repeat;
+    background-position: 110% top;
+    background-size: 400px 400px;
 }
 
 .login-and-signup form{
     width: 100%;
+}
+
+.pc-page-title{
+    color: #95720C; 
 }
 
 /* sign out 更改登入後使用者的名字顏色 */
@@ -44,6 +50,28 @@
     width: 80%;
 }
 
-.signupPage-title{
-    color: #95720C; 
+/* 領取coupon */
+.couponGet {
+    height: 100vh;
+}
+
+.couponGet-content {
+    width: 80%;
+    background:linear-gradient(180deg, gray, transparent );
+    border-radius: 16px;
+    padding: 30px 0;
+}
+
+.pc-ticket-img {
+    background: url("../img/coffee-ticket-black.svg") no-repeat;
+    width: 300px;
+    height: 139px;
+    margin: 0 auto;
+}
+
+.pc-ticket-img span{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    color: #fff;
 }

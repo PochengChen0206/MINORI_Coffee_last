@@ -1,0 +1,15 @@
+<div class="signOut-menu dropdown-menu-sw">
+    <div class="signOut-menu-container">
+        <?php if (isset($_SESSION['name'])) { ?>
+            <div class="pc-user signOut-list">
+                <a href="javascript:;">
+                    <?= $_SESSION['name'] ?></a>
+            </div>
+        <?php } ?>
+        <?php if (isset($_SESSION['name'])) { ?>
+            <div class="signOut signOut-list">
+                <a href="#" id="logout">登出</a>
+            </div>
+        <?php } ?>
+    </div>
+</div>

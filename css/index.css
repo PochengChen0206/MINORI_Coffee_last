@@ -191,6 +191,8 @@ img {
     position: fixed;
     width: inherit;
     height: 100%;
+    background: url("../img/main_left.jpg") no-repeat; 
+    background-size: cover;
 }
 /* //////////////////////////////// rightSide page */
 .right-side {
@@ -199,7 +201,7 @@ img {
     right: 0;
     width: 50%;
     background-color: black;
-    height: 100%;
+    height: 100%;/*important*/
     padding: 0;
 }
 .right-side-content {
