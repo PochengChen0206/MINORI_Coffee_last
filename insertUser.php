@@ -41,12 +41,6 @@ if (
             $obj['success'] = true;
             $obj['info'] = '註冊成功';
 
-            //註冊成功
-            $coupon_code = md5( date("YmdHis") );
-            $sqlCoupon = "INSERT INTO `coupon` (`email`, `code`, `percentage`)
-                VALUE('{$_POST['email']}', '{$coupon_code}', 0.8)";
-            $pdo->query($sqlCoupon);
-
             /**
              * 開啟 session，準備在註冊成功時，建立 email 在 session 當中，
              * 之後會透過 $_SESSION['email'] 作為訂單成立 (寫入訂單資料表) 前的判斷，
@@ -59,6 +53,8 @@ if (
             //建立session資料
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['name'] = $_POST['name'];
+          
+
         }
         
     } catch (PDOException $e) { //$e為錯誤訊息

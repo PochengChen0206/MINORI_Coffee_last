@@ -1,6 +1,7 @@
 <div class="r-side-header-container main-icons">
     <div class="main-icon"><button class="icon-btn user-btn"><i class="fas fa-user"></i></button></div>
     <div class="main-icon shopping-card">
+        <!-- 計算購物車內容 -->
         <div class="nums" id="count_products">
             <?php
             if (isset($_SESSION['cart'])) {

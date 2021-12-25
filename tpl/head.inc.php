@@ -13,6 +13,7 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login-and-signup.css">
+    <link rel="stylesheet" href="./css/coffee.css">
     <!--jquery UI-->
     <link rel="stylesheet" href="./lib/jquery-ui.css">
 </head>

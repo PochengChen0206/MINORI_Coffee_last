@@ -83,7 +83,7 @@ $('button#btn_register').click(function (event) {
     //各自將 input 帶到變數中
     let input_name = $('input#name');
     let input_birthdate = $('input#birthdate');
-    let input_phonenum = $('input#phonenum');
+    let input_phone_number = $('input#phone_number');
     let input_address = $('input#address');
     let input_email = $('input#email');
     let input_pwd = $('input#pwd');
@@ -126,7 +126,7 @@ $('button#btn_register').click(function (event) {
     }
 
     //檢查手機是否輸入
-    if (input_phonenum.val() == '') {
+    if (input_phone_number.val() == '') {
         alert(`請輸入手機號碼`);
         return false;
     }
@@ -151,7 +151,7 @@ $('button#btn_register').click(function (event) {
     let objUser = {
         name: input_name.val(),
         birthdate: input_birthdate.val(),
-        phonenum: input_phonenum.val(),
+        phonenum: input_phone_number.val(),
         address: input_address.val(),
         email: input_email.val(),
         pwd: input_pwd.val()
@@ -160,9 +160,6 @@ $('button#btn_register').click(function (event) {
     //header("Content-Type: application/json");因為有header所以直接傳回物件不需要再轉換
     $.post("insertUser.php", objUser, function (obj) {
         if (obj['success']) {
-            //關閉 modal
-            $('div#exampleModal').hide();
-
             //成功訊息
             alert(`${obj['info']}`);
 
@@ -177,6 +174,7 @@ $('button#btn_register').click(function (event) {
         console.log(obj);
     }, 'json');
 });
+
 
 //登入  
 //要先fn+ctrl+F5 清除快取
@@ -231,10 +229,6 @@ $('a#logout').click(function(event){
     $.get('logout.php', function(obj){
         if(obj['success']){
             alert(`${obj['info']}`);
-
-            $('a#my_data').hide();
-            $('a#products_order').hide();
-            $('a#my_coupon').hide();
 
 
             setTimeout(function() {

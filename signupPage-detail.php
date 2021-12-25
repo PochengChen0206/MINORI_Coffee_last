@@ -29,7 +29,7 @@
                         <form class="row g-3" id="myForm">
                             <div class="col-md-6">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
-                                <input type="text" class="form-control" id="name" placeholder="請填寫您的姓名">
+                                <input type="text" class="form-control" id="name" value="<?= $_SESSION['name'] ?>">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
-                                <input type="text" class="form-control" id="phonenum" placeholder="請填寫您的手機號碼">
+                                <input type="text" class="form-control" id="phone_number" placeholder="請填寫您的手機號碼">
                             </div>
                             <div class="col-12 mt-2">
                                 <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
@@ -45,14 +45,14 @@
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
-                                <input type="email" class="form-control" id="email" placeholder="請填寫您的Email">
+                                <input type="email" class="form-control" id="email" value="<?= $_SESSION['email'] ?>">
                             </div>
                             <div class="col-12 mt-2">
                                 <label for="inputPassword4" class="form-label" style="color: #95720C;">密碼</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="請填寫您的密碼">
+                                <input type="password" class="form-control" id="pwd" placeholder="請輸入您的密碼">
                             </div>
                             <div class="col-12 mt-3 text-right">
-                                <a type="button" class="btn btn-outline-warning px-5" href='couponGet.php'>登錄</a>
+                                <a type="button" class="btn btn-outline-warning px-5" href='couponGet.php' id="btn_setting">登錄</a>
                             </div>
                         </form>
                     </div>
