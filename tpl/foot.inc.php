@@ -13,7 +13,7 @@
                     <a href="javascript:;">最新消息</a>
                 </li>
                 <li class="link_list">
-                    <a href="javascript:;">會員中心</a>
+                    <a href='loginSignup.php'>會員中心</a>
                 </li>
                 <li class="link_list">
                     <a href="javascript:;">常見問題</a>
@@ -24,7 +24,7 @@
                     <a href="javascript:;">所有商品</a>
                 </li>
                 <li class="link_list" style="font-size:12px;">
-                    <a href="javascript:;">豆單</a>
+                    <a href='coffee.php'>豆單</a>
                 </li>
                 <li class="link_list" style="font-size:12px;">
                     <a href="javascript:;">嚴選商品</a>
@@ -110,6 +110,8 @@
 <script src="./lib/bootstrap.bundle.min.js"></script>
 <!-- js -->
 <script src="./js/index.js"></script>
+<script src="./js/login-and-signup.js"></script>
+<script src="./js/coffeeAccessories_page.js"></script>
 </body>
 
 </html>

@@ -161,8 +161,10 @@ img {
 .list a:hover{
     opacity: 100%;
 }
-.second-list{
+.second-list {
     padding-bottom: 8px;
+}
+.second-list a{
     color: #fff;
     font-size: 0.875rem;
     opacity: 50%;
@@ -527,6 +529,7 @@ img {
     }
     .header-m{
         display: block;
+        height: 90px;   /* 1227新增 */
     }
     /* //////////// footer */
     .footer {

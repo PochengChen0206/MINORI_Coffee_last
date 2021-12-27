@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="mt-2">
-                                            <a type="button" class="btn btn-outline-warning px-5" href="#" id="pc-signup">註冊</a>
+                                            <a type="button" class="btn btn-outline-warning px-5" href='signupPage.php' id="pc-signup">註冊</a>
                                         </div>
                                     </div>
                                 </div>

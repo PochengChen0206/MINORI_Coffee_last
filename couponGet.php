@@ -20,7 +20,7 @@
                     <!-- main icon  每一頁都要放不更動-->
                     <?php require_once 'tpl/mainicon.inc.php' ?>
                     <!-- sign out  每一頁都要放不更動-->
-                    <?php require_once 'tpl/signout-login.inc.php' ?>
+                    <?php require_once 'tpl/signout.inc.php' ?>
                 </div>
                 <!-- ================================================= 新頁面加入 -->
                 <div class="container couponGet d-flex flex-column justify-content-center pc-bg-logo">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="mt-2 text-center">
-                        <a type="button" class="btn btn-outline-warning px-5" href="#">開始購物</a>
+                        <a type="button" class="btn btn-outline-warning px-5" href='beanList_page.php'>開始購物</a>
                     </div>
                 </div>
                 <!-- ================================================= -->

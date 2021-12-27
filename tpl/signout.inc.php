@@ -7,11 +7,11 @@
                     <?= $_SESSION['name'] ?></a>
             </div>
         <?php } ?>
-        <div class="signOut-list">
-            <div class="signOut-second-list">
+        <?php if (!isset($_SESSION['name'])) { ?>
+            <div class="signOut-list">
                 <a href='loginSignup.php'>登入/註冊</a>
             </div>
-        </div>
+        <?php } ?>
         <?php if (isset($_SESSION['name'])) { ?>
             <div class="signOut signOut-list">
                 <a href="#" id="logout">登出</a>

@@ -13,7 +13,8 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login-and-signup.css">
-    <link rel="stylesheet" href="./css/coffee.css">
+    <link rel="stylesheet" href="./css/beanList_page.css">
+    <link rel="stylesheet" href="./css/coffeeAccessories_page.css">
     <!--jquery UI-->
     <link rel="stylesheet" href="./lib/jquery-ui.css">
 </head>
@@ -64,7 +65,7 @@
                     <a href="javascript:;">最新消息</a>
                 </div>
                 <div class="list">
-                    <a href="javascript:;">會員中心</a>
+                    <a href='loginSignup.php' id="memberCenter">會員中心</a>
                 </div>
                 <div class="list list-drop">
                     <div class="first-list">
@@ -72,10 +73,18 @@
                         <div class="icon list-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <ul class="list-drop-menu">
-                        <li class="second-list">豆單</li>
-                        <li class="second-list">嚴選商品</li>
-                        <li class="second-list">熱銷排行</li>
-                        <li class="second-list">咖啡器材</li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>豆單</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>嚴選商品</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>熱銷排行</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>咖啡器材</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="list list-drop">
@@ -84,9 +93,15 @@
                         <div class="icon list-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <ul class="list-drop-menu">
-                        <li class="second-list">企業包班</li>
-                        <li class="second-list">團體課程</li>
-                        <li class="second-list">個人課程</li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>企業包班</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>團體課程</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>個人課程</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="list list-drop">
@@ -95,9 +110,15 @@
                         <div class="icon list-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <ul class="list-drop-menu">
-                        <li class="second-list">購物流程</li>
-                        <li class="second-list">退換貨</li>
-                        <li class="second-list">課程募資</li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>購物流程</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>退換貨</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>課程募資</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -158,10 +179,18 @@
                         <div class="icon list-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <ul class="list-drop-menu">
-                        <li class="second-list">豆單</li>
-                        <li class="second-list">嚴選商品</li>
-                        <li class="second-list">熱銷排行</li>
-                        <li class="second-list">咖啡器材</li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>豆單</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>嚴選商品</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>熱銷排行</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>咖啡器材</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="list list-drop">
@@ -170,9 +199,15 @@
                         <div class="icon list-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <ul class="list-drop-menu">
-                        <li class="second-list">企業包班</li>
-                        <li class="second-list">團體課程</li>
-                        <li class="second-list">個人課程</li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>企業包班</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>團體課程</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>個人課程</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="list list-drop">
@@ -181,9 +216,15 @@
                         <div class="icon list-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <ul class="list-drop-menu">
-                        <li class="second-list">購物流程</li>
-                        <li class="second-list">退換貨</li>
-                        <li class="second-list">課程募資</li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>購物流程</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>退換貨</a>
+                        </li>
+                        <li class="second-list">
+                            <a href='beanList_page.php'>課程募資</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- link -->
@@ -203,17 +244,22 @@
         <!-- head-m-sign out -->
         <div class="signOut-menu-m">
             <div class="signOut-menu-container">
-                <div class="user signOut-list">
-                    <p>用戶 <a href="javascript:;">User</a></p>
-                </div>
-                <div class="signOut-list">
-                    <div class="signOut-second-list">
-                        <a href="javascript:;">登入/註冊</a>
+                <?php if (isset($_SESSION['name'])) { ?>
+                    <div class="pc-user signOut-list">
+                        <a href="javascript:;">
+                            <?= $_SESSION['name'] ?></a>
                     </div>
-                </div>
-                <div class="signOut signOut-list">
-                    <a href="javascript:;">登出</a>
-                </div>
+                <?php } ?>
+                <?php if (!isset($_SESSION['name'])) { ?>
+                    <div class="signOut-list">
+                        <a href='loginSignup.php'>登入/註冊</a>
+                    </div>
+                <?php } ?>
+                <?php if (isset($_SESSION['name'])) { ?>
+                    <div class="signOut signOut-list">
+                        <a href="#" id="logout">登出</a>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </header>

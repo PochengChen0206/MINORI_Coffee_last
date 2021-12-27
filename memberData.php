@@ -37,7 +37,7 @@
                     <!-- main icon -->
                     <?php require_once 'tpl/mainicon.inc.php' ?>
                     <!-- sign out -->
-                    <?php require_once 'tpl/signout-login.inc.php' ?>
+                    <?php require_once 'tpl/signout.inc.php' ?>
                 </div>
                 <!-- ================================================= 新頁面加入 -->
                 <div class="pc-memberCenter d-flex flex-column justify-content-center pc-bg-logo">
