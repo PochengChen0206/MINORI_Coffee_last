@@ -1,37 +1,32 @@
 <?php
 //匯入資料庫
 require_once 'db.inc.php';
+session_start();
 
-//預設訊息
 $obj = [];
 $obj['success'] = false;
 $obj['info'] = '註冊失敗';
+
 
 
 //確認所有傳過來的表單資料是否完整
 if (
     isset($_POST['name']) &&
     isset($_POST['email']) &&
-    isset($_POST['pwd']) 
+    isset($_POST['pwd'] )
 ) {
-    
-    //設定密碼雜湊值
     $pwd = sha1($_POST['pwd']);
-
-    //產生驗證碼
-    $verified_code = md5(date("YmdHis"));
-
     
     try {
         //新增使用者(先不新增地址)
-        $sql = "INSERT INTO `users` (`name`, `email`, `pwd`, `verified_code`) 
-            VALUES (
-                '{$_POST['name']}',
-                '{$_POST['email']}',
-                '{$pwd}',
-                '{$verified_code}'
-            ) ";
-        
+        $sql = "UPDATE `users` 
+                SET `name` = '{$_POST['name']}',
+                    `birthdate` = '{$_POST['birthdate']}',
+                    `phone_number` = '{$_POST['phone_number']}',
+                    `address` = '{$_POST['address']}',
+                    `email` = '{$_POST['email']}',
+                    `pwd` = '{$pwd}'
+                WHERE `email` = '{$_SESSION['email']}'";
         //執行SQL語法
         $stmt = $pdo->query($sql);
         
@@ -39,21 +34,24 @@ if (
         if ($stmt->rowCount() > 0) {
             //修改預設訊息
             $obj['success'] = true;
-            $obj['info'] = '註冊成功';
+            $obj['info'] = '會員資料登錄成功';
 
-            /**
-             * 開啟 session，準備在註冊成功時，建立 email 在 session 當中，
-             * 之後會透過 $_SESSION['email'] 作為訂單成立 (寫入訂單資料表) 前的判斷，
-             * 有 $_SESSION['email'] 就可以新增訂單和訂單明細，
-             * 沒有就請你登入，或是註冊帳號。
-             */
+            //註冊成功
+            $coupon_code = md5( date("YmdHis") );
+            $sqlCoupon = "INSERT INTO `coupon` (`email`, `code`, `percentage`)
+                VALUE('{$_POST['email']}', '{$coupon_code}', 0.8)";
+            $pdo->query($sqlCoupon);
 
-            session_start();
+           
+
 
             //建立session資料
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['name'] = $_POST['name'];
-          
+            $_SESSION['birthdate'] = $_POST['birthdate'];
+            $_SESSION['address'] = $_POST['address'];
+            $_SESSION['phone_number'] = $_POST['phone_number'];
+            $_SESSION['pwd'] = $pwd;
 
         }
         

@@ -52,7 +52,7 @@
                                 <input type="password" class="form-control" id="pwd" placeholder="請輸入您的密碼">
                             </div>
                             <div class="col-12 mt-3 text-right">
-                                <a type="button" class="btn btn-outline-warning px-5" href='couponGet.php' id="btn_setting">登錄</a>
+                                <a type="button" class="btn btn-outline-warning px-5" href='#' id="btn_setting">登錄</a>
                             </div>
                         </form>
                     </div>

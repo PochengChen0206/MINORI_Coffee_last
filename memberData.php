@@ -50,15 +50,15 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
-                                <input type="text" class="form-control" id="birthdate" placeholder="請填寫您的生日">
+                                <input type="text" class="form-control" id="birthdate" value="<?= $_SESSION['birthdate'] ?>">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
-                                <input type="text" class="form-control" id="phone_number" placeholder="請填寫您的手機號碼">
+                                <input type="text" class="form-control" id="phone_number" value="<?= $_SESSION['phone_number'] ?>">
                             </div>
                             <div class="col-12 mt-2">
                                 <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
-                                <input type="text" class="form-control" id="address" placeholder="請填寫您的通訊地址">
+                                <input type="text" class="form-control" id="address" value="<?= $_SESSION['address'] ?>">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="col-12 mt-2">
                                 <label for="inputPassword4" class="form-label" style="color: #95720C;">密碼</label>
-                                <input type="inputEmail4" class="form-control" id="pwd" placeholder="請輸入您的密碼">
+                                <input type="inputEmail4" class="form-control" id="pwd" value="<?= $_SESSION['pwd'] ?>">
                             </div>
                             <div class="col-12 mt-3 text-right">
                                 <button type="submit" class="btn btn-outline-warning px-4" id="btn-renew">儲存</button>
