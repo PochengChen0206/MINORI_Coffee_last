@@ -23,13 +23,14 @@
                         <?php require_once 'tpl/signout.inc.php' ?>
                     </div>
                     <!-- ================================================= 新頁面加入 -->
-                    <div class="container signupPage d-flex flex-column justify-content-center pc-bg-logo">
-                        <h2 class="pc-page-title text-center">註冊完成，歡迎加入MINORI</h2>
+                    <div class="container signupPage d-flex flex-column justify-content-center align-items-center pc-bg-logo">
+                        <h2 class="pc-page-title text-center">註冊完成</p>
+                        <h3 class="pc-page-title text-center">歡迎加入MINORI</h3>
                         <div class="signupPage-content">
-                            <div class="mt-3">
+                            <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
                                 <a type="button" class="btn btn-outline-warning px-5" href='signupPage-detail.php'>填寫完整資料拿優惠券</a>
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
                                 <a type="button" class="btn btn-outline-warning px-5" href= 'beanList_page.php'>先逛逛所有商品</a>
                             </div>
                         </div>

@@ -12,8 +12,17 @@
                 <li class="link_list">
                     <a href="javascript:;">最新消息</a>
                 </li>
+                <?php if (!isset($_SESSION['name'])) { ?>
+                    <li class="link_list">
+                        <a href='loginSignup.php'>會員中心</a>
+                    </li>
+                <?php } else { ?>
+                    <li class="link_list">
+                        <a href='memberData.php'>會員中心</a>
+                    </li>
+                <?php } ?>
                 <li class="link_list">
-                    <a href='loginSignup.php'>會員中心</a>
+                    <a href="javascript:;">咖啡地圖</a>
                 </li>
                 <li class="link_list">
                     <a href="javascript:;">常見問題</a>
@@ -67,10 +76,27 @@
         <div class="col-md-6 col-12 d-flex text-center pb-5">
             <div class="col">
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">關於我們</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">最新消息</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">會員中心</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">常見問題</a></li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-white">關於我們</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-white">最新消息</a>
+                    </li>
+                    <?php if (!isset($_SESSION['name'])) { ?>
+                        <li class="nav-item mb-2">
+                            <a href="loginSignup.php" class="nav-link p-0 text-white">會員中心</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item mb-2">
+                            <a href="memberData.php" class="nav-link p-0 text-white">會員中心</a>
+                        </li>
+                    <?php } ?>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-white">咖啡地圖</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-white">常見問題</a>
+                    </li>
                 </ul>
             </div>
             <div class="col">

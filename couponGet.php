@@ -23,23 +23,32 @@
                     <?php require_once 'tpl/signout.inc.php' ?>
                 </div>
                 <!-- ================================================= 新頁面加入 -->
-                <div class="container couponGet d-flex flex-column justify-content-center pc-bg-logo">
-                    <h2 class="pc-page-title text-center">MINORI</h2>
-                    <div class="container couponGet-content text-center">
-                        <div class="couponGet-img">
-                            <img src="./img/coffee-beans-icon.png" style="width: 15%;" alt="">
-                        </div>
-                        <h4 class="" style="color:#95720C; width:100%">個人資料登錄完成</h4>
-                        <h5 class="" style="color:white;">獲得20%OFF優惠券</h5>
-                        <div class="pc-ticket-img">
-                            <span>折扣<h5 class="ml-2" style="color:#95720C; margin:0;">20%OFF</h5></span>
-                            <p style="color: #fff;">所有商品使用</p>
+                <div class="pc-couponGet pc-bg-logo">
+                        <div class="pc-coupon-container">
+                            <div class="pc-coupon-title">
+                                <span>MINORI</span>
+                            </div>
+                            <!-- card -->
+                            <div class="pc-couponGet-content">
+                                <div class="pc-gradient-card">
+                                    <div class="pc-bean-img">
+                                        <img src="./img/coffee-beans-icon.png" alt="">
+                                    </div>
+                                    <h4 class="pc-card-title">登錄完成</h4>
+                                    <h5 class="pc-card-second-title">歡迎加入!</h5>
+                                    <div class="pc-ticket-img">
+                                        <span class="pc-discount">折扣<h1 class="pc-20">20%</h1>OFF</span>
+                                        <p class="pc-text">給所有商品使用</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- button -->
+                            <div class="pc-btn-starShop">
+                                <a type="button" class="btn btn-outline-warning px-5" href="#">開始購物</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-2 text-center">
-                        <a type="button" class="btn btn-outline-warning px-5" href='beanList_page.php'>開始購物</a>
-                    </div>
-                </div>
                 <!-- ================================================= -->
 
                 <?php require_once 'tpl/foot.inc.php' ?>

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./css/login-and-signup.css">
     <link rel="stylesheet" href="./css/beanList_page.css">
     <link rel="stylesheet" href="./css/coffeeAccessories_page.css">
+    <link rel="stylesheet" href="./css/couponGet.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.multiscroll.css" />
     <!--jquery UI-->
     <link rel="stylesheet" href="./lib/jquery-ui.css">
 </head>
@@ -64,8 +66,17 @@
                 <div class="list">
                     <a href="javascript:;">最新消息</a>
                 </div>
+                <?php if (!isset($_SESSION['name'])) { ?>
+                    <div class="list">
+                        <a href="loginSignup.php" id="memberCenter">會員中心</a>
+                    </div>
+                <?php } else { ?>
+                    <div class="list">
+                        <a href="memberData.php" id="memberCenter">會員中心</a>
+                    </div>
+                <?php } ?>
                 <div class="list">
-                    <a href='loginSignup.php' id="memberCenter">會員中心</a>
+                    <a class="list-title" href="javascript:;">咖啡地圖</a>
                 </div>
                 <div class="list list-drop">
                     <div class="first-list">
@@ -170,8 +181,17 @@
                 <div class="list">
                     <a href="javascript:;">最新消息</a>
                 </div>
+                <?php if (!isset($_SESSION['name'])) { ?>
+                    <div class="list">
+                        <a href="loginSignup.php" id="memberCenter">會員中心</a>
+                    </div>
+                <?php } else { ?>
+                    <div class="list">
+                        <a href="memberData.php" id="memberCenter">會員中心</a>
+                    </div>
+                <?php } ?>
                 <div class="list">
-                    <a href="javascript:;">會員中心</a>
+                    <a class="list-title" href="javascript:;">咖啡地圖</a>
                 </div>
                 <div class="list list-drop">
                     <div class="first-list">

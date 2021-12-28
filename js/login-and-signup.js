@@ -91,16 +91,6 @@ $('button#btn_register').click(function (event) {
         return false;
     }
 
-    // //將所有欄位的值，整合在陣列當中
-    // let arrValue = [input_pwd.val(), input_name.val(), input_birthdate.val(), input_address.val(),]
-
-
-    // //判斷其他欄位是否填寫完成
-    // if(arrValue.indexOf('') > -1){  //因為從零開始要大於-1
-    //     alert(`請正確填寫欄位`);
-    //     return false;
-    // }
-
     //送出POST請求， 註冊帳號
     let objUser = {
         name: input_name.val(),
@@ -223,17 +213,6 @@ $('a#pc-signup').click(function(event){
 });
 
 
-//header和footer會員中心
-$('a#memberCenter').click(function(event){
-    if( isset($_SESSION['name']) ){
-        location.href = 'memberData.php';
-    }else {
-        location.href = 'loginSignup.php';
-    }
-})
-
-
-
 //登錄完整資料
 $('a#btn_setting').click(function (event) {
 
@@ -277,3 +256,15 @@ $('a#btn_setting').click(function (event) {
         console.log(obj);
     }, 'json');
 });
+
+
+// //header和footer會員中心
+// $('a#memberCenter').click(function(event){
+//     event.preventDefault();
+    
+//     if(($_SESSION['name']) != 'undefined' ){
+//         location.href = 'memberData.php';
+//     }else {
+//         location.href = 'loginSignup.php';
+//     }
+// })

@@ -49,29 +49,3 @@
 .signupPage-content{
     width: 80%;
 }
-
-/* 領取coupon */
-.couponGet {
-    height: 100vh;
-}
-
-.couponGet-content {
-    width: 80%;
-    background:linear-gradient(180deg, gray, transparent );
-    border-radius: 16px;
-    padding: 30px 0;
-}
-
-.pc-ticket-img {
-    background: url("../img/coffee-ticket-black.svg") no-repeat;
-    width: 300px;
-    height: 139px;
-    margin: 0 auto;
-}
-
-.pc-ticket-img span{
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-    color: #fff;
-}
