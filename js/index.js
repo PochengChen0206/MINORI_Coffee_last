@@ -69,7 +69,7 @@ window.onload = function () {
 };
 
 
-$('a#pc-bean').click(function(event){
-    event.preventDefault();
-    location.href = 'http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1';
-});
+// $('a#pc-bean').click(function(event){
+//     event.preventDefault();
+//     location.href = 'http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1';
+// });

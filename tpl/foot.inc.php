@@ -138,6 +138,7 @@
 <script src="./js/index.js"></script>
 <script src="./js/login-and-signup.js"></script>
 <script src="./js/coffeeAccessories_page.js"></script>
+<script src="./js/beanList_page.js"></script>
 </body>
 
 </html>

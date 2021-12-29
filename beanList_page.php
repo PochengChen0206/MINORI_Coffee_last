@@ -174,7 +174,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                                 <div class="hc-pds-card-control col-lg-4 col-md-6">
                                                     <div class="hc-pds-card">
                                                         <div class="hc-pds-img">
-                                                            <a href="detail.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
+                                                            <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
                                                                 <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
                                                             </a>
                                                         </div>

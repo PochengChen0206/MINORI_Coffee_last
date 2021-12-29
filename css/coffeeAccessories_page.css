@@ -64,6 +64,7 @@ img{
     margin: 0 auto;
     margin-top: 8px;
 }
+/* ///////////////////////// rightSide page*/
 /* ///////////////////////// hc-coffee-products*/
 .hc-coffee-products{
     width: 100%;
@@ -84,13 +85,6 @@ img{
 .hc-page-title a{
     text-decoration: none;
     color: var(--main-color);
-}
-/* /////////////////////////////////// coffee products */
-.hc-coffee-products{
-    width: 100%;
-}
-.hc-coffee-products-container{
-    height: 100%;
 }
 /* ///////////////////// title */
 .hc-main-title-control{

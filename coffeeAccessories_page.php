@@ -1,48 +1,44 @@
 <?php require_once 'db.inc.php'; ?>
 <?php session_start(); ?>
 
+<?php
+$sql = "SELECT `id`, `cat_name`  FROM`categories` WHERE `parent_id` = 0";
+$arr = $pdo->query($sql)->fetchAll();
+?>
 
 <?php require_once 'tpl/head.inc.php' ?>
+
 <!-- main page -->
 <div class="container-fluid main-page">
     <div class="row">
         <!-- leftSide page -->
         <div class="left-side">
             <!-- ================================================= 新頁面加入 -->
-            <div class="left-side-bg" style="background: url(./img/coffeeAccessories_bg.jpg) no-repeat; background-size: cover;">
-                <!-- menu title -->
-                <div class="hc-top-menus">
-                    <div class="hc-top-menu-container-push100">
-                        <div class="hc-top-menu-control">
-                            <!-- menu 1 -->
-                            <div class="hc-top-menu">
-                                <a href="javascript:;">
-                                    豆單
-                                </a>
-                            </div>
-                            <!-- menu 2 -->
-                            <div class="hc-top-menu">
-                                <a href="javascript:;">
-                                    嚴選商品
-                                </a>
-                            </div>
-                            <!-- menu 3 -->
-                            <div class="hc-top-menu">
-                                <a href="javascript:;">
-                                    熱銷排行
-                                </a>
-                            </div>
-                            <!-- menu 4 -->
-                            <div class="hc-top-menu">
-                                <a class="hc-top-menu-active" href="javascript:;">
-                                    咖啡器材
-                                </a>
+            <div class="left-side-push100">
+                <div class="hc-left-side-bg" style="background: url(./img/coffeeAccessories_bg.jpg) no-repeat; background-size: cover;">
+                    <!-- ======================================================================================= add content -->
+                    <!-- head -->
+                    <div class="hc-top-menus">
+                        <div class="hc-top-menu-container-pushTop">
+                            <div class="hc-top-menu-control">
+                                <div class="hc-top-menu">
+                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
+                                </div>
+
+                                <div class="hc-top-menu">
+                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[1]['id'] ?>"><?= $arr[1]['cat_name'] ?></a>
+                                </div>
+
+                                <div class="hc-top-menu">
+                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[2]['id'] ?>"><?= $arr[2]['cat_name'] ?></a>
+                                </div>
+
+                                <div class="hc-top-menu">
+                                    <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-
                 </div>
             </div>
             <!-- ================================================= -->
@@ -306,4 +302,5 @@
                 </div>
                 <!-- ================================================= -->
             </div>
+            <!-- footer -->
             <?php require_once 'tpl/foot.inc.php' ?>
