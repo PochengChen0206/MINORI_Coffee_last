@@ -2,6 +2,7 @@
 <?php session_start(); ?>
 
 <?php require_once 'tpl/head.inc.php' ?>
+
     <!-- main page -->
     <div class="container-fluid main-page">
         <div class="row">

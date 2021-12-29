@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./css/beanList_page.css">
     <link rel="stylesheet" href="./css/coffeeAccessories_page.css">
     <link rel="stylesheet" href="./css/couponGet.css">
-    <link rel="stylesheet" type="text/css" href="./css/jquery.multiscroll.css" />
     <!--jquery UI-->
     <link rel="stylesheet" href="./lib/jquery-ui.css">
 </head>

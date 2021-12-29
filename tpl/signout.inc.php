@@ -3,7 +3,7 @@
         <!-- 要登入才會顯現會員名稱 -->
         <?php if (isset($_SESSION['name'])) { ?>
             <div class="pc-user signOut-list">
-                <a href="javascript:;">
+                <a href="memberData.php">
                     <?= $_SESSION['name'] ?></a>
             </div>
         <?php } ?>

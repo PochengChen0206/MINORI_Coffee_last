@@ -6,6 +6,33 @@ $sql = "SELECT `id`, `cat_name`  FROM`categories` WHERE `parent_id` = 0";
 $arr = $pdo->query($sql)->fetchAll();
 ?>
 
+<?php
+//整合特定商品類別分頁的$sql字串
+// $where = "";
+// if(isset($_GET['sub_cat_id'])){
+//     $where = "WHERE`cat_id` = {$_GET['sub_cat_id']}";
+// }
+
+//取得products資料表總筆數(對cat_id = 3的products做count聚合成一筆)
+// $sqlTotal = "SELECT COUNT(1) AS `count`FROM `products` {$where}";
+// $totalRows = $pdo->query($sqlTotal)->fetch()['count'];
+
+
+//設定每頁幾筆
+// $numPerPage = 12;
+
+//總頁數ceil()
+// $totalPages = ceil($totalRows / $numPerPage);
+
+//目前第幾頁(存在且大於給予頁數，否則設為第一頁)
+// $page = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
+
+//計算分頁偏移量
+// $offset = ($page - 1) * $numPerPage;
+
+// 啟用的話168行的$sql 要加 LIMIT {$offset}, {$numPerPage}";
+?>
+
 <?php require_once 'tpl/head.inc.php' ?>
 <!-- main page -->
 <div class="container-fluid main-page">
@@ -144,25 +171,23 @@ $arr = $pdo->query($sql)->fetchAll();
                                                 $arr = $stmt->fetchAll();
                                                 foreach ($arr as $obj) {
                                             ?>
-                                                    <div class="hc-pds-card-control col-lg-4 col-md-6">
-
-                                                        <div class="hc-pds-card">
-                                                            <div class="hc-pds-img">
-                                                                <a href="javascript:;">
-                                                                    <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
-                                                                </a>
+                                                <div class="hc-pds-card-control col-lg-4 col-md-6">
+                                                    <div class="hc-pds-card">
+                                                        <div class="hc-pds-img">
+                                                            <a href="detail.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
+                                                                <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="hc-card-content-container">
+                                                            <div class="hc-card-content-title">
+                                                                <h5><?= $obj['prod_name'] ?></h5>
                                                             </div>
-                                                            <div class="hc-card-content-container">
-                                                                <div class="hc-card-content-title">
-                                                                    <h5><?= $obj['prod_name'] ?></h5>
-                                                                </div>
-                                                                <div class="hc-card-content-price">
-                                                                    <span>NT$<?= $obj['prod_price'] ?>~</span>
-                                                                </div>
+                                                            <div class="hc-card-content-price">
+                                                                <span>NT$<?= $obj['prod_price'] ?>~</span>
                                                             </div>
                                                         </div>
-
                                                     </div>
+                                                </div>
                                             <?php
                                                 }
                                             }
@@ -174,6 +199,7 @@ $arr = $pdo->query($sql)->fetchAll();
                         </div>
                     </div>
                     <!-- page number -->
+                    <!-- 做分頁參考老師php影片1214-001最後一分半開始 -->
                     <div class="hc-page-number">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">

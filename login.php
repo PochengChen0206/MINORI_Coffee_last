@@ -13,7 +13,7 @@ if( isset($_POST['email']) && isset($_POST['pwd']) ){
 
     try{
         //查詢使用者
-        $sql = "SELECT `email`,`name` 
+        $sql = "SELECT `email`,`name` , `birthdate` , `address`, `phone_number`
                 FROM `users` 
                 WHERE `email` = '{$_POST['email']}' 
                 AND `pwd` = '{$pwd}' 
@@ -37,6 +37,10 @@ if( isset($_POST['email']) && isset($_POST['pwd']) ){
             //建立 session 資料
             $_SESSION['email'] = $objUser['email']; 
             $_SESSION['name'] = $objUser['name']; 
+            $_SESSION['birthdate'] = $objUser['birthdate'];
+            $_SESSION['address'] = $objUser['address'];
+            $_SESSION['phone_number'] = $objUser['phone_number'];
+            // $_SESSION['pwd'] = $pwd;
 
 
         }
