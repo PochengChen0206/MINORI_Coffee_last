@@ -288,6 +288,11 @@ img{
     color: black;
 }
 
+/* ///////豆單分類標題///// */
+.pc-cat-title {
+    color: var(--main-color);
+}
+
 
 /* //////////////////////////////// RWD */
 @media screen and (max-width:576px) {

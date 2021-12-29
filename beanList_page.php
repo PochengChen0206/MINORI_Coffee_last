@@ -48,62 +48,28 @@ $arr = $pdo->query($sql)->fetchAll();
                                     $arr1 = $pdo->query($sql);
                                     foreach ($arr1 as $obj1) {
                                     ?>
-                                        <div class="list list-drop hc-bean-menu-drop">
-                                        <?= $obj1['cat_name'] ?>
-                                            
+                                        <!-- 分類 -->
+                                        <div class="list list-drop hc-bean-menu-drop pc-cat-title">
+                                            <?= $obj1['cat_name'] ?>
+
                                             <ul class="list-drop-menu" style="display: block;">
-                                            <!-- B  -->
+                                                <!-- 分類子層  -->
                                                 <?php $sql = "SELECT `id`, `cat_name`
                                                           FROM `categories`
                                                           WHERE `parent_id` = {$obj1['id']}";
                                                 $arr2 = $pdo->query($sql);
                                                 foreach ($arr2 as $obj2) {
                                                 ?>
-                                                <!-- B child -->
+                                                    <!-- 從資料庫取出分類子層內容(sub_cat_id) -->
                                                     <li class="second-list">
-                                                        <a href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>$sub_cat_id=?<?= $obj2['id'] ?>"><?= $obj2['id'] ?></a>
+                                                        <a href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $obj2['id'] ?>"><?= $obj2['cat_name'] ?></a>
                                                     </li>
                                                 <?php
                                                 }
                                                 ?>
-                                                <!-- <li class="second-list">酸</li>
-                                                <li class="second-list">柔和酸</li>
-                                                <li class="second-list">不酸</li> -->
                                             </ul>
                                         </div>
                                     <?php } ?>
-                                    <!-- <div class="list list-drop hc-bean-menu-drop">
-                                        <div class="first-list">
-                                            <a class="hc-bean-menu-list" href="javascript:;">以洲別分類</a>
-                                        </div>
-                                        <ul class="list-drop-menu" style="display: block;">
-                                            <li class="second-list">中南美洲</li>
-                                            <li class="second-list">非洲</li>
-                                            <li class="second-list">亞洲</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list list-drop hc-bean-menu-drop">
-                                        <div class="first-list">
-                                            <a class="hc-bean-menu-list" href="javascript:;">以處理法分類</a>
-                                        </div>
-                                        <ul class="list-drop-menu" style="display: block;">
-                                            <li class="second-list">日曬</li>
-                                            <li class="second-list">水洗</li>
-                                            <li class="second-list">蜜處理</li>
-                                            <li class="second-list">特殊</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list list-drop hc-bean-menu-drop">
-                                        <div class="first-list">
-                                            <a class="hc-bean-menu-list" href="javascript:;">以烘培度分類</a>
-                                        </div>
-                                        <ul class="list-drop-menu" style="display: block;">
-                                            <li class="second-list">淺焙</li>
-                                            <li class="second-list">中淺焙</li>
-                                            <li class="second-list">中焙</li>
-                                            <li class="second-list">中深焙</li>
-                                        </ul>
-                                    </div> -->
                                 </div>
                             <?php } ?>
                         </div>
@@ -166,116 +132,43 @@ $arr = $pdo->query($sql)->fetchAll();
                                 <!-- products content -->
                                 <div class="hc-products-grp">
                                     <!-- product grp 1 -->
-                                    <div class="hc-products-grp-control">
-                                        <!-- product card 1 -->
-                                        <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                            <div class="hc-pds-card">
-                                                <div class="hc-pds-img">
-                                                    <a href="javascript:;">
-                                                        <img src="./img/product_bean_001.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hc-card-content-container">
-                                                    <div class="hc-card-content-title">
-                                                        <h5>耶加雪菲 晨之莓</h5>
+                                    <?php if (isset($_GET['sub_cat_id'])) { ?>
+                                        <div class="hc-products-grp-control">
+                                            <!-- product card 1 -->
+                                            <?php
+                                            $sql = "SELECT `id`, `prod_name`, `prod_thumbnail`,`prod_price` 
+                                                FROM `products`
+                                                WHERE `cat_id` = {$_GET['sub_cat_id']}";
+                                            $stmt = $pdo->query($sql);
+                                            if ($stmt->rowCount() > 0) {
+                                                $arr = $stmt->fetchAll();
+                                                foreach ($arr as $obj) {
+                                            ?>
+                                                    <div class="hc-pds-card-control col-lg-4 col-md-6">
+
+                                                        <div class="hc-pds-card">
+                                                            <div class="hc-pds-img">
+                                                                <a href="javascript:;">
+                                                                    <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="hc-card-content-container">
+                                                                <div class="hc-card-content-title">
+                                                                    <h5><?= $obj['prod_name'] ?></h5>
+                                                                </div>
+                                                                <div class="hc-card-content-price">
+                                                                    <span>NT$<?= $obj['prod_price'] ?>~</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
-                                                    <div class="hc-card-content-price">
-                                                        <span>NT$199 ~ NT$1,599</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
                                         </div>
-                                        <!-- product card 2 -->
-                                        <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                            <div class="hc-pds-card">
-                                                <div class="hc-pds-img">
-                                                    <a href="javascript:;">
-                                                        <img src="./img/product_bean_002.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hc-card-content-container">
-                                                    <div class="hc-card-content-title">
-                                                        <h5>耶加雪菲 晨之莓</h5>
-                                                    </div>
-                                                    <div class="hc-card-content-price">
-                                                        <span>NT$199 ~ NT$1,599</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product card 3 -->
-                                        <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                            <div class="hc-pds-card">
-                                                <div class="hc-pds-img">
-                                                    <a href="javascript:;">
-                                                        <img src="./img/product_bean_003.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hc-card-content-container">
-                                                    <div class="hc-card-content-title">
-                                                        <h5>耶加雪菲 晨之莓</h5>
-                                                    </div>
-                                                    <div class="hc-card-content-price">
-                                                        <span>NT$199 ~ NT$1,599</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product card 4 -->
-                                        <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                            <div class="hc-pds-card">
-                                                <div class="hc-pds-img">
-                                                    <a href="javascript:;">
-                                                        <img src="./img/beans_s_001.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hc-card-content-container">
-                                                    <div class="hc-card-content-title">
-                                                        <h5>耶加雪菲 晨之莓</h5>
-                                                    </div>
-                                                    <div class="hc-card-content-price">
-                                                        <span>NT$199 ~ NT$1,599</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product card 5 -->
-                                        <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                            <div class="hc-pds-card">
-                                                <div class="hc-pds-img">
-                                                    <a href="javascript:;">
-                                                        <img src="./img/beans_s_002.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hc-card-content-container">
-                                                    <div class="hc-card-content-title">
-                                                        <h5>耶加雪菲 晨之莓</h5>
-                                                    </div>
-                                                    <div class="hc-card-content-price">
-                                                        <span>NT$199 ~ NT$1,599</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product card 6 -->
-                                        <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                            <div class="hc-pds-card">
-                                                <div class="hc-pds-img">
-                                                    <a href="javascript:;">
-                                                        <img src="./img/beans_s_004.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hc-card-content-container">
-                                                    <div class="hc-card-content-title">
-                                                        <h5>耶加雪菲 晨之莓</h5>
-                                                    </div>
-                                                    <div class="hc-card-content-price">
-                                                        <span>NT$199 ~ NT$1,599</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
