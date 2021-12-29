@@ -85,7 +85,7 @@
                     </div>
                     <ul class="list-drop-menu">
                         <li class="second-list">
-                            <a href='beanList_page.php'>豆單</a>
+                            <a href='#' id="pc-bean">豆單</a>
                         </li>
                         <li class="second-list">
                             <a href='beanList_page.php'>嚴選商品</a>

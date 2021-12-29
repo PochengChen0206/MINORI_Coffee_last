@@ -35,30 +35,6 @@ $arr = $pdo->query($sql)->fetchAll();
                                 <div class="hc-top-menu">
                                     <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
                                 </div>
-                                <!-- menu 1 -->
-                                <!-- <div class="hc-top-menu">
-                                    <a class="hc-top-menu-active" href="javascript:;">
-                                        豆單
-                                    </a>
-                                </div> -->
-                                <!-- menu 2 -->
-                                <!-- <div class="hc-top-menu">
-                                    <a href="javascript:;">
-                                        嚴選商品
-                                    </a>
-                                </div> -->
-                                <!-- menu 3 -->
-                                <!-- <div class="hc-top-menu">
-                                    <a href="javascript:;">
-                                        熱銷排行
-                                    </a>
-                                </div> -->
-                                <!-- menu 4 -->
-                                <!-- <div class="hc-top-menu">
-                                    <a href="javascript:;">
-                                        咖啡器材
-                                    </a>
-                                </div> -->
                             </div>
                         </div>
                     </div>

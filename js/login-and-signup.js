@@ -257,14 +257,3 @@ $('a#btn_setting').click(function (event) {
     }, 'json');
 });
 
-
-// //header和footer會員中心
-// $('a#memberCenter').click(function(event){
-//     event.preventDefault();
-    
-//     if(($_SESSION['name']) != 'undefined' ){
-//         location.href = 'memberData.php';
-//     }else {
-//         location.href = 'loginSignup.php';
-//     }
-// })
