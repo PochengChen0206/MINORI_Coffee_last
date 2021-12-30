@@ -261,44 +261,7 @@ $arr = $pdo->query($sql)->fetchAll();
                             </div>
                         </div>
                     </div>
-                    <!-- page number -->
-                    <div class="hc-page-number">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <!-- 第1頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-backward"></i>
-                                    </a>
-                                </li>
-                                <!-- 上一頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </a>
-                                </li>
-                                <!-- 中間頁 -->
-                                <li class="page-item">
-                                    <a class="page-link page-link-active" href="javascript:;">
-                                        1
-                                    </a>
-                                </li>
-                                <!-- 下一頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                                <!-- 最後1頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-forward"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-
+                    <?php require_once 'tpl/pageNumber.inc.php' ?>
                 </div>
                 <!-- ================================================= -->
             </div>

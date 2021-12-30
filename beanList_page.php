@@ -41,7 +41,7 @@ $arr = $pdo->query($sql)->fetchAll();
         <div class="left-side">
             <!-- ================================================= 新頁面加入 -->
             <div class="left-side-push100">
-                <div class="hc-left-side-bg" style="background: url(./img/beans_s_034.jpg) no-repeat; background-size: cover;">
+                <div class="hc-left-side-bg" style="background: url(./img/beans_l_034.jpg) no-repeat; background-size: cover;">
                     <!-- ======================================================================================= add content -->
                     <!-- head -->
                     <div class="hc-top-menus">
@@ -171,23 +171,23 @@ $arr = $pdo->query($sql)->fetchAll();
                                                 $arr = $stmt->fetchAll();
                                                 foreach ($arr as $obj) {
                                             ?>
-                                                <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                                    <div class="hc-pds-card">
-                                                        <div class="hc-pds-img">
-                                                            <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
-                                                                <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="hc-card-content-container">
-                                                            <div class="hc-card-content-title">
-                                                                <h5><?= $obj['prod_name'] ?></h5>
+                                                    <div class="hc-pds-card-control col-lg-4 col-md-6">
+                                                        <div class="hc-pds-card">
+                                                            <div class="hc-pds-img">
+                                                                <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
+                                                                    <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
+                                                                </a>
                                                             </div>
-                                                            <div class="hc-card-content-price">
-                                                                <span>NT$<?= $obj['prod_price'] ?>~</span>
+                                                            <div class="hc-card-content-container">
+                                                                <div class="hc-card-content-title">
+                                                                    <h5><?= $obj['prod_name'] ?></h5>
+                                                                </div>
+                                                                <div class="hc-card-content-price">
+                                                                    <span>NT$<?= $obj['prod_price'] ?>~</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                             <?php
                                                 }
                                             }
@@ -198,45 +198,10 @@ $arr = $pdo->query($sql)->fetchAll();
                             </div>
                         </div>
                     </div>
-                    <!-- page number -->
-                    <!-- 做分頁參考老師php影片1214-001最後一分半開始 -->
-                    <div class="hc-page-number">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <!-- 第1頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-backward"></i>
-                                    </a>
-                                </li>
-                                <!-- 上一頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </a>
-                                </li>
-                                <!-- 中間頁 -->
-                                <li class="page-item">
-                                    <a class="page-link page-link-active" href="javascript:;">
-                                        1
-                                    </a>
-                                </li>
-                                <!-- 下一頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                                <!-- 最後1頁 -->
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:;">
-                                        <i class="fas fa-forward"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <?php require_once 'tpl/pageNumber.inc.php' ?>
                 </div>
                 <!-- ================================================= -->
             </div>
+
+
             <?php require_once 'tpl/foot.inc.php' ?>
