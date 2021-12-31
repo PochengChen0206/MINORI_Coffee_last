@@ -139,6 +139,10 @@
 <script src="./js/login-and-signup.js"></script>
 <script src="./js/coffeeAccessories_page.js"></script>
 <script src="./js/beanList_page.js"></script>
+<script src="./js/beanList_detail.js"></script>
+<script src="./js/shoppingCart_page.js"></script>
+<!-- swiper -->
+<script src="./lib/swiper-bundle.min.js"></script>
 </body>
 
 </html>

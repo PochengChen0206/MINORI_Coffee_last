@@ -309,10 +309,10 @@ img{
     color: #ffff;
 }
 .hc-plus{
-    border-radius: 4px 0 0 4px;
+    border-radius: 0px 4px 4px 0px;
 }
 .hc-minus{
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 4px 0 0 4px;
 }
 .hc-num-btn:active{
    color: #ffff;

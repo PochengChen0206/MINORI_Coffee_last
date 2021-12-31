@@ -17,8 +17,14 @@
     <link rel="stylesheet" href="./css/coffeeAccessories_page.css">
     <link rel="stylesheet" href="./css/couponGet.css">
     <link rel="stylesheet" href="./css/beanList_detail_page.css">
+    <link rel="stylesheet" href="./css/shoppingCart_page.css">
+    <link rel="stylesheet" href="./css/card.css">
     <!--jquery UI-->
     <link rel="stylesheet" href="./lib/jquery-ui.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
+
+
 </head>
 
 
