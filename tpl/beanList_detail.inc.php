@@ -93,12 +93,14 @@
                                         <h5>重量</h5>
                                     </div>
                                     <?php
-                                    $sql = "SELECT `id`, `coffee_size`  FROM`prod_weight` WHERE `prod_id` = {$_GET['prod_id']}";
+                                    $sql = "SELECT `id`, `prod_size`  FROM`products_size` WHERE `prod_id` = {$_GET['prod_id']}";
                                     $arr2 = $pdo->query($sql)->fetchAll();
                                     foreach ($arr2 as $obj2) {
                                     ?>
                                         <div class="hc-process-control d-flex">
-                                            <button class="hc-process-btn"><?= $obj2['coffee_size'] ?></button>
+                                            <label class="btn btn-outline-warning">
+                                                <input type="radio" name="prod_size" id="pc-size"> <?= $obj2['prod_size'] ?>
+                                            </label>
                                         </div>
                                     <?php
                                     }
@@ -109,12 +111,14 @@
                                         <h5>磨豆</h5>
                                     </div>
                                     <?php
-                                    $sql = "SELECT `id`, `coffee_grind`  FROM`prod_grind` WHERE `prod_id` = {$_GET['prod_id']}";
+                                    $sql = "SELECT `id`, `prod_grind`  FROM`products_grind` WHERE `prod_id` = {$_GET['prod_id']}";
                                     $arr3 = $pdo->query($sql)->fetchAll();
                                     foreach ($arr3 as $obj3) {
                                     ?>
                                         <div class="hc-process-control d-flex">
-                                            <button class="hc-process-btn"><?= $obj3['coffee_grind'] ?></button>
+                                            <label class="btn btn-outline-warning">
+                                                <input type="radio" name="prod_grind" id="pc-grind"> <?= $obj3['prod_grind'] ?>
+                                            </label>
                                         </div>
                                     <?php
                                     }
@@ -142,8 +146,10 @@
                                         <h5>結帳</h5>
                                     </div>
                                     <div class="hc-process-control">
+                                        <!-- 立即購買 -->
                                         <button type="button" class="btn btn-outline-warning px-4" id="pc-asapBuy">立即購買</button>
-                                        <button type="button" class="btn btn-outline-warning px-4 ml-2" id="pc-set_cart" data-prod-id="<?= $obj['id'] ?>" data-prod-name="<?= $obj['prod_name'] ?>" data-prod-price="<?= $obj['prod_price'] ?>">加入購物車</button>
+                                        <!-- 加入購物車 -->
+                                        <button type="button" class="btn btn-outline-warning px-4 ml-2" id="btn_set_cart" data-prod-id="<?= $obj['id'] ?>" data-prod-name="<?= $obj['prod_name'] ?>" data-prod-price="<?= $obj['prod_price'] ?>" >加入購物車</button>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +160,7 @@
             </div>
         </div>
         <!-- relate products -->
-        <script src="./lib/swiper-bundle.min.js"></script>
+        <!-- <script src="./lib/swiper-bundle.min.js"></script> -->
         <div class="hc-products-relate">
             <div class="hc-products-relate-title">
                 <h5>相關商品</h5>
