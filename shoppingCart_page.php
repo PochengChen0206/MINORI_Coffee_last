@@ -106,7 +106,7 @@
                                                     </td>
                                                     <td class="hc-hidden-xs">
                                                         <span data-index="<?= $key ?>">
-                                                            NT$<?= $obj['prod_price'] * $obj['prod_qty'] ?>
+                                                            <?= $obj['prod_price'] * $obj['prod_qty'] ?>
                                                         </span>
                                                     </td>
                                                     <td class="hc-show-xs">
@@ -143,7 +143,7 @@
                                         <tr>
                                             <td>商品總計:</td>
                                             <td>NT$<span id="total"><?= $total ?></span></td>
-                                        </tr> 
+                                        </tr>
                                         <tr>
                                             <td>運送方式:</td>
                                             <td>宅配</td>
@@ -153,8 +153,16 @@
                                             <td>NT$120</td>
                                         </tr>
                                         <tr>
-                                            <td>折價卷代碼:</td>
-                                            <td><input type="text" class="hc-input-code" name="coupon_code" id="coupon_code">
+                                            <td>折價券:</td>
+                                            <!-- <td><input type="text" class="hc-input-code" name="coupon_code" id="coupon_code">
+                                            </td> -->
+                                            <td class="d-flex">
+                                                <div class="col-sm-10 p-0">
+                                                    <input type="text" class="form-control" name="coupon_code" placeholder="(請輸入優惠代碼)">
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <a href="#" class="btn btn-outline-warning" id="check_coupon_code">確認</a>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -170,7 +178,7 @@
                             </div>
                             <!-- send button -->
                             <div class="hc-shopping-btn hc-payment">
-                                <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">結帳</a>
+                                <button type="submit" class="btn btn-outline-warning px-5">結帳</button>
                             </div>
                         </form>
                     </div>

@@ -1,4 +1,3 @@
-// 這段會影響到button先關掉
 // const discount = document.getElementById('coupon_code');
 // const payment_btn = document.querySelector('.hc-payment');
 // const trash_btn = document.querySelectorAll('.hc-trash');
@@ -7,31 +6,102 @@
 //     console.log('折價卷代碼:', discount.value);
 // });
 
-
-//加入商品至購物車
-$('button#btn_set_cart').click(function (event){
-    
-    // 取得btn的jq物件
+//增加商品數量(購物車)
+$('button.btn_plus').click(function (event) {
+    // 計算數量
     let btn = $(this);
-    // 送出POST請求，加入購物車
-    let objProduct = {
-        prod_id: btn.attr('data-prod-id'),
-        prod_name: btn.attr('data-prod-name'),
-        prod_price: btn.attr('data-prod-price'),
-        // prod_size: btn.attr('data-prod-size'),
-        // prod_grind: btn.attr('data-prod-grind'),
-        prod_size: $('input#pc-size').val(),
-        prod_grind: $('input#pc-grind').val(),
-        prod_qty: $('input#qty').val()     
-    };
-    $.post('setCart.php', objProduct, function(obj){
-        if(obj['success']){
-            alert(`商品已加入購物車`);
+    let index = btn.attr('data-index');
+    let prod_price = btn.attr('data-prod-price');
+    let input_qty = $(`input.qty[data-index="${index}"]`);
+    input_qty.val(parseInt(input_qty.val()) + 1);
 
-            //之後會回傳 obj['count_products']，放到網頁上
-            $('span#count_products').text(obj['count_products']);
+    //修改商品金額
+    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price);
+
+    // 更新總計
+    let total = 0;
+    $(`input.qty`).each(function (index, element) {
+        total += (parseInt($(element).val()) * $(element).attr('data-prod-price'));
+    });
+    $('span#total').text(total);
+});
+
+//減少商品數量(購物車)
+$('button.btn_minus').click(function (event) {
+    let btn = $(this);
+    let index = btn.attr('data-index');
+    let prod_price = btn.attr('data-prod-price');
+    let input_qty = $(`input.qty[data-index="${index}"]`);
+    if (parseInt(input_qty.val()) - 1 < 1) return false;
+    input_qty.val(parseInt(input_qty.val()) - 1);
+
+    //修改商品金額
+    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price);
+
+    // 更新總計
+    let total = 0;
+    $(`input.qty`).each(function (index, element) {
+        total += (parseInt($(element).val()) * $(element).attr('data-prod-price'));
+    });
+    $('span#total').text(total);
+});
+
+//刪除購物車內商品
+$('a.delete').click(function (event) {
+    event.preventDefault();
+
+    //取得刪除用的購物車索引
+    let index = $(this).attr('data-index');
+
+    $.get('deleteItem.php', { index: index }, function (obj) {
+        if(obj['success']){
+            location.reload();
+        }else{
+            alert(`${obj['info']}`);
         }
         console.log(obj);
-    },'json');
-    
+    }, 'json');
+
 });
+
+
+//確認優惠代碼是否可用
+$('a#check_coupon_code').click(function(event){
+    event.preventDefault();
+
+    //取得優惠代碼
+    let code = $('input[name="coupon_code"]').val();
+
+    //如果代碼為空，就不往下執行
+    if(code == ''){
+        alert(`請輸入優惠代碼`);
+        return false;
+    };
+
+    $.post("checkCoupon.php", {code:code}, function(obj){
+        alert(`${obj['info']}`);
+        console.log(obj);
+    },'json')
+});
+
+
+//填入收件人資訊
+$('input#member_info').click(function(event){
+    // console.log('hi');
+
+//     $.get('autofillin.php', function (obj) {
+    
+//         $('input#r-email').val(obj.data.email);
+//         $('input#r-name').val(obj.data.name);
+//         $('input#r-phnum').val(obj.data.phone_number);
+//         $('input#r-address').val(obj.data.address);
+
+//         if (obj['success']) {
+//             alert(`成功`);
+//         } else {
+//             alert(`${obj['info']}`);
+//         }
+
+
+//     }, 'json');
+// });

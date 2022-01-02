@@ -64,10 +64,6 @@
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
                                 <input type="email" class="form-control" id="email" value="<?= $_SESSION['email'] ?>">
                             </div>
-                            <div class="col-12 mt-2">
-                                <label for="inputPassword4" class="form-label" style="color: #95720C;">密碼</label>
-                                <input type="inputEmail4" class="form-control" id="pwd" value="<?= $_SESSION['pwd'] ?>">
-                            </div>
                             <div class="col-12 mt-3 text-right">
                                 <button type="submit" class="btn btn-outline-warning px-4" id="btn-renew">儲存</button>
                                 <!-- id不能用跟其他btn一樣 -->
