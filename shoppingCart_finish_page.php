@@ -2,8 +2,8 @@
 <?php session_start(); ?>
 
 <?php
-//如果這個階段沒有購物車，就將頁面轉回商品確認頁
-if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 ) {
+//如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
+if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email']) ) {
     header("location: shoppingCart_page.php");
     exit();
 }
@@ -26,11 +26,13 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
 <?php require_once 'tpl/head.inc.php' ?>
 
 <!-- 檢查是否成功印出 -->
-<?php
+<!-- <?php
 echo "<pre>"; 
 print_r($_SESSION);
 echo "</pre>";  
-?>
+?> -->
+
+<?php require_once 'tpl/make_order.php' ?>
 
 <!-- main page -->
 <div class="container-fluid main-page">
@@ -70,7 +72,7 @@ echo "</pre>";
                         <!-- process -->
                         <div class="hc-process d-flex">
                             <div class="hc-process-container d-flex justify-content-between hc-process-bg">
-                                <div class="hc-process-list">購物車</div>
+                                <div class="hc-process-list">商品確認</div>
                                 <div class="hc-process-list">填寫資料</div>
                                 <div class="hc-process-list hc-process-active">訂單完成</div>
                             </div>
@@ -188,7 +190,7 @@ echo "</pre>";
                         <!-- send button -->
                         <div class="hc-hc-shopping-btn-grp d-flex justify-content-between">
                             <div class="hc-payment">
-                                <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">回購物車</a>
+                                <a href="shoppingCart_fillIn_page.php" type="button" class="btn btn-outline-warning px-5">回上一頁</a>
                             </div>
                             <div class="hc-payment">
                                 <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">確認結帳</a>

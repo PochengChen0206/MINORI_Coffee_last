@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="./lib/bootstrap.min.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="./lib/awesome.all.min.css">
+    <!--jquery UI-->
+    <link rel="stylesheet" href="./lib/jquery-ui.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login-and-signup.css">
@@ -19,11 +23,6 @@
     <link rel="stylesheet" href="./css/beanList_detail_page.css">
     <link rel="stylesheet" href="./css/shoppingCart_page.css">
     <link rel="stylesheet" href="./css/card.css">
-    <!--jquery UI-->
-    <link rel="stylesheet" href="./lib/jquery-ui.css">
-    <!-- swiper -->
-    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
-
 
 </head>
 

@@ -97,11 +97,11 @@
                                     $arr2 = $pdo->query($sql)->fetchAll();
                                     foreach ($arr2 as $index => $obj2) {
                                         $strClass = "";
-                                        if($index == 0) $strClass = "checked";
+                                        if ($index == 0) $strClass = "checked";
                                     ?>
                                         <div class="hc-process-control d-flex">
-                                            <label class="btn btn-outline-warning">
-                                                <input type="radio" name="prod_size" id="pc-size" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>" > <?= $obj2['prod_size'] ?>
+                                            <label class="btn btn-outline-warning btn-size">
+                                                <input class="pc-radio" type="radio" name="prod_size" id="pc-size" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>"> <?= $obj2['prod_size'] ?>
                                             </label>
                                         </div>
                                     <?php
@@ -119,7 +119,7 @@
                                     ?>
                                         <div class="hc-process-control d-flex">
                                             <label class="btn btn-outline-warning">
-                                                <input type="radio" name="prod_grind" id="pc-grind" value="<?= $obj3['prod_grind'] ?>"> <?= $obj3['prod_grind'] ?>
+                                                <input class="pc-radio" type="radio" name="prod_grind" id="pc-grind" value="<?= $obj3['prod_grind'] ?>"> <?= $obj3['prod_grind'] ?>
                                             </label>
                                         </div>
                                     <?php
@@ -162,7 +162,6 @@
             </div>
         </div>
         <!-- relate products -->
-        <!-- <script src="./lib/swiper-bundle.min.js"></script> -->
         <div class="hc-products-relate">
             <div class="hc-products-relate-title">
                 <h5>相關商品</h5>
@@ -178,10 +177,10 @@
                         foreach ($stmt as $obj) {
                     ?>
                             <!-- product card 1 -->
-                            <div class="hc-pds-card-control col-lg-4 col-md-6">
-                                <div class="hc-pds-card swiper-slide">
+                            <div class="hc-pds-card-control swiper-slide">
+                                <div class="hc-pds-card ">
                                     <div class="hc-pds-img">
-                                        <a href="#">
+                                        <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
                                             <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
                                         </a>
                                     </div>
@@ -199,9 +198,9 @@
                         }
                     }
                     ?>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </div>

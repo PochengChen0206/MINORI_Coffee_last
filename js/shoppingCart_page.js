@@ -1,11 +1,3 @@
-// const discount = document.getElementById('coupon_code');
-// const payment_btn = document.querySelector('.hc-payment');
-// const trash_btn = document.querySelectorAll('.hc-trash');
-
-// payment_btn.addEventListener('click', function (event) {
-//     console.log('折價卷代碼:', discount.value);
-// });
-
 //增加商品數量(購物車)
 $('button.btn_plus').click(function (event) {
     // 計算數量
@@ -111,3 +103,4 @@ $('div.shopping-card').click(function(event){
     // console.log('hi');
     location.href = 'shoppingCart_page.php';
 });
+

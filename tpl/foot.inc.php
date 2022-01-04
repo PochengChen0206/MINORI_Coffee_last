@@ -134,6 +134,9 @@
 <script src="./lib/awesome.all.min.js"></script>
 <!-- bootstrap@4.6 -->
 <script src="./lib/bootstrap.bundle.min.js"></script>
+<!-- swiper -->
+<script src="./lib/swiper-bundle.min.js"></script>
+
 <!-- js -->
 <script src="./js/index.js"></script>
 <script src="./js/login-and-signup.js"></script>
@@ -141,8 +144,7 @@
 <script src="./js/beanList_page.js"></script>
 <script src="./js/beanList_detail.js"></script>
 <script src="./js/shoppingCart_page.js"></script>
-<!-- swiper -->
-<script src="./lib/swiper-bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -48,6 +48,8 @@ $arr = $pdo->query($sql)->fetchAll();
                                     </div>
                                 </div>
                             </div>
+                            <!-- 左側頁面內容 -->
+                            <?php require_once 'tpl/beanList_menu.inc.php' ?>
                         </div>
                     </div>
                     <!-- ================================================= -->

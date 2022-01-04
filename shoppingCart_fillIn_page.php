@@ -2,8 +2,8 @@
 <?php session_start(); ?>
 
 <?php
-//如果這個階段沒有購物車，就將頁面轉回商品確認頁
-if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 ) {
+//如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
+if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email']) ) {
     header("location: shoppingCart_page.php");
     exit();
 }
@@ -66,7 +66,7 @@ echo "</pre>";
                         <!-- process -->
                         <div class="hc-process d-flex">
                             <div class="hc-process-container d-flex justify-content-between hc-process-bg">
-                                <div class="hc-process-list">購物車</div>
+                                <div class="hc-process-list">商品確認</div>
                                 <div class="hc-process-list hc-process-active">填寫資料</div>
                                 <div class="hc-process-list">訂單完成</div>
                             </div>
@@ -78,7 +78,7 @@ echo "</pre>";
                                 <table class="hc-table">
                                     <thead>
                                         <tr class="hc-table-title">
-                                            <th colspan="2">
+                                            <th colspan="5">
                                                 <h5>訂單明細</h5>
                                             </th>
                                         </tr>
@@ -124,7 +124,7 @@ echo "</pre>";
                                             <td>收件人姓名:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="recipient_name" id="r-name">
+                                                    <input type="text" class="form-control" name="recipient_name" id="r-name" placeholder="請輸入收件人姓名">
                                                 </div>
                                             </td>
                                         </tr>
@@ -132,7 +132,7 @@ echo "</pre>";
                                             <td>Email:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="email" class="form-control" name="recipient_email" id="r-email">
+                                                    <input type="email" class="form-control" name="recipient_email" id="r-email" placeholder="請輸入收件人電子信箱">
                                                 </div>
                                             </td>
                                         </tr>
@@ -140,7 +140,7 @@ echo "</pre>";
                                             <td>電話:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="recipient_phone_number" id="r-phnum">
+                                                    <input type="text" class="form-control" name="recipient_phone_number" id="r-phnum" placeholder="請輸入收件人電話號碼">
                                                 </div>
                                             </td>
                                         </tr>
@@ -148,7 +148,7 @@ echo "</pre>";
                                             <td>地址:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="recipient_address" id="r-address">
+                                                    <input type="text" class="form-control" name="recipient_address" id="r-address" placeholder="請輸入收件人地址">
                                                 </div>
                                             </td>
                                         </tr>
@@ -180,7 +180,7 @@ echo "</pre>";
                                         </tr>
                                     </thead>
                                     <tbody class="hc-table-lists hc-tbody-credit hc-table-size" id="hc-credit">
-                                        <!-- <tr class="d-flex">
+                                        <tr class="d-felx">
                                             <td class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="invoice_carrier" value="隨包裹" checked>
                                                 <label class="form-check-label">隨包裹</label>
@@ -189,7 +189,14 @@ echo "</pre>";
                                                 <input class="form-check-input" type="radio" name="invoice_carrier" value="電子條碼載具">
                                                 <label class="form-check-label">電子條碼載具</label>
                                             </td>
-                                        </tr> -->
+                                            <!-- <td><label for="colFormLabel">載具編號:</label>
+                                            </td>
+                                            <td>
+                                                <div class="col-sm-12 p-0">
+                                                    <input type="text" class="form-control" name="invoice_carrier_number" placeholder="(發票隨包裹不必填寫)">
+                                                </div>
+                                            </td> -->
+                                        </tr>
                                         <tr>
                                             <td><label for="colFormLabel">載具編號:</label>
                                             </td>

@@ -336,8 +336,9 @@ img{
 .hc-products-grp2-control{
     width: inherit;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; 不能開啟不然無法呈現 */
 }
+
 /* product card */
 .hc-products-grp{
     width: 100%;
@@ -373,6 +374,21 @@ img{
 .hc-pds-card-mid{
     margin-top: 60px;
 }
+
+/* relate products */
+.swiper-button-prev:after{
+    color:var(--main-color);
+}
+
+.swiper-button-next:after{
+    color:var(--main-color);
+}
+
+/* 重量和磨豆的radio */
+.pc-radio {
+    display: none;;
+}
+
 
 
 
@@ -437,7 +453,10 @@ img{
     }
     /* product card */
     .hc-pds-card-control{
-        padding: 0 20px;
+        padding: 0 6px;
     }
 
+
+
 }
+

@@ -40,7 +40,7 @@
                         <!-- process -->
                         <div class="hc-process d-flex">
                             <div class="hc-process-container d-flex justify-content-between hc-process-bg">
-                                <div class="hc-process-list hc-process-active">購物車</div>
+                                <div class="hc-process-list hc-process-active">商品確認</div>
                                 <div class="hc-process-list">填寫資料</div>
                                 <div class="hc-process-list">訂單完成</div>
                             </div>
@@ -96,15 +96,17 @@
                                                     <td class="hc-hidden-xs">
                                                         <!-- 將購物車中的商品索引，透過 form 帶到下一頁去 -->
                                                         <input type="hidden" name="index[]" value="<?= $key ?>">
-
+                                                        <!-- 減少商品 -->
                                                         <button class="btn_minus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>"><i class="fas fa-minus"></i>
                                                         </button>
+                                                        <!-- 數量 -->
                                                         <input type="text" class="form-control qty" name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" value="<?= $obj['prod_qty'] ?>">
-                                                        <!-- <span><?= $obj['prod_qty'] ?></span> -->
+                                                        <!-- 增加商品 -->
                                                         <button class="btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>"><i class="fas fa-plus"></i>
                                                         </button>
                                                     </td>
                                                     <td class="hc-hidden-xs">
+                                                        NT$
                                                         <span data-index="<?= $key ?>">
                                                             <?= $obj['prod_price'] * $obj['prod_qty'] ?>
                                                         </span>
@@ -182,7 +184,7 @@
                                     <button type="button" onclick="history.back()" class="btn btn-outline-warning px-5">回上一頁</button>
                                 </div>
                                 <div class="hc-payment">
-                                    <button type="submit" class="btn btn-outline-warning px-5">結帳</button>
+                                    <button type="submit" class="btn btn-outline-warning px-5" id="pc-goToPay">前往結帳</button>
                                 </div>
                             </div>
                             <!-- <div class="hc-shopping-btn hc-payment">
