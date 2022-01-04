@@ -3,33 +3,31 @@
 
 <?php
 //如果這個階段沒有購物車，就將頁面轉回商品確認頁
-if (!isset($_SESSION['cart'])) {
+if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 ) {
     header("location: shoppingCart_page.php");
     exit();
 }
+?>
 
+<?php
 //如果購物車與、商品索引與數量同時存在，則修改指定索引的商品數量
-// if(isset($_POST['index']) && isset($_POST['qty'])) {
-//     foreach($_POST['index'] as $index => $value){
-//         $_SESSION['cart'][$index]['prod_qty'] = $_POST['qty'][$index];
-//     }
-// }
+if(isset($_POST['qty'])) {
+    foreach($_POST['qty'] as $index => $value){
+        $_SESSION['cart'][$index]['prod_qty'] = $_POST['qty'][$index];
+    }
+}
 
-//將表單資訊寫入session ，之後建立訂單時，一起變成訂單資訊
-// $_SESSION['form'] = [];
-// $_SESSION['form']['transport_arrival_time'] = $_POST['transport_arrival_time'];
-// $_SESSION['form']['recipient_email'] = $_POST['recipient_email'];
-// $_SESSION['form']['recipient_name'] = $_POST['recipient_name'];
-// $_SESSION['form']['recipient_phone_number'] = $_POST['recipient_phone_number'];
-// $_SESSION['form']['recipient_address'] = $_POST['recipient_address'];
-// $_SESSION['form']['recipient_comments'] = $_POST['recipient_comments'];
-// $_SESSION['form']['invoice_type'] = $_POST['invoice_type'];
-// $_SESSION['form']['invoice_carrier'] = $_POST['invoice_carrier'];
-// $_SESSION['form']['invoice_carrier_number'] = $_POST['invoice_carrier_number'];
-// $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
 ?>
 
 <?php require_once 'tpl/head.inc.php' ?>
+
+<!-- 檢查是否成功印出 -->
+<!-- <?php
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+?> -->
+
 <!-- main page -->
 <div class="container-fluid main-page">
     <div class="row">
@@ -74,7 +72,7 @@ if (!isset($_SESSION['cart'])) {
                             </div>
                         </div>
                         <!-- table form -->
-                        <form name="myForm" method="post" action="payment.php">
+                        <form name="myForm" method="post" action="shoppingCart_finish_page.php">
                             <div class="hc-content-form">
                                 <!-- order list  -->
                                 <table class="hc-table">
@@ -126,7 +124,7 @@ if (!isset($_SESSION['cart'])) {
                                             <td>收件人姓名:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="recipient_name">
+                                                    <input type="text" class="form-control" name="recipient_name" id="r-name">
                                                 </div>
                                             </td>
                                         </tr>
@@ -134,7 +132,7 @@ if (!isset($_SESSION['cart'])) {
                                             <td>Email:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="email" class="form-control" name="recipient_email">
+                                                    <input type="email" class="form-control" name="recipient_email" id="r-email">
                                                 </div>
                                             </td>
                                         </tr>
@@ -142,7 +140,7 @@ if (!isset($_SESSION['cart'])) {
                                             <td>電話:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="recipient_phone_number">
+                                                    <input type="text" class="form-control" name="recipient_phone_number" id="r-phnum">
                                                 </div>
                                             </td>
                                         </tr>
@@ -150,7 +148,15 @@ if (!isset($_SESSION['cart'])) {
                                             <td>地址:</td>
                                             <td>
                                                 <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="recipient_address">
+                                                    <input type="text" class="form-control" name="recipient_address" id="r-address">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>備註:</td>
+                                            <td>
+                                                <div class="col-sm-12 p-0">
+                                                    <textarea type="text" class="form-control" name="recipient_comments" rows="5"></textarea>
                                                 </div>
                                             </td>
                                         </tr>
@@ -174,6 +180,16 @@ if (!isset($_SESSION['cart'])) {
                                         </tr>
                                     </thead>
                                     <tbody class="hc-table-lists hc-tbody-credit hc-table-size" id="hc-credit">
+                                        <!-- <tr class="d-flex">
+                                            <td class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="invoice_carrier" value="隨包裹" checked>
+                                                <label class="form-check-label">隨包裹</label>
+                                            </td>
+                                            <td class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="invoice_carrier" value="電子條碼載具">
+                                                <label class="form-check-label">電子條碼載具</label>
+                                            </td>
+                                        </tr> -->
                                         <tr>
                                             <td><label for="colFormLabel">載具編號:</label>
                                             </td>
@@ -183,7 +199,6 @@ if (!isset($_SESSION['cart'])) {
                                                 </div>
                                             </td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                                 <!-- coupon  Information -->
@@ -262,7 +277,8 @@ if (!isset($_SESSION['cart'])) {
                                     <a href="shoppingCart_page.php" type="button" class="btn btn-outline-warning px-5">回購物車</a>
                                 </div>
                                 <div class="hc-payment">
-                                    <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">確認結帳</a>
+                                    <!-- <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">確認結帳</a> -->
+                                    <button type="submit" class="btn btn-outline-warning px-5">確認結帳</button>
                                 </div>
                             </div>
                         </form>

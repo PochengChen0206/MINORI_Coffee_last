@@ -198,7 +198,55 @@ img{
     margin: 0;
     padding-right: 16px;
 }
-
+/* ///////////////////////////////////  訂單編號 */
+.hc-tbody-orderDone tr>:last-child{
+    text-align: end;
+}
+.hc-tbody-orderDone tr>:first-child{
+    color: rgba(255, 255, 255, 0.5);
+}
+.hc-tbody-orderDone>:last-child{
+    border-bottom: none;
+}
+.hc-order-content ul{
+    margin: 0;
+}
+.hc-order-content ul li>span{
+    padding: 0;
+}
+.hc-order-content{
+    padding-left: 20px;
+}
+.hc-order-content li:first-child{
+    margin-bottom: 8px;
+}
+.hc-order-content li:last-child>span:first-child{
+    float: left;
+}
+.hc-order-content li:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+.hc-total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.hc-total div{
+    display:flex;
+    align-items: flex-end;
+}
+.hc-total h3{
+    font-weight: 700;
+    color: var(--main-color);
+    margin: 0;
+    border-bottom: 1px solid var(--main-color);
+}
+.hc-order-img{
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
 /* //////////////////////////////// RWD */
 @media screen and (max-width:1200px) {
     .hc-shopping-cart-container{
@@ -244,11 +292,19 @@ img{
     .hc-table-lists tr td {
         padding: 8px 16px;
     }
+    .hc-table-lists tr td span {
+        padding: 0 4px;
+    }
    /* invoice Information */
     .hc-check-move-first{
         right: 0;
         left: 0;
         margin-left: 12px
+    }
+
+    /* ///////////////////////////////////  訂單編號 */
+    .hc-order-content{
+        padding-left: 8px;
     }
 
 }

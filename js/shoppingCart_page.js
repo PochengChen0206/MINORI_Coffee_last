@@ -89,19 +89,25 @@ $('a#check_coupon_code').click(function(event){
 $('input#member_info').click(function(event){
     // console.log('hi');
 
-//     $.get('autofillin.php', function (obj) {
+    $.get('autofillin.php', function (obj) {
     
-//         $('input#r-email').val(obj.data.email);
-//         $('input#r-name').val(obj.data.name);
-//         $('input#r-phnum').val(obj.data.phone_number);
-//         $('input#r-address').val(obj.data.address);
+        $('input#r-email').val(obj.data.email);
+        $('input#r-name').val(obj.data.name);
+        $('input#r-phnum').val(obj.data.phone_number);
+        $('input#r-address').val(obj.data.address);
 
-//         if (obj['success']) {
-//             alert(`成功`);
-//         } else {
-//             alert(`${obj['info']}`);
-//         }
+        if (obj['success']) {
+            // alert(`填入會員資料成功`);
+        } else {
+            alert(`${obj['info']}`);
+        }
 
 
-//     }, 'json');
-// });
+    }, 'json');
+});
+
+//點擊icon進入購物車
+$('div.shopping-card').click(function(event){
+    // console.log('hi');
+    location.href = 'shoppingCart_page.php';
+});

@@ -5,7 +5,7 @@ session_start();
 
 $obj = [];
 $obj['success'] = false;
-$obj['info'] = '註冊失敗';
+$obj['info'] = '登錄失敗';
 
 
 

@@ -12,7 +12,7 @@ if(isset($_SESSION['email'])){
         $arr = $stmt->fetch();
         $obj['data'] = $arr;
         $obj['success'] = true;
-        $obj['info'] = '填入成功';
+        $obj['info'] = '填入會員資料成功';
     };
 };
 

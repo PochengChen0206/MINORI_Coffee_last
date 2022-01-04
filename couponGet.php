@@ -45,7 +45,7 @@
                             </div>
                             <!-- button -->
                             <div class="pc-btn-starShop">
-                                <a type="button" class="btn btn-outline-warning px-5" href="#">開始購物</a>
+                                <a type="button" class="btn btn-outline-warning px-5" href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1">開始購物</a>
                             </div>
                         </div>
                     </div>

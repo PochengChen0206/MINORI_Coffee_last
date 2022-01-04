@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+// print_r($_POST);
+
 //預設訊息
 $obj['success'] = false;
 $obj['info'] = "加入購物車失敗";
@@ -14,7 +16,6 @@ if(
     isset($_POST['prod_grind']) &&
     isset($_POST['prod_qty'])
 ) {
-
     //假如先前沒有建立購物車，就直接初始化(建立)
     if(!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 

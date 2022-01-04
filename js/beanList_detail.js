@@ -44,18 +44,48 @@ $('button#btn_set_cart').click(function (event) {
 
 // 立即購買
 $('button#pc-asapBuy').click(function (event) {
+  // 取得btn的jq物件
+  let btn = $(this);
+  // 送出POST請求，加入購物車
+  let objProduct = {
+    prod_id: btn.attr('data-prod-id'),
+    prod_name: btn.attr('data-prod-name'),
+    prod_price: btn.attr('data-prod-price'),
+    prod_size: $('input#pc-size:checked').val(),
+    prod_grind: $('input#pc-grind:checked').val(),
+    prod_qty: $('input#qty').val()
+  };
+  // console.log(objProduct);
+  
+  $.post('setCart.php', objProduct, function (obj) {
+    if (obj['success']) {
+      alert(`商品已加入購物車`);
 
-  // let pcCart = $('div#count_products').val();
+      //之後會回傳 obj['count_products']，放到網頁上
+      $('span#count_products').text(obj['count_products']);
 
-  // if (pcCart == '') {
-  //   alert(`請將商品加入購物車`);
-  //   return false;
-  // }
-
-  location.href = 'shoppingCart_page.php';
+      //重新整理讓count_products可以計算
+      location.href='shoppingCart_page.php';
+    }
+    console.log(obj);
+  }, 'json');
 
 });
 
+//磨豆的checked
+$(document).ready(function(){
+  $('input#pc-grind:eq(0)').attr("checked",'');
+  // 檢查是否有選到
+  // alert($('input#pc-grind').length);
+});
+
+// $(document).ready(function(){
+//   $('input#pc-size:eq(0)').parent().addClass("active",'');
+
+//   // 參考mouseover
+//   // 檢查是否有選到
+//   // alert($('input#pc-grind').length);
+// });
 
 
 
@@ -63,18 +93,18 @@ $('button#pc-asapBuy').click(function (event) {
 
 
 //相關商品
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  slidesPerGroup: 1,
-  loop: true,
-  loopFillGroupWithBlank: true,
+// var swiper = new Swiper(".mySwiper", {
+//   slidesPerView: 3,
+//   spaceBetween: 20,
+//   slidesPerGroup: 1,
+//   loop: true,
+//   loopFillGroupWithBlank: true,
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
 
 
 

@@ -95,11 +95,13 @@
                                     <?php
                                     $sql = "SELECT `id`, `prod_size`  FROM`products_size` WHERE `prod_id` = {$_GET['prod_id']}";
                                     $arr2 = $pdo->query($sql)->fetchAll();
-                                    foreach ($arr2 as $obj2) {
+                                    foreach ($arr2 as $index => $obj2) {
+                                        $strClass = "";
+                                        if($index == 0) $strClass = "checked";
                                     ?>
                                         <div class="hc-process-control d-flex">
                                             <label class="btn btn-outline-warning">
-                                                <input type="radio" name="prod_size" id="pc-size"> <?= $obj2['prod_size'] ?>
+                                                <input type="radio" name="prod_size" id="pc-size" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>" > <?= $obj2['prod_size'] ?>
                                             </label>
                                         </div>
                                     <?php
@@ -117,7 +119,7 @@
                                     ?>
                                         <div class="hc-process-control d-flex">
                                             <label class="btn btn-outline-warning">
-                                                <input type="radio" name="prod_grind" id="pc-grind"> <?= $obj3['prod_grind'] ?>
+                                                <input type="radio" name="prod_grind" id="pc-grind" value="<?= $obj3['prod_grind'] ?>"> <?= $obj3['prod_grind'] ?>
                                             </label>
                                         </div>
                                     <?php
@@ -147,9 +149,9 @@
                                     </div>
                                     <div class="hc-process-control">
                                         <!-- 立即購買 -->
-                                        <button type="button" class="btn btn-outline-warning px-4" id="pc-asapBuy">立即購買</button>
+                                        <button type="button" class="btn btn-outline-warning px-4" id="pc-asapBuy" data-prod-id="<?= $obj['id'] ?>" data-prod-name="<?= $obj['prod_name'] ?>" data-prod-price="<?= $obj['prod_price'] ?>">立即購買</button>
                                         <!-- 加入購物車 -->
-                                        <button type="button" class="btn btn-outline-warning px-4 ml-2" id="btn_set_cart" data-prod-id="<?= $obj['id'] ?>" data-prod-name="<?= $obj['prod_name'] ?>" data-prod-price="<?= $obj['prod_price'] ?>" >加入購物車</button>
+                                        <button type="button" class="btn btn-outline-warning px-4 ml-2" id="btn_set_cart" data-prod-id="<?= $obj['id'] ?>" data-prod-name="<?= $obj['prod_name'] ?>" data-prod-price="<?= $obj['prod_price'] ?>">加入購物車</button>
                                     </div>
                                 </div>
                             </div>

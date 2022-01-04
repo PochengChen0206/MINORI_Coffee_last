@@ -31,7 +31,7 @@
                                 <a type="button" class="btn btn-outline-warning px-5" href='signupPage-detail.php'>填寫完整資料拿優惠券</a>
                             </div>
                             <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
-                                <a type="button" class="btn btn-outline-warning px-5" href= 'beanList_page.php'>先逛逛所有商品</a>
+                                <a type="button" class="btn btn-outline-warning px-5" href= 'http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1'>先逛逛所有商品</a>
                             </div>
                         </div>
                     </div>

@@ -221,7 +221,7 @@ $('a#btn_setting').click(function (event) {
             .tooltip('dispose');
     }
 
-    //檢查密碼是否輸入
+    // 檢查密碼是否輸入
     if (input_pwd.val() == '') {
         // alert(`請輸入密碼`);
         // return false;

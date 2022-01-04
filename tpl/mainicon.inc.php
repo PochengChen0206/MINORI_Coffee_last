@@ -9,7 +9,8 @@
             } else {
                 echo 0;
             }
-            ?></div>
+            ?>
+        </div>
         <i class="fas fa-shopping-bag"></i>
     </div>
     <div class="main-icon"><i class="fas fa-gift"></i></div>

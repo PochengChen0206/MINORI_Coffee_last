@@ -33,7 +33,7 @@
                     <a href="javascript:;">所有商品</a>
                 </li>
                 <li class="link_list" style="font-size:12px;">
-                    <a href='coffee.php'>豆單</a>
+                    <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1'>豆單</a>
                 </li>
                 <li class="link_list" style="font-size:12px;">
                     <a href="javascript:;">嚴選商品</a>
@@ -42,7 +42,7 @@
                     <a href="javascript:;">熱銷排行</a>
                 </li>
                 <li class="link_list" style="font-size:12px;">
-                    <a href="javascript:;">咖啡器材</a>
+                    <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=4">咖啡器材</a>
                 </li>
             </ul>
             <ul class="text-center d-flex flex-column ">
@@ -102,10 +102,10 @@
             <div class="col">
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">所有商品</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">豆單</a></li>
+                    <li class="nav-item mb-2"><a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" class="nav-link p-0 text-white" style="font-size: 12px;">豆單</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">嚴選商品</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">熱銷排行</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">咖啡器材</a></li>
+                    <li class="nav-item mb-2"><a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=4" class="nav-link p-0 text-white" style="font-size: 12px;">咖啡器材</a></li>
                 </ul>
             </div>
             <div class="col">

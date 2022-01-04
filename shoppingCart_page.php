@@ -177,9 +177,17 @@
                                 </table>
                             </div>
                             <!-- send button -->
-                            <div class="hc-shopping-btn hc-payment">
-                                <button type="submit" class="btn btn-outline-warning px-5">結帳</button>
+                            <div class="hc-hc-shopping-btn-grp d-flex justify-content-between">
+                                <div class="hc-payment">
+                                    <button type="button" onclick="history.back()" class="btn btn-outline-warning px-5">回上一頁</button>
+                                </div>
+                                <div class="hc-payment">
+                                    <button type="submit" class="btn btn-outline-warning px-5">結帳</button>
+                                </div>
                             </div>
+                            <!-- <div class="hc-shopping-btn hc-payment">
+                                <button type="submit" class="btn btn-outline-warning px-5">結帳</button>
+                            </div> -->
                         </form>
                     </div>
                 </div>
