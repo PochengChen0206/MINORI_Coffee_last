@@ -144,6 +144,7 @@
 <script src="./js/beanList_page.js"></script>
 <script src="./js/beanList_detail.js"></script>
 <script src="./js/shoppingCart_page.js"></script>
+<script src="./js/coupons_page.js"></script>
 
 </body>
 

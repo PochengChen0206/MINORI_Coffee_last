@@ -31,7 +31,10 @@
                         <div class="hc-products-name">
                             <h3 class="hc-name"><?= $obj['prod_name'] ?></h3>
                         </div>
-                        <h4 class="hc-products-price">NT$<?= $obj['prod_price'] ?></h4>
+                        <h4 class="hc-products-price">
+                            <input type="hidden" name="detail_prod_price" value="<?= $obj['prod_price'] ?>">
+                            NT$<span id="detailProdPrice"><?= $obj['prod_price'] ?></span>
+                        </h4>
                         <div class="hc-products-list-grp hc-flavor d-flex">
                             <div class="hc-products-list-secondTitle">
                                 <h5>風味</h5>
@@ -172,7 +175,14 @@
                 <div class="hc-products-grp2-control swiper-wrapper">
                     <?php
                     if (isset($_GET['sub_cat_id'])) {
-                        $sql = "SELECT * FROM `products` WHERE `cat_id` = {$_GET['sub_cat_id']}";
+                        $sql =
+                            "SELECT `prod_id`, `prod_name`,  `prod_thumbnail`, `prod_price`
+                                           FROM `relative` 
+                                           INNER JOIN `categories` 
+                                           ON`relative`.`cat_id` = `categories`.`id`
+                                           INNER JOIN`products`
+                                           ON`relative`.`prod_id`=`products`.`id`
+                                           WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}";
                         $stmt = $pdo->query($sql);
                         foreach ($stmt as $obj) {
                     ?>
@@ -180,7 +190,7 @@
                             <div class="hc-pds-card-control swiper-slide">
                                 <div class="hc-pds-card ">
                                     <div class="hc-pds-img">
-                                        <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
+                                        <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">
                                             <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
                                         </a>
                                     </div>

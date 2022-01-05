@@ -8,27 +8,31 @@ $arr = $pdo->query($sql)->fetchAll();
 
 <?php
 //整合特定商品類別分頁的$sql字串
-// $where = "";
-// if(isset($_GET['sub_cat_id'])){
-//     $where = "WHERE`cat_id` = {$_GET['sub_cat_id']}";
-// }
+$where = "";
+if(isset($_GET['sub_cat_id'])){
+    $where = "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}";
+}
 
 //取得products資料表總筆數(對cat_id = 3的products做count聚合成一筆)
-// $sqlTotal = "SELECT COUNT(1) AS `count`FROM `products` {$where}";
-// $totalRows = $pdo->query($sqlTotal)->fetch()['count'];
-
+$sqlTotal = "SELECT COUNT(1) AS `count`FROM `relative` 
+INNER JOIN `categories` 
+ON`relative`.`cat_id` = `categories`.`id`
+INNER JOIN`products`
+ON`relative`.`prod_id`=`products`.`id`
+{$where}";
+$totalRows = $pdo->query($sqlTotal)->fetch()['count'];
 
 //設定每頁幾筆
-// $numPerPage = 12;
+$numPerPage = 9;
 
 //總頁數ceil()
-// $totalPages = ceil($totalRows / $numPerPage);
+$totalPages = ceil($totalRows / $numPerPage);
 
 //目前第幾頁(存在且大於給予頁數，否則設為第一頁)
-// $page = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
+$page = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
 
 //計算分頁偏移量
-// $offset = ($page - 1) * $numPerPage;
+$offset = ($page - 1) * $numPerPage;
 
 // 啟用的話168行的$sql 要加 LIMIT {$offset}, {$numPerPage}";
 ?>
@@ -129,9 +133,16 @@ $arr = $pdo->query($sql)->fetchAll();
                                         <div class="hc-products-grp-control">
                                             <!-- product card 1 -->
                                             <?php
-                                            $sql = "SELECT `id`, `prod_name`, `prod_thumbnail`,`prod_price` 
-                                                FROM `products`
-                                                WHERE `cat_id` = {$_GET['sub_cat_id']}";
+                                           $sql = 
+                                           "SELECT `prod_id`, `prod_name`,  `prod_thumbnail`, `prod_price`
+                                           FROM `relative` 
+                                           INNER JOIN `categories` 
+                                           ON`relative`.`cat_id` = `categories`.`id`
+                                           INNER JOIN`products`
+                                           ON`relative`.`prod_id`=`products`.`id`
+                                           WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}
+                                           LIMIT {$offset}, {$numPerPage}";
+
                                             $stmt = $pdo->query($sql);
                                             if ($stmt->rowCount() > 0) {
                                                 $arr = $stmt->fetchAll();
@@ -140,7 +151,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                                     <div class="hc-pds-card-control col-lg-4 col-md-6">
                                                         <div class="hc-pds-card">
                                                             <div class="hc-pds-img">
-                                                                <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['id'] ?>">
+                                                                <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">
                                                                     <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
                                                                 </a>
                                                             </div>
@@ -159,7 +170,9 @@ $arr = $pdo->query($sql)->fetchAll();
                                             }
                                             ?>
                                         </div>
-                                    <?php } ?>
+                                    <?php 
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>

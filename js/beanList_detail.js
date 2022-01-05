@@ -80,7 +80,7 @@ $(document).ready(function(){
     // removeClass('active');
     $(this).parent().addClass('active');
     $(this).parent().parent().siblings().children().removeClass('active');
-    // console.log('hi');  
+    // console.log('hi'); 
   })
 
 
@@ -100,10 +100,6 @@ $(document).ready(function(){
 
 });
 
-
-
-
-
 //相關商品
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
@@ -117,6 +113,21 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+
+//選擇磅數更改價格
+// let input_prod_price = $('input[name="detail_prod_price"]');
+
+// $('input#pc-size:eq(1)').click(function(event){
+//   // alert(input_prod_price.val());
+//   // span沒有value所以要用text而不是value
+//   $('span#detailProdPrice').text( input_prod_price.val() * 2);
+//   // alert($('span#detailProdPrice').text());
+// })
+
+
+
+
 
 
 

@@ -84,7 +84,7 @@ img{
     height: 100%;
 }
 /* mask */
-/* .hc-left-side-bg::before{
+.hc-left-side-bg::before{
     content: "";
     display: block;
     position: absolute;
@@ -93,7 +93,7 @@ img{
     width: 100%;
     height: 100%;
     z-index: 1;
-} */
+}
 .hc-left-side-content{
     position: relative;
     width: 100%;
@@ -135,14 +135,13 @@ img{
     padding: 0;
 }
 /* ///////////////////////// rightSide page*/
-/* ///////////////////////// hc-bean-products*/
-.hc-bean-products{
+.hc-coupons-products{
     width: 100%;
     height: 100%;
     padding-top: 90px;
     padding-bottom: 90px;
 }
-.hc-bean-products-container{
+.hc-coupons-products-container{
     width: inherit;
     height: inherit;
     padding: 0 50px ;
@@ -169,11 +168,11 @@ img{
     opacity: 20%;
     line-height: 1.125;
 }
-.hc-box-title{
+.hc-coupon-box-title{
     position: absolute;
     top: 150px;
     left: 0;
-    width: 40%;
+    width: 50%;
     height: 60px;
 }
 /* ///////////////////// filter */
@@ -231,70 +230,109 @@ img{
     padding-top: 60px;
     width: 100%;
 }
-.hc-products-grp-control{
-    width: inherit;
-    margin-bottom: 60px;
+.hc-coupons{
+    width: 100%;
+}
+.hc-coupon-list{
     display: flex;
-    flex-wrap: wrap;
+    width: 500px;
+    height: 150px;
+    background-color: #ffff;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all ease-in-out 0.3s;
+    margin-bottom: 16px;
 }
-/* product card */
-.hc-products-grp{
+.hc-coupon-list:hover{
+    transform: scale(1.02);
+}
+.hc-coupon-ticket{
+    width: 60%;
+    height: 100%;
+    padding-right: 16px;
+}
+.hc-coupon-ticket-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    color: #ffff;
-    text-align: center;
+    height: 100%;
+    background: url(../img/ticket_card.png) no-repeat;
+    background-size: cover;
 }
-.hc-pds-card-control{
-    width: 100%;
-    padding: 0 4px;
-    margin-bottom: 48px;
+.hc-coupon-content{
+    width: 40%;
+    height: 100%;
+    background-color: #F5EEDA;
 }
-.hc-pds-card{
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 100%;
-    /* margin: 0 4px; */
-    transition: all 0.3s ease-out;
-    opacity: 0.8;
+.hc-coupon-btn{
+    background-color: var(--warning-color);
+    border-style: none;
+    color: var(--font-main-color);
+    padding: 8px 32px;
+    border-radius: 4px;
+    border: 1px solid var(--warning-color);
 }
-.hc-pds-card:hover{
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-    transform: scale(1.07);
-    opacity: 1;
+.hc-coupon-btn:active{
+    color: var(--warning-color);
+    background-color: #ffff;
+    border: 1px solid var(--warning-color);
 }
-.hc-card-content-container{
-    padding: 8px;
+.hc-coupon-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.hc-card-content-title h5{
-    font-weight: 700;
-}
-.hc-card-content-price{
+.hc-coupon-content>p{
     margin-bottom: 8px;
 }
-.hc-pds-card-mid{
-    margin-top: 60px;
+.hc-coupon-content>div{
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 1rem;
 }
-/* ///////////////////// page number */
-.page-link{
+.hc-coupon-ticket-bg .hc-ticket-title{
+    display: inline-block;
+    font-weight: 700;
+    color: #ffff;
+    margin: 0;
+    text-shadow: 0 0 16px rgb(0 0 0 / 80%);
+}
+.hc-coupon-ticket-bg>p{
+    color: #ffff;
+    text-shadow: 0 0 16px rgb(0 0 0 / 80%);
+}
+.hc-ticket-title>span{
+    margin: 0;
+    font-size: 3rem;
+}
+/* ///////////////////// button */
+.hc-coupons-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+}
+/*  ///////////////////// show more */
+.hc-showMore{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.hc-showMore-btn{
+    color: var(--main-color);
+    border-style: none;
     background-color: transparent;
-    border: 1px solid var(--main-color);
+    margin-right: 8px;
+}
+.hc-showMore-btn:active{
+    color: var(--hover-color);
+}
+.hc-icon-down{
+    font-size: 1rem;
     color: var(--main-color);
 }
-.page-link:hover{
-    background-color: var(--main-color);
-    border: 1px solid var(--main-color);
-    color: black;
-}
-.page-link-active{
-    background-color: var(--main-color);
-    color: black;
-}
-
-
-/* ///////豆單分類標題///// */
-.pc-cat-title {
-    color: var(--main-color);
-}
-
-
 /* //////////////////////////////// RWD */
 @media screen and (max-width:576px) {
     /* left side */
@@ -324,5 +362,13 @@ img{
     .right-side{
         width: 100%;
     }
-
+    .hc-coupons-products-container{
+        padding: 0 32px;
+    }
+    .hc-coupon-box-title{
+        width: 60%;
+    }
+    .hc-coupon-list{
+        width: 100%;
+    }
 }

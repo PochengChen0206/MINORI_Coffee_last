@@ -74,6 +74,7 @@ img{
 }
 .pc-card-second-title{
     color: var(--font-main-color);
+    margin-bottom: 8px;
 }
 .pc-ticket-img {
     display: flex;

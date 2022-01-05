@@ -79,6 +79,8 @@
                                         //購物車商品數量、小計、總計
                                         $count = 0;
                                         $total = 0;
+                                        $cartage = 0;
+                                        $e = 0;
 
                                         //判斷購物車是否存在
                                         if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
@@ -128,6 +130,16 @@
                                                 </tr>
                                         <?php
                                             }
+                                            if( $total < 1300){
+                                                $cartage = 120;
+                                            }else{
+                                                $cartage = 0;
+                                            }
+                                            if( $total < 1300 ){
+                                                $e = 1300 - $total;
+                                            }else{
+                                                $e = 0;
+                                            }
                                         }
                                         ?>
                                     </tbody>
@@ -152,7 +164,7 @@
                                         </tr>
                                         <tr>
                                             <td>運費:</td>
-                                            <td>NT$120</td>
+                                            <td> NT$<?= $cartage ?></td>
                                         </tr>
                                         <tr>
                                             <td>折價券:</td>
@@ -172,7 +184,7 @@
                                             <td>
                                                 <div class="hc-total">NT$1120</div>
                                                 <div>消費滿1300元免運費</div>
-                                                <div>差100元可免運</div>
+                                                <div>差<?= $e ?>元可免運</div>
                                             </td>
                                         </tr>
                                     </tbody>

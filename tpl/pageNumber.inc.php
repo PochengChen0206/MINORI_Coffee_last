@@ -1,38 +1,49 @@
 <!-- page number -->
 <!-- 做分頁參考老師php影片1214-001最後一分半開始 -->
-<div class="hc-page-number">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <!-- 第1頁 -->
-            <li class="page-item">
-                <a class="page-link" href="javascript:;">
-                    <i class="fas fa-backward"></i>
-                </a>
-            </li>
-            <!-- 上一頁 -->
-            <li class="page-item">
-                <a class="page-link" href="javascript:;">
-                    <i class="fas fa-chevron-left"></i>
-                </a>
-            </li>
-            <!-- 中間頁 -->
-            <li class="page-item">
-                <a class="page-link page-link-active" href="javascript:;">
-                    1
-                </a>
-            </li>
-            <!-- 下一頁 -->
-            <li class="page-item">
-                <a class="page-link" href="javascript:;">
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            </li>
-            <!-- 最後1頁 -->
-            <li class="page-item">
-                <a class="page-link" href="javascript:;">
-                    <i class="fas fa-forward"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
+<?php if (isset($_GET['cat_id']) && isset($_GET['sub_cat_id'])) { ?>
+    <div class="hc-page-number">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <!-- 第1頁 -->
+                <li class="page-item <?php if ($page = 1) echo "disabled"; ?>">
+                    <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=1">
+                        <i class="fas fa-backward"></i>
+                    </a>
+                </li>
+                <!-- 上一頁 -->
+                <li class="page-item">
+                    <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=<?= ($page - 1) ?>">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </li>
+                <?php
+                //列出所有分頁連結
+                for ($i = 1; $i <= $totalPages; $i++) {
+                    //當目前第幾頁($page)等於顯示在網頁上的分頁號碼($i)，就加上class
+                    $strClass = "";
+                    if ($page == $i) $strClass = "active";
+                ?>
+                    <!-- 中間頁 -->
+                    <li class="page-item <?= $strClass ?>">
+                        <a class="page-link " href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=<?= $i ?>"><?= $i ?></a>
+                    </li>
+                <?php
+                }
+                ?>
+
+                <!-- 下一頁 -->
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+                <!-- 最後1頁 -->
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;">
+                        <i class="fas fa-forward"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<?php } ?>
