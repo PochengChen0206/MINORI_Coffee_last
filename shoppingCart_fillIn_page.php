@@ -3,7 +3,7 @@
 
 <?php
 //如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
-if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email']) ) {
+if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email'])) {
     header("location: shoppingCart_page.php");
     exit();
 }
@@ -11,29 +11,28 @@ if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSIO
 
 <?php
 //如果購物車與、商品索引與數量同時存在，則修改指定索引的商品數量
-if(isset($_POST['qty'])) {
-    foreach($_POST['qty'] as $index => $value){
+if (isset($_POST['qty'])) {
+    foreach ($_POST['qty'] as $index => $value) {
         $_SESSION['cart'][$index]['prod_qty'] = $_POST['qty'][$index];
     }
 }
-
 ?>
 
 <?php require_once 'tpl/head.inc.php' ?>
 
 <!-- 檢查是否成功印出 -->
 <!-- <?php
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
-?> -->
+        echo "<pre>";
+        print_r($_SESSION);
+        echo "</pre>";
+        ?> -->
 
 <!-- main page -->
 <div class="container-fluid main-page">
     <div class="row">
         <!-- leftSide page -->
         <div class="left-side">
-            <div class="left-side-bg" style="background: url(./img/coffee-class_05.jpg) no-repeat; background-size: cover;">
+            <div class="left-side-bg" style="background: url(./img/shoppingCart_1.jpg) no-repeat; background-size: cover; background-position: center">
                 <!-- ======================================================================================= add content -->
                 <div class="container">
 
@@ -85,10 +84,6 @@ echo "</pre>";
                                     </thead>
 
                                     <tbody class="hc-table-lists hc-tbody-credit" id="hc-credit">
-                                        <!-- <tr>
-                                            <td>訂單編號:</td>
-                                            <td>61052</td>
-                                        </tr> -->
                                         <?php
                                         if (isset($_SESSION['cart'])) {
                                             foreach ($_SESSION['cart'] as $key => $obj) {
@@ -180,22 +175,15 @@ echo "</pre>";
                                         </tr>
                                     </thead>
                                     <tbody class="hc-table-lists hc-tbody-credit hc-table-size" id="hc-credit">
-                                        <tr class="d-felx">
-                                            <td class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="invoice_carrier" value="隨包裹" checked>
+                                        <tr>
+                                            <td>
+                                                <input class="form-check-input-pc" type="radio" name="invoice_carrier" value="隨包裹" checked>
                                                 <label class="form-check-label">隨包裹</label>
                                             </td>
-                                            <td class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="invoice_carrier" value="電子條碼載具">
+                                            <td>
+                                                <input class="form-check-input-pc" type="radio" name="invoice_carrier" value="電子條碼載具">
                                                 <label class="form-check-label">電子條碼載具</label>
                                             </td>
-                                            <!-- <td><label for="colFormLabel">載具編號:</label>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="invoice_carrier_number" placeholder="(發票隨包裹不必填寫)">
-                                                </div>
-                                            </td> -->
                                         </tr>
                                         <tr>
                                             <td><label for="colFormLabel">載具編號:</label>
@@ -206,28 +194,6 @@ echo "</pre>";
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                                <!-- coupon  Information -->
-                                <table class="hc-table">
-                                    <thead>
-                                        <tr class="hc-table-title hc-control-table">
-                                            <th colspan="2">
-                                                <h5>優惠選擇</h5>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="hc-table-lists hc-tbody-credit hc-table-size" id="hc-credit">
-                                        <tr>
-                                            <td><label for="colFormLabel">優惠代碼:</label>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-12 p-0">
-                                                    <input type="text" class="form-control" name="coupon_code" placeholder="(請輸入優惠代碼)">
-                                                </div>
-                                            </td>
-                                        </tr>
-
                                     </tbody>
                                 </table>
                                 <!-- credit card  -->
@@ -281,10 +247,9 @@ echo "</pre>";
                             <!-- send button -->
                             <div class="hc-hc-shopping-btn-grp d-flex justify-content-between">
                                 <div class="hc-payment">
-                                    <a href="shoppingCart_page.php" type="button" class="btn btn-outline-warning px-5">回購物車</a>
+                                    <a href="shoppingCart_page.php" type="button" class="btn btn-outline-warning px-5">回上一頁</a>
                                 </div>
                                 <div class="hc-payment">
-                                    <!-- <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">確認結帳</a> -->
                                     <button type="submit" class="btn btn-outline-warning px-5">確認結帳</button>
                                 </div>
                             </div>

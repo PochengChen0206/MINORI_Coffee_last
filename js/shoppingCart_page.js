@@ -10,7 +10,7 @@ $('button.btn_plus').click(function (event) {
     //修改商品金額
     $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price);
 
-    // 更新總計
+    // 更新總計  取得每一個index的element
     let total = 0;
     $(`input.qty`).each(function (index, element) {
         total += (parseInt($(element).val()) * $(element).attr('data-prod-price'));

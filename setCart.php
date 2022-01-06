@@ -24,6 +24,7 @@ if(
     foreach($_SESSION['cart'] as $index => $o){
         if(
             $o['prod_id'] == (int)$_POST['prod_id'] &&
+            $o['prod_name'] == $_POST['prod_name'] &&
             $o['prod_size'] == $_POST['prod_size'] &&
             $o['prod_grind'] == $_POST['prod_grind']
         ){

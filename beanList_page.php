@@ -14,7 +14,8 @@ if(isset($_GET['sub_cat_id'])){
 }
 
 //取得products資料表總筆數(對cat_id = 3的products做count聚合成一筆)
-$sqlTotal = "SELECT COUNT(1) AS `count`FROM `relative` 
+$sqlTotal = "SELECT COUNT(1) AS `count`
+FROM `relative` 
 INNER JOIN `categories` 
 ON`relative`.`cat_id` = `categories`.`id`
 INNER JOIN`products`
@@ -23,7 +24,7 @@ ON`relative`.`prod_id`=`products`.`id`
 $totalRows = $pdo->query($sqlTotal)->fetch()['count'];
 
 //設定每頁幾筆
-$numPerPage = 9;
+$numPerPage = 6;
 
 //總頁數ceil()
 $totalPages = ceil($totalRows / $numPerPage);
@@ -148,7 +149,7 @@ $offset = ($page - 1) * $numPerPage;
                                                 $arr = $stmt->fetchAll();
                                                 foreach ($arr as $obj) {
                                             ?>
-                                                    <div class="hc-pds-card-control col-lg-4 col-md-6">
+                                                    <div class="hc-pds-card-control col-lg-4 col-md-6 ">
                                                         <div class="hc-pds-card">
                                                             <div class="hc-pds-img">
                                                                 <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">

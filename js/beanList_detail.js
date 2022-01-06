@@ -21,10 +21,9 @@ $('button#btn_set_cart').click(function (event) {
     prod_id: btn.attr('data-prod-id'),
     prod_name: btn.attr('data-prod-name'),
     prod_price: btn.attr('data-prod-price'),
-    // prod_size: btn.attr('data-prod-size'),
-    // prod_grind: btn.attr('data-prod-grind'),
-    prod_size: $('input#pc-size').val(),
-    prod_grind: $('input#pc-grind').val(),
+    //要送最後被選擇的
+    prod_size: $('input#pc-size:checked').val(),
+    prod_grind: $('input#pc-grind:checked').val(),
     prod_qty: $('input#qty').val()
   };
   $.post('setCart.php', objProduct, function (obj) {
@@ -53,7 +52,8 @@ $('button#pc-asapBuy').click(function (event) {
     prod_price: btn.attr('data-prod-price'),
     prod_size: $('input#pc-size:checked').val(),
     prod_grind: $('input#pc-grind:checked').val(),
-    prod_qty: $('input#qty').val()
+    prod_qty: $('input#qty').val(),
+     
   };
   // console.log(objProduct);
   
@@ -116,15 +116,38 @@ var swiper = new Swiper(".mySwiper", {
 
 
 //選擇磅數更改價格
-// let input_prod_price = $('input[name="detail_prod_price"]');
+let input_prod_price = $('input[name="detail_prod_price"]');
+// console.log(input_prod_price);
 
-// $('input#pc-size:eq(1)').click(function(event){
-//   // alert(input_prod_price.val());
-//   // span沒有value所以要用text而不是value
-//   $('span#detailProdPrice').text( input_prod_price.val() * 2);
-//   // alert($('span#detailProdPrice').text());
+
+//從name進行選取而非id
+$('input.prod_size').click(function(event){
+  // console.log($(this).closest('.hc-process-control').index());
+  //無法直接從$(this)裡進行選擇，因為labal裡面只有一個值所以出來都只會是0，要從最接近的div的.hc-process-control選擇，這時btn出來的順序就會是1,2,3(0是hc-products-list-secondTitle)
+  let times = $(this).closest('.hc-process-control').index();
+  //times的值需將原本為3的值定義為4，其餘1,2就按照index()取出的值就好
+  // ?是if :是else
+  times = (times === 3)? 4: times;
+  $('span#detailProdPrice').text( input_prod_price.val() * times);
+  
+})
+
+
+
+//直接將button寫死
+
+// $('input#pc-size:eq(2)').click(function(event){
+//   $('span#detailProdPrice').text( input_prod_price.val() * 4);
 // })
 
+// $('input#pc-size:eq(1)').click(function(event){
+//   $('span#detailProdPrice').text( input_prod_price.val() * 2);
+// })
+
+
+// $('input#pc-size:eq(0)').click(function(event){
+//   $('span#detailProdPrice').text( input_prod_price.val());
+// })
 
 
 

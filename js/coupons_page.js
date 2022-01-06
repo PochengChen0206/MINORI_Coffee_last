@@ -34,7 +34,7 @@ let getTicket = `{
 
 let obj_ticket = JSON.parse(getTicket);
 let ticket_length = obj_ticket["ticket"].length;
-console.log("obj length:", ticket_length);
+// console.log("obj length:", ticket_length);
 
 // for(_of_) 撈物件
 for (var key of obj_ticket["ticket"]) {

@@ -17,7 +17,7 @@
                             <div class="hc-top-menu-control">
                                 <!-- menu 1 -->
                                 <div class="hc-top-menu">
-                                    <a href="javascript:;">
+                                    <a href="memberData.php">
                                         個人資料
                                     </a>
                                 </div>
@@ -29,7 +29,7 @@
                                 </div>
                                 <!-- menu 3 -->
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu-active" href="javascript:;">
+                                    <a class="hc-top-menu-active" href="#">
                                         優惠卷
                                     </a>
                                 </div>

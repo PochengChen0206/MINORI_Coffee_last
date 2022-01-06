@@ -7,27 +7,46 @@
     <div class="row">
         <!-- leftSide page -->
         <div class="left-side">
-            <div class="left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover;">
-                <!-- ======================================================================================= add content -->
-                <div class="pc-memberCenter-item d-flex  justify-content-around">
-                    <div class="pc-item px-4" style="border-bottom: 1px solid #95720C;">
-                        <a href="#" id="my_data" style="color: #95720C;">
-                            個人資料
-                        </a>
+            <!-- ================================================= 新頁面加入 -->
+            <div class="left-side-push100">
+                <div class="hc-left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover; background-position: center">
+                    <!-- ======================================================================================= add content -->
+                    <!-- head -->
+                    <div class="hc-top-menus">
+                        <div class="hc-top-menu-container-pushTop">
+                            <div class="hc-top-menu-control">
+                                <!-- menu 1 -->
+                                <div class="hc-top-menu">
+                                    <a class="hc-top-menu-active" href="#">
+                                        個人資料
+                                    </a>
+                                </div>
+                                <!-- menu 2 -->
+                                <div class="hc-top-menu">
+                                    <a href="javascript:;">
+                                        訂單查詢
+                                    </a>
+                                </div>
+                                <!-- menu 3 -->
+                                <div class="hc-top-menu">
+                                    <a href="coupons_page.php">
+                                        優惠卷
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pc-item px-4">
-                        <a a href="orders.php" id="products_order">
-                            訂單查詢
-                        </a>
-                    </div>
-                    <div class="pc-item px-4">
-                        <a href="#" id="my_coupon">
-                            優惠券
-                        </a>
+                    <!-- 左側頁面內容 -->
+                    <div class="hc-left-side-content">
+                        <div class="hc-left-side-container">
+                            <div class="hc-bean-menu">
+                                <!-- menu list -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
+            <!-- ================================================= -->
         </div>
         <!-- rightSide page -->
         <div class="right-side">

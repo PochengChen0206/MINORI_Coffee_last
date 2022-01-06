@@ -39,7 +39,7 @@ echo "</pre>";
     <div class="row">
         <!-- leftSide page -->
         <div class="left-side">
-            <div class="left-side-bg" style="background: url(./img/coffee-class_05.jpg) no-repeat; background-size: cover;">
+            <div class="left-side-bg" style="background: url(./img/shoppingCart_1.jpg) no-repeat; background-size: cover; background-position: center">
                 <!-- ======================================================================================= add content -->
                 <div class="container">
 
@@ -190,10 +190,10 @@ echo "</pre>";
                         <!-- send button -->
                         <div class="hc-hc-shopping-btn-grp d-flex justify-content-between">
                             <div class="hc-payment">
-                                <a href="shoppingCart_fillIn_page.php" type="button" class="btn btn-outline-warning px-5">回上一頁</a>
+                                <a href="shoppingCart_fillIn_page.php" type="button" class="btn btn-outline-warning px-5">查看訂單</a>
                             </div>
                             <div class="hc-payment">
-                                <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">確認結帳</a>
+                                <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" type="button" class="btn btn-outline-warning px-5">繼續逛商品</a>
                             </div>
                         </div>
 

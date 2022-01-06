@@ -330,6 +330,7 @@ $('button#btn_login').click(function (event) {
             //當成功訊息執行時，等數秒，執行自訂程式
             setTimeout(function () {
                 location.href = 'memberData.php';
+                // location.reload();
             }, 1000);
         } else {
             alert(`${obj['info']}`);
@@ -348,9 +349,9 @@ $('a#logout').click(function(event){
         if(obj['success']){
             alert(`${obj['info']}`);
 
-
             setTimeout(function() {
                 location.href = 'loginSignup.php';
+                // location.reload();
             }, 500);
         }
     }, 'json');

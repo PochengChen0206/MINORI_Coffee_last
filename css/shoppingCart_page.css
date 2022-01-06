@@ -144,6 +144,7 @@ img{
     opacity: 100%;
     color: var(--font-main-color);
 }
+
 /* ///////////////// credit card */
 /* 信用卡 */
 .hc-tbody-credit tr>:last-child{
@@ -196,7 +197,11 @@ img{
 .hc-table-size tr td>label{
     font-size: 1rem;
     margin: 0;
-    padding-right: 16px;
+    padding-left: 16px;
+}
+.form-check-input-pc{
+    position: absolute;
+    margin-top: 0.3rem;
 }
 /* ///////////////////////////////////  訂單編號 */
 .hc-tbody-orderDone tr>:last-child{
@@ -307,4 +312,9 @@ img{
         padding-left: 8px;
     }
 
+}
+
+/* 讓NT$不會隨價格改變而消失 */
+.pc-cartNT span::before{
+    content: "NT$";
 }

@@ -104,7 +104,7 @@
                                     ?>
                                         <div class="hc-process-control d-flex">
                                             <label class="btn btn-outline-warning btn-size">
-                                                <input class="pc-radio" type="radio" name="prod_size" id="pc-size" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>"> <?= $obj2['prod_size'] ?>
+                                                <input class="pc-radio prod_size" type="radio" name="prod_size" id="pc-size" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>"> <?= $obj2['prod_size'] ?>
                                             </label>
                                         </div>
                                     <?php
