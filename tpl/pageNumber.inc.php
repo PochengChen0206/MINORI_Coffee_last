@@ -5,13 +5,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <!-- 第1頁 -->
-                <li class="page-item <?php if ($page = 1) echo "disabled"; ?>">
+                <li class="page-item <?php if ($page == 1) echo "disabled"; ?>">
                     <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=1">
                         <i class="fas fa-backward"></i>
                     </a>
                 </li>
                 <!-- 上一頁 -->
-                <li class="page-item">
+                <li class="page-item <?php if ($page == 1) echo "disabled"; ?>">
                     <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=<?= ($page - 1) ?>">
                         <i class="fas fa-chevron-left"></i>
                     </a>
@@ -32,13 +32,13 @@
                 ?>
 
                 <!-- 下一頁 -->
-                <li class="page-item">
+                <li class="page-item <?php if ($page == $totalPages) echo "disabled"; ?>">
                     <a class="page-link" href="javascript:;">
                         <i class="fas fa-chevron-right"></i>
                     </a>
                 </li>
                 <!-- 最後1頁 -->
-                <li class="page-item">
+                <li class="page-item <?php if ($page == $totalPages) echo "disabled"; ?>">
                     <a class="page-link" href="javascript:;">
                         <i class="fas fa-forward"></i>
                     </a>

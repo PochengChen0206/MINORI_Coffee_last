@@ -22,6 +22,7 @@ $('button#btn_set_cart').click(function (event) {
     prod_name: btn.attr('data-prod-name'),
     prod_price: btn.attr('data-prod-price'),
     //要送最後被選擇的
+    prod_times: $('input#pc-size:checked').attr('data-prod-times'),
     prod_size: $('input#pc-size:checked').val(),
     prod_grind: $('input#pc-grind:checked').val(),
     prod_qty: $('input#qty').val()
@@ -50,6 +51,7 @@ $('button#pc-asapBuy').click(function (event) {
     prod_id: btn.attr('data-prod-id'),
     prod_name: btn.attr('data-prod-name'),
     prod_price: btn.attr('data-prod-price'),
+    prod_times: $('input#pc-size:checked').attr('data-prod-times'),
     prod_size: $('input#pc-size:checked').val(),
     prod_grind: $('input#pc-grind:checked').val(),
     prod_qty: $('input#qty').val(),

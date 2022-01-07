@@ -80,13 +80,7 @@
                                         $count = 0;
                                         $total = 0;
                                         $cartage = 0;
-                                        $e = 0;
-                                        $amountTotal = $total + $cartage;
-
-                                        
-                                        $prodArray['半磅'] = 1;
-                                        $prodArray['一磅'] = 2;
-                                        $prodArray['2.2磅'] = 4;
+                                        $difference = 0;
 
                                         //判斷購物車是否存在
                                         if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
@@ -94,7 +88,7 @@
                                             $count = count($_SESSION['cart']);
                                             foreach ($_SESSION['cart'] as $key => $obj) {
                                                 // 計算小計
-                                                $total += $obj['prod_price'] * $obj['prod_qty'] * $prodArray[$obj['prod_size']];
+                                                $total += $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'];
                                         ?>
                                                 <!-- 表單切換 -->
                                                 <tr>
@@ -105,17 +99,17 @@
                                                         <!-- 將購物車中的商品索引，透過 form 帶到下一頁去 -->
                                                         <input type="hidden" name="index[]" value="<?= $key ?>">
                                                         <!-- 減少商品 -->
-                                                        <button class="btn_minus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>"><i class="fas fa-minus"></i>
+                                                        <button class="btn_minus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-minus"></i>
                                                         </button>
                                                         <!-- 數量 -->
-                                                        <input type="text" class="form-control qty mx-2" style="width: 40%;"  name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" value="<?= $obj['prod_qty'] ?>">
+                                                        <input type="text" class="form-control qty mx-2" style="width: 40%;" name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" value="<?= $obj['prod_qty'] ?>">
                                                         <!-- 增加商品 -->
-                                                        <button class="btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>"><i class="fas fa-plus"></i>
+                                                        <button class="btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-plus"></i>
                                                         </button>
                                                     </td>
                                                     <td class="hc-hidden-xs pc-cartNT" style="white-space: nowrap;">
                                                         <span data-index="<?= $key ?>">
-                                                            <?= $obj['prod_price'] * $obj['prod_qty'] * $prodArray[$obj['prod_size']] ?>
+                                                            <?= $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'] ?>
                                                         </span>
                                                     </td>
                                                     <td class="hc-show-xs">
@@ -135,15 +129,15 @@
                                                 </tr>
                                         <?php
                                             }
-                                            if( $total < 1300){
+                                            if ($total < 1300) {
                                                 $cartage = 120;
-                                            }else{
+                                            } else {
                                                 $cartage = 0;
                                             }
-                                            if( $total < 1300 ){
-                                                $e = 1300 - $total;
-                                            }else{
-                                                $e = 0;
+                                            if ($total < 1300) {
+                                                $difference = 1300 - $total;
+                                            } else {
+                                                $difference = 0;
                                             }
                                         }
                                         ?>
@@ -169,7 +163,7 @@
                                         </tr>
                                         <tr>
                                             <td>運費:</td>
-                                            <td> NT$<?= $cartage ?></td>
+                                            <td><span class="pc-cartage" id="cartage"><?= $cartage ?></span></td>
                                         </tr>
                                         <tr>
                                             <td><label for="colFormLabel">優惠代碼:</label>
@@ -186,11 +180,16 @@
                                         <tr>
                                             <td>結帳金額:</td>
                                             <td>
-                                                <div class="hc-total">NT$<span><?= $amountTotal ?></span></div>
+                                                <?php $amountTotal = $total + $cartage; ?>
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
                                                 <div>消費滿1300元免運費</div>
-                                                <?php if( $total < 1300 ){ ?>
-                                                <div>差<?= $e ?>元可免運</div>
-                                                <?php } ?>
+                                                <div>
+                                                    <?php
+                                                    $strClass = "pc-hide";
+                                                    if ($total < 1300) $strClass = "";
+                                                    ?>
+                                                    <span class="pc-difference <?= $strClass ?>" id="difference"><?= $difference ?></span>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -205,9 +204,6 @@
                                     <button type="submit" class="btn btn-outline-warning px-5" id="pc-goToPay">前往結帳</button>
                                 </div>
                             </div>
-                            <!-- <div class="hc-shopping-btn hc-payment">
-                                <button type="submit" class="btn btn-outline-warning px-5">結帳</button>
-                            </div> -->
                         </form>
                     </div>
                 </div>

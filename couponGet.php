@@ -9,7 +9,6 @@
         <div class="left-side">
             <div class="left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover; background-position: center">
                 <!-- ======================================================================================= add content -->
-
             </div>
         </div>
         <!-- rightSide page -->

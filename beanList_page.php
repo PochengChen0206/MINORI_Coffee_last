@@ -21,7 +21,7 @@ ON`relative`.`cat_id` = `categories`.`id`
 INNER JOIN`products`
 ON`relative`.`prod_id`=`products`.`id`
 {$where}";
-$totalRows = $pdo->query($sqlTotal)->fetch()['count'];
+$totalRows = $pdo->query($sqlTotal)->fetch()['count']; //取回來是個$obj['count']可以印出200筆
 
 //設定每頁幾筆
 $numPerPage = 6;
@@ -29,8 +29,10 @@ $numPerPage = 6;
 //總頁數ceil()
 $totalPages = ceil($totalRows / $numPerPage);
 
+
 //目前第幾頁(存在且大於給予頁數，否則設為第一頁)
 $page = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
+
 
 //計算分頁偏移量
 $offset = ($page - 1) * $numPerPage;

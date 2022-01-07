@@ -5,17 +5,40 @@ $('button.btn_plus').click(function (event) {
     let index = btn.attr('data-index');
     let prod_price = btn.attr('data-prod-price');
     let input_qty = $(`input.qty[data-index="${index}"]`);
+    let prod_times = btn.attr('data-prod-times')
     input_qty.val(parseInt(input_qty.val()) + 1);
 
     //修改商品金額
-    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price);
+    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
+
+    let total = 0;
+    let cartage = 0;
 
     // 更新總計  取得每一個index的element
-    let total = 0;
     $(`input.qty`).each(function (index, element) {
-        total += (parseInt($(element).val()) * $(element).attr('data-prod-price'));
+        total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * prod_times);
     });
+
+    if (total > 1300) {
+        cartage = 0
+    } else {
+        cartage = 120;
+    }
+    
     $('span#total').text(total);
+    $('span#cartage').text(cartage);
+
+    let difference = 0;
+    if (total > 1300) {
+        $('span#difference').addClass('pc-hide');  
+    } else {
+        $('span#difference').removeClass('pc-hide');
+        difference = 1300 - total;
+    }
+    $('span#difference').text(difference);
+
+    let amountTotal = total + cartage;
+    $('span#amountTotal').text(amountTotal);
 });
 
 //減少商品數量(購物車)
@@ -24,18 +47,43 @@ $('button.btn_minus').click(function (event) {
     let index = btn.attr('data-index');
     let prod_price = btn.attr('data-prod-price');
     let input_qty = $(`input.qty[data-index="${index}"]`);
+    let prod_times = btn.attr('data-prod-times');
     if (parseInt(input_qty.val()) - 1 < 1) return false;
     input_qty.val(parseInt(input_qty.val()) - 1);
 
     //修改商品金額
-    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price);
+    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
+
+    let total = 0;
+    let cartage = 0;
 
     // 更新總計
-    let total = 0;
     $(`input.qty`).each(function (index, element) {
-        total += (parseInt($(element).val()) * $(element).attr('data-prod-price'));
+        total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * prod_times);
     });
+
+    if (total > 1300) {
+        cartage = 0
+    } else {
+        cartage = 120;
+    }
+    
     $('span#total').text(total);
+    $('span#cartage').text(cartage);
+
+    let difference = 0;
+    
+    if (total > 1300) {
+        $('span#difference').addClass('pc-hide');
+    } else {
+        
+        $('span#difference').removeClass('pc-hide');
+        difference = 1300 - total;
+    }
+    $('span#difference').text(difference);
+
+    let amountTotal = total + cartage;
+    $('span#amountTotal').text(amountTotal);
 });
 
 //刪除購物車內商品

@@ -1,0 +1,75 @@
+/* left */
+/* .oooleft{
+    width: 100%;
+    height: 100vh;
+} */
+/* .left-top-bar{
+    margin:24px  0 0 100px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 1.2rem;
+} */
+.yc-left-side-title{
+    font-size: 1.5rem;
+    color: #FFC300;
+    text-align: center;
+    margin:24px  0 24px 100px;
+}
+.yc-left-side-text{
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    padding: 0 10rem;
+    margin:24px  0 0 100px;
+}
+.yc-left-info{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 0 100px; */
+}
+/* a{  
+    color: #FFC300;
+} */
+
+/* right */
+.yc-title{
+    font-size: 0.5rem;
+    color: #FFC300;
+    margin: 0 0 0 50px;
+}
+.yc-card{
+    background: #000;
+    color: white;
+    margin: 0 0 0 50px;
+}
+
+
+/* //////////////////////////////// RWD */
+@media screen and (max-width:576px) {
+    /* .left-top-bar{
+        margin: 96px 0 0 0;
+        padding: 20px;
+    } */
+    .yc-left-side-title {
+        margin: 0;
+        padding: 20px;
+    }
+    .yc-left-side-text{
+        margin: 0;
+        padding: 10px 20px;
+    }
+    .yc-left-info{
+        margin: 0;
+        display:contents;
+    }
+    .yc-title{
+        padding: 20px 0;
+        margin: 0;
+    }
+    .yc-card{
+        margin: 0;
+    }
+}

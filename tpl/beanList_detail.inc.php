@@ -96,7 +96,7 @@
                                         <h5>重量</h5>
                                     </div>
                                     <?php
-                                    $sql = "SELECT `id`, `prod_size`  FROM`products_size` WHERE `prod_id` = {$_GET['prod_id']}";
+                                    $sql = "SELECT `id`, `prod_size`, `prod_times`  FROM`products_size` WHERE `prod_id` = {$_GET['prod_id']}";
                                     $arr2 = $pdo->query($sql)->fetchAll();
                                     foreach ($arr2 as $index => $obj2) {
                                         $strClass = "";
@@ -104,7 +104,8 @@
                                     ?>
                                         <div class="hc-process-control d-flex">
                                             <label class="btn btn-outline-warning btn-size">
-                                                <input class="pc-radio prod_size" type="radio" name="prod_size" id="pc-size" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>"> <?= $obj2['prod_size'] ?>
+                                                <input class="pc-radio prod_size" type="radio" name="prod_size" id="pc-size" data-prod-times="<?= $obj2['prod_times'] ?>" <?= $strClass ?> value="<?= $obj2['prod_size'] ?>">
+                                                <?= $obj2['prod_size'] ?>
                                             </label>
                                         </div>
                                     <?php

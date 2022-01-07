@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./css/shoppingCart_page.css">
     <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/coupons_page.css">
+    <link rel="stylesheet" href="./css/classpage.css">
 
 </head>
 

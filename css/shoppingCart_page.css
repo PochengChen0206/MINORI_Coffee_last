@@ -318,3 +318,20 @@ img{
 .pc-cartNT span::before{
     content: "NT$";
 }
+
+.pc-cartage::before{
+    content: "NT$";
+}
+
+.pc-difference::before{
+    content: "差NT$";
+}
+
+.pc-difference::after{
+    content: "可免運";
+}
+
+
+.pc-hide {
+    display: none;
+}

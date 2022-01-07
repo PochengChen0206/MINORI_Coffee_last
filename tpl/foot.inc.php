@@ -1,5 +1,5 @@
 <!-- footer -->
-<div class="footer" style="background: url(./img/footer_bg.jpg) no-repeat;">
+<div class="footer" style="background: url(./img/footer_bg.jpg) no-repeat; background-size:cover">
     <div class="footer_container">
         <div div class="col-lg-12 footer-content">
             <div class="footer-logo" style="width:20%">

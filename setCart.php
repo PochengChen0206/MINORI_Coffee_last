@@ -12,6 +12,7 @@ if(
     isset($_POST['prod_id']) &&
     isset($_POST['prod_name']) &&
     isset($_POST['prod_price']) &&
+    isset($_POST['prod_times']) &&
     isset($_POST['prod_size']) &&
     isset($_POST['prod_grind']) &&
     isset($_POST['prod_qty'])
@@ -26,6 +27,7 @@ if(
             $o['prod_id'] == (int)$_POST['prod_id'] &&
             $o['prod_name'] == $_POST['prod_name'] &&
             $o['prod_size'] == $_POST['prod_size'] &&
+            $o['prod_times'] == $_POST['prod_times'] &&
             $o['prod_grind'] == $_POST['prod_grind']
         ){
 
@@ -45,6 +47,7 @@ if(
             "prod_name" => $_POST['prod_name'],
             "prod_price" => (int)$_POST['prod_price'],
             "prod_size" => $_POST['prod_size'],
+            "prod_times" => $_POST['prod_times'],
             "prod_grind" => $_POST['prod_grind'],
             "prod_qty" => $_POST['prod_qty']
         ];
