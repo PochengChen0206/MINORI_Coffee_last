@@ -3,10 +3,10 @@
 
 <?php
 //如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
-if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email'])) {
-    header("location: shoppingCart_page.php");
-    exit();
-}
+// if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email'])) {
+//     header("location: shoppingCart_page.php");
+//     exit();
+// }
 ?>
 
 <?php
@@ -82,7 +82,6 @@ if (isset($_POST['qty'])) {
                                             </th>
                                         </tr>
                                     </thead>
-
                                     <tbody class="hc-table-lists hc-tbody-credit" id="hc-credit">
                                         <?php
                                         if (isset($_SESSION['cart'])) {
@@ -93,7 +92,7 @@ if (isset($_POST['qty'])) {
                                                     <td class="hc-hidden-xs"><?= $obj['prod_size'] ?></td>
                                                     <td class="hc-hidden-xs"><?= $obj['prod_grind'] ?></td>
                                                     <td class="hc-hidden-xs">數量<?= $obj['prod_qty'] ?></td>
-                                                    <td class="hc-hidden-xs">NT$<?= $obj['prod_price'] * $obj['prod_qty'] ?></td>
+                                                    <td class="hc-hidden-xs">NT$<?= $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'] ?></td>
                                                 </tr>
                                         <?php
                                             }
@@ -101,6 +100,41 @@ if (isset($_POST['qty'])) {
                                         ?>
                                     </tbody>
                                 </table>
+                                <table class="hc-table">
+                                    <thead>
+                                        <tr class="hc-table-title">
+                                            <th colspan="5">
+                                                <h5>金額確認</h5>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="hc-table-lists hc-tbody-credit">
+                                        <!-- <tr>
+                                                    <td><label for="colFormLabel">優惠代碼:</label>
+                                                    </td>
+                                                    <td class="d-flex">
+                                                        <div class="col-8 p-0">
+                                                            <input type="text" class="form-control" name="coupon_code" placeholder="(請輸入優惠代碼)">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <a href="#" class="btn btn-outline-warning" id="check_coupon_code">確認</a>
+                                                        </div>
+                                                    </td>
+                                                </tr> -->
+
+                                        <!-- <?php require_once 'tpl/coupon_account.inc.php' ?> -->
+                                        <tr>
+                                            <td>結帳金額:</td>
+                                            <td>
+                                                <?php
+                                                // 存取上一頁的總計
+                                                $amountTotal = $_SESSION['amountTotal']; ?>
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                                 <!-- Recipient Information  -->
                                 <table class="hc-table">
                                     <thead>

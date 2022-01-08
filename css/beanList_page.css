@@ -290,9 +290,8 @@ img{
 .pc-disabled a{
     color: black ;
     pointer-events: none;
-    cursor: auto;
-    background-color: var(--main-color);
-    border-color: 1px solid var(--main-color);
+    background-color: rgba(204,154,6,0.25);
+    border-color:var(--main-color);
 }
 
 

@@ -141,8 +141,6 @@ $('input#member_info').click(function(event){
         } else {
             alert(`${obj['info']}`);
         }
-
-
     }, 'json');
 });
 

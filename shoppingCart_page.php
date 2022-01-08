@@ -149,7 +149,7 @@
                                     <thead>
                                         <tr class="hc-table-title">
                                             <th colspan="2">
-                                                <h5>商品金額</h5>
+                                                <h5>訂單金額</h5>
                                             </th>
                                         </tr>
                                     </thead>
@@ -181,8 +181,13 @@
                                         <tr>
                                             <td>結帳金額:</td>
                                             <td>
-                                                <?php $amountTotal = $total + $cartage; ?>
+                                                <?php $amountTotal = $total + $cartage;
+                                                ?>
                                                 <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
+                                                <?php
+                                                // 建立$_SESSION將總金額傳到下一頁
+                                                $_SESSION['amountTotal'] = $amountTotal;
+                                                ?>
                                                 <div>消費滿1300元免運費</div>
                                                 <div>
                                                     <?php

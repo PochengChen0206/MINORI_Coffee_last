@@ -3,10 +3,10 @@
 
 <?php
 //如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
-if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email']) ) {
-    header("location: shoppingCart_page.php");
-    exit();
-}
+// if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email']) ) {
+//     header("location: shoppingCart_page.php");
+//     exit();
+// }
 ?>
 
 <?php
@@ -27,12 +27,94 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
 
 <!-- 檢查是否成功印出 -->
 <!-- <?php
-echo "<pre>"; 
-print_r($_SESSION);
-echo "</pre>";  
-?> -->
+        echo "<pre>";
+        print_r($_SESSION);
+        echo "</pre>";
+        ?> -->
 
-<?php require_once 'tpl/make_order.inc.php' ?>
+<?php
+# 總額 與優惠後總額
+$total = 0;
+$total_m = 0;
+
+#計算總價
+foreach ($_SESSION['cart'] as $key => $obj) {
+    $total += $obj['prod_price'] * $obj['prod_qty'];
+}
+
+/**
+ * 先讓 總額 跟 優惠後總額一樣，
+ * 之後看看是否使用優惠代碼，來決定實際的優惠後總額
+ */
+$total_m = $total;
+
+// echo $total;
+
+//判斷優惠代碼是否存在，有的話則計算優惠後總額
+if ($_SESSION['form']['coupon_code'] != '') {
+    $sqlCoupon = "SELECT * FROM `coupon` WHERE `code` = '{$_SESSION['form']['coupon_code']}' AND `isUsed` = 0";
+    $stmt = $pdo->query($sqlCoupon);
+    if ($stmt->rowCount() > 0) {
+        //取得優惠資訊
+        $obj = $stmt->fetch();
+
+        //計算優惠後總額
+        $total_m = ceil($total * $obj['percentage']); //ceil無條件進位
+
+        //將優惠券設定為已使用
+        $sqlUpdate = "UPDATE`coupon` SET `isUsed` = 1 WHERE `code` = '{$_SESSION['form']['coupon_code']}'";
+        $pdo->query($sqlUpdate);
+    }
+}
+
+//確認輸出
+// echo $total;
+// echo "<br>";
+// echo $total_m;
+
+//信用卡資訊
+$card_number = sha1($_POST['card_number_1'] . $_POST['card_number_2'] . $_POST['card_number_3'] . $_POST['card_number_4']);
+$card_valid_date = sha1($_POST['card_valid_date']);
+$card_ccv = sha1($_POST['card_ccv']);
+$card_holder = sha1($_POST['card_holder']);
+
+// 建立訂單
+$sql = "INSERT INTO `orders`( 
+    `email`, `recipient_email`, `recipient_name`, `recipient_phone_number`, `recipient_address`, `recipient_comments`, `invoice_type`, `invoice_carrier`, `invoice_carrier_number`, `coupon_code`, `card_number`, `card_valid_date`, `card_ccv`, `card_holder`, `total`, `total_m`) 
+    VALUES (
+    '{$_SESSION['email']}','{$_SESSION['form']['recipient_email']}','{$_SESSION['form']['recipient_name']}','{$_SESSION['form']['recipient_phone_number']}','{$_SESSION['form']['recipient_address']}','{$_SESSION['form']['recipient_comments']}','{$_SESSION['form']['invoice_type']}','{$_SESSION['form']['invoice_carrier']}','{$_SESSION['form']['invoice_carrier_number']}','{$_SESSION['form']['coupon_code']}','{$card_number}','{$card_valid_date}','{$card_ccv}','{$card_holder}',{$total},{$total_m}
+    )";
+$stmt = $pdo->query($sql);
+
+/**
+ * 若訂單成立，則取得新增資料的 ID (Auto Increment)
+ * 透過 ID 來建立訂單資料表的訂單編號 (order_id)
+ */
+if ($stmt->rowCount() > 0) {
+    //取得新增資料時的自動編號
+    $lastInsertId = $pdo->lastInsertId();
+
+    //建立訂單編號 %05d補滿5位數的0
+    $order_id = date("Ymd") . sprintf("%05d", $lastInsertId);
+
+    //將訂單編號更新回 orders 資料表
+    $sqlUpdate = "UPDATE`orders`SET `order_id` = '{$order_id}' WHERE `id` = {$lastInsertId}";
+    $pdo->query($sqlUpdate);
+
+    //處理商品明細資訊
+    foreach ($_SESSION['cart'] as $key => $obj) {
+        //計算小計
+        $subtotal = $obj['prod_price'] * $obj['prod_qty'];
+
+        //新增商品明細
+        $sqlDetail = "INSERT INTO`orders_detail`(`order_id`, `prod_id`, `prod_name`, `prod_price`, `prod_size`, `prod_grind`, `prod_qty`, `prod_subtotal`)VALUE(
+            '{$order_id}', {$obj['prod_id']}, '{$obj['prod_name']}', {$obj['prod_price']},
+            '{$obj['prod_size']}', '{$obj['prod_grind']}', {$obj['prod_qty']}, {$subtotal}
+        ) ";
+        $pdo->query($sqlDetail);
+    }
+}
+?>
 
 <!-- main page -->
 <div class="container-fluid main-page">
@@ -96,42 +178,49 @@ echo "</pre>";
                                                 </div>
                                                 <div>
                                                     <p style="color: rgb(252, 80, 80); text-align: center;">
-                                                        訂單已經建立，系統將發送確認信件至您的信箱。</p>
+                                                        訂單已經建立，系統將發送訂單信件至您的信箱。</p>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>訂單編號: <a href="javascript:;">CB04061254</a> </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="hc-order-img">
-                                                    <img src="./img/product_bean_003.jpg" alt="">
-                                                </div>
-                                                <div class="hc-order-content d-flex align-items-center">
-                                                    <ul>
-                                                        <li><span>耶加雪菲 晨之莓</span></li>
-                                                        <li>
-                                                            <span>NT 1200</span>
-                                                            <div><span class="hc-num-red">1</span>件</div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            NT 1200
-                                        </td>
+                                        <td>訂單編號:</td>
+                                        <td><?= $order_id ?></td>
                                     </tr>
                                     <tr>
-                                        <td>總計:</td>
-                                        <td colspan="2">
-                                            <div class="hc-total">
-                                                <div>NT<h3>1200</h3>
-                                                </div>
-                                            </div>
+                                        <td>結帳金額:</td>
+                                        <td>
+                                            <?php
+                                            // 存取上一頁的總計
+                                            $amountTotal = $_SESSION['amountTotal']; ?>
+                                            <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
                                         </td>
                                     </tr>
+                            </table>
+                            <table class="hc-table">
+                                <thead>
+                                    <tr class="hc-table-title">
+                                        <th colspan="5">
+                                            <h5>訂單明細</h5>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="hc-table-lists hc-tbody-credit" id="hc-credit">
+                                    <?php
+                                    if (isset($_SESSION['cart'])) {
+                                        foreach ($_SESSION['cart'] as $key => $obj) {
+                                    ?>
+                                            <tr>
+                                                <td><?= $obj['prod_name'] ?></td>
+                                                <td class="hc-hidden-xs"><?= $obj['prod_size'] ?></td>
+                                                <td class="hc-hidden-xs"><?= $obj['prod_grind'] ?></td>
+                                                <td class="hc-hidden-xs">數量<?= $obj['prod_qty'] ?></td>
+                                                <td class="hc-hidden-xs">NT$<?= $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'] ?></td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                             <!-- Recipient Information  -->
@@ -148,9 +237,7 @@ echo "</pre>";
                                         <td>收件人姓名:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <!-- <input type="text" class="form-control hc-input-code"
-                                                        name="recipient_name"> -->
-                                                Alex Chen
+                                                <?= $_SESSION['form']['recipient_name'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -158,9 +245,7 @@ echo "</pre>";
                                         <td>Email:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <!-- <input type="email" class="form-control hc-input-code"
-                                                        name="recipient_email"> -->
-                                                alexC@gmail.com
+                                                <?= $_SESSION['form']['recipient_email'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -168,9 +253,7 @@ echo "</pre>";
                                         <td>電話:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <!-- <input type="text" class="form-control hc-input-code"
-                                                        name="recipient_phone_number"> -->
-                                                0900-123456
+                                                <?= $_SESSION['form']['recipient_phone_number'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -178,9 +261,7 @@ echo "</pre>";
                                         <td>地址:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <!-- <input type="text" class="form-control hc-input-code"
-                                                        name="recipient_address"> -->
-                                                106台北市大安區復興南路一段390號2樓
+                                                <?= $_SESSION['form']['recipient_address'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -196,7 +277,11 @@ echo "</pre>";
                                 <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" type="button" class="btn btn-outline-warning px-5">繼續逛商品</a>
                             </div>
                         </div>
-
+                        <?php
+                        
+                        //刪除購物車 和 表單資訊
+                        unset($_SESSION['cart'], $_SESSION['form']);
+                        ?>
                     </div>
                 </div>
                 <!-- ================================================= -->
