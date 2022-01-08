@@ -283,9 +283,16 @@ img{
     border: 1px solid var(--main-color);
     color: black;
 }
-.page-link-active{
+.page-link-active a{
     background-color: var(--main-color);
     color: black;
+}
+.pc-disabled a{
+    color: black ;
+    pointer-events: none;
+    cursor: auto;
+    background-color: var(--main-color);
+    border-color: 1px solid var(--main-color);
 }
 
 

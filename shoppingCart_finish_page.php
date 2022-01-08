@@ -32,7 +32,7 @@ print_r($_SESSION);
 echo "</pre>";  
 ?> -->
 
-<?php require_once 'tpl/make_order.php' ?>
+<?php require_once 'tpl/make_order.inc.php' ?>
 
 <!-- main page -->
 <div class="container-fluid main-page">

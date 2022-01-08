@@ -5,13 +5,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <!-- 第1頁 -->
-                <li class="page-item <?php if ($page == 1) echo "disabled"; ?>">
+                <li class="page-item <?php if ($page == 1) echo "pc-disabled"; ?>">
                     <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=1">
                         <i class="fas fa-backward"></i>
                     </a>
                 </li>
                 <!-- 上一頁 -->
-                <li class="page-item <?php if ($page == 1) echo "disabled"; ?>">
+                <li class="page-item <?php if ($page == 1) echo "pc-disabled"; ?>">
                     <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=<?= ($page - 1) ?>">
                         <i class="fas fa-chevron-left"></i>
                     </a>
@@ -21,7 +21,7 @@
                 for ($i = 1; $i <= $totalPages; $i++) {
                     //當目前第幾頁($page)等於顯示在網頁上的分頁號碼($i)，就加上class
                     $strClass = "";
-                    if ($page == $i) $strClass = "active";
+                    if ($page == $i) $strClass = "page-link-active";
                 ?>
                     <!-- 中間頁 -->
                     <li class="page-item <?= $strClass ?>">
@@ -32,14 +32,14 @@
                 ?>
 
                 <!-- 下一頁 -->
-                <li class="page-item <?php if ($page == $totalPages) echo "disabled"; ?>">
-                    <a class="page-link" href="javascript:;">
+                <li class="page-item <?php if ($page == $totalPages) echo "pc-disabled"; ?>">
+                    <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=<?= ($page + 1) ?>">
                         <i class="fas fa-chevron-right"></i>
                     </a>
                 </li>
                 <!-- 最後1頁 -->
-                <li class="page-item <?php if ($page == $totalPages) echo "disabled"; ?>">
-                    <a class="page-link" href="javascript:;">
+                <li class="page-item <?php if ($page == $totalPages) echo "pc-disabled"; ?>">
+                    <a class="page-link" href="beanList_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&page=<?= $totalPages ?>">
                         <i class="fas fa-forward"></i>
                     </a>
                 </li>

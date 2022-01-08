@@ -90,6 +90,7 @@
                                                 // 計算小計
                                                 $total += $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'];
                                         ?>
+
                                                 <!-- 表單切換 -->
                                                 <tr>
                                                     <td><?= $obj['prod_name'] ?></td>
