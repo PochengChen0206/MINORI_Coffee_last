@@ -122,12 +122,19 @@
         <p>版權所有 © minori. All Rights Reserved.</p>
     </div>
 </footer>
+<!-- goTop -->
+<span class="hc-goTop" id="pagetop" style="display: block;"><a href="#pages">
+        <i class="fas fa-chevron-up hc-icon-top"></i>
+    </a>
+</span>
 </div>
 </div>
 </div>
 <!--//////////////////////////////////////// script -->
 <!-- jQ -->
 <script src="./lib/jquery-3.6.0.min.js"></script>
+<!-- animate -->
+<script src="./lib/anime.min.js"></script>
 <!-- jquery UI-->
 <script src="./lib/jquery-ui.min.js"></script>
 <!-- fontawesome -->
@@ -136,6 +143,11 @@
 <script src="./lib/bootstrap.bundle.min.js"></script>
 <!-- swiper -->
 <script src="./lib/swiper-bundle.min.js"></script>
+<!-- splide 3.6.9 js -->
+<script src="./lib/splide.min.js"></script>
+<!-- vanilla js -->
+<script src="./lib/vanilla-tilt.js"></script>
+
 
 <!-- js -->
 <script src="./js/index.js"></script>
@@ -145,6 +157,8 @@
 <script src="./js/beanList_detail.js"></script>
 <script src="./js/shoppingCart_page.js"></script>
 <script src="./js/coupons_page.js"></script>
+<script src="./js/landing_page.js"></script>
+<script src="./js/news_page.js"></script>
 
 </body>
 

@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./lib/jquery-ui.css">
     <!-- swiper -->
     <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
+    <!-- splide 3.6.9 js -->
+    <link rel="stylesheet" href="./lib/splide.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login-and-signup.css">
@@ -26,6 +28,8 @@
     <link rel="stylesheet" href="./css/coupons_page.css">
     <link rel="stylesheet" href="./css/classpage.css">
     <link rel="stylesheet" href="./css/order_tracking_page.css">
+    <link rel="stylesheet" href="./css/landing_page.css">
+    <link rel="stylesheet" href="./css/news_page.css">
 
 </head>
 
