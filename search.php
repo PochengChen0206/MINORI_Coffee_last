@@ -9,7 +9,7 @@ $arr = $pdo->query($sql)->fetchAll();
 <?php
 //整合特定商品類別分頁的$sql字串
 $where = "";
-if(isset($_GET['sub_cat_id'])){
+if (isset($_GET['sub_cat_id'])) {
     $where = "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}";
 }
 
@@ -132,39 +132,30 @@ $offset = ($page - 1) * $numPerPage;
                                 <!-- products content -->
                                 <div class="hc-products-grp">
                                     <!-- product grp 1 -->
-                                    <?php if (isset($_GET['sub_cat_id'])) { ?>
-                                        <div class="hc-products-grp-control">
-                                            <!-- product card 1 -->
+                                    <div class="hc-products-grp-control">
+                                        <div class="hc-pds-card-control col-lg-4 col-md-6 ">
                                             <?php
-                                           $sql = 
-                                           "SELECT `prod_id`, `prod_name`,  `prod_thumbnail`, `prod_price`
-                                           FROM `relative` 
-                                           INNER JOIN `categories` 
-                                           ON`relative`.`cat_id` = `categories`.`id`
-                                           INNER JOIN`products`
-                                           ON`relative`.`prod_id`=`products`.`id`
-                                           WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}
-                                           LIMIT {$offset}, {$numPerPage}";
+                                            //將搜尋關鍵字當中有空白的字元，改成百分比
+                                            $keyword = str_replace(" ", "%", $_GET['keyword']);
 
+                                            //搜尋結果
+                                            $sql = "SELECT * FROM `products` WHERE `prod_name` LIKE '%{$keyword}%'";
                                             $stmt = $pdo->query($sql);
                                             if ($stmt->rowCount() > 0) {
-                                                $arr = $stmt->fetchAll();
-                                                foreach ($arr as $obj) {
+                                                foreach ($stmt->fetchAll() as $obj) {
                                             ?>
-                                                    <div class="hc-pds-card-control col-lg-4 col-md-6 col-6 ">
-                                                        <div class="hc-pds-card">
-                                                            <div class="hc-pds-img">
-                                                                <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">
-                                                                    <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
-                                                                </a>
+                                                    <div class="hc-pds-card">
+                                                        <div class="hc-pds-img">
+                                                            <a href="beanList_detail_page.php?prod_id=<?= $obj['id'] ?>">
+                                                                <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="hc-card-content-container">
+                                                            <div class="hc-card-content-title">
+                                                                <h5><?= $obj['prod_name'] ?></h5>
                                                             </div>
-                                                            <div class="hc-card-content-container">
-                                                                <div class="hc-card-content-title">
-                                                                    <h5><?= $obj['prod_name'] ?></h5>
-                                                                </div>
-                                                                <div class="hc-card-content-price">
-                                                                    <span>NT$<?= $obj['prod_price'] ?>~</span>
-                                                                </div>
+                                                            <div class="hc-card-content-price">
+                                                                <span>NT$<?= $obj['prod_price'] ?>~</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -173,17 +164,14 @@ $offset = ($page - 1) * $numPerPage;
                                             }
                                             ?>
                                         </div>
-                                    <?php 
-                                    }
-                                    ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <?php require_once 'tpl/pageNumber.inc.php' ?>
                     </div>
-                    <?php require_once 'tpl/pageNumber.inc.php' ?>
+                    <!-- ================================================= -->
                 </div>
-                <!-- ================================================= -->
-            </div>
 
 
-            <?php require_once 'tpl/foot.inc.php' ?>
+                <?php require_once 'tpl/foot.inc.php' ?>

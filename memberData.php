@@ -23,7 +23,7 @@
                                 </div>
                                 <!-- menu 2 -->
                                 <div class="hc-top-menu">
-                                    <a href="javascript:;">
+                                    <a href="order_tracking_page.php">
                                         訂單查詢
                                     </a>
                                 </div>
@@ -61,7 +61,17 @@
                 <!-- ================================================= 新頁面加入 -->
                 <div class="pc-memberCenter d-flex flex-column justify-content-center pc-bg-logo">
                     <div class="pc-memberCenter-content container">
-                        <h2 class="pc-page-title text-center">個人資料</h2>
+                        <!-- page title -->
+                        <div class="hc-page-title">
+                                <a href="javascript:;" class="hc-page-title-menu">
+                                    <span>會員中心</span>
+                                </a>
+                                <span>/</span>
+                                <a href="javascript:;" class="hc-page-title-menu">
+                                    <span>個人資料</span>
+                                </a>
+                            </div>
+                        <!-- <h2 class="pc-page-title text-center">個人資料</h2> -->
                         <form class="row g-3" id="myForm">
                             <div class="col-md-6">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
@@ -83,8 +93,8 @@
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
                                 <input type="email" class="form-control" id="email" value="<?= $_SESSION['email'] ?>">
                             </div>
-                            <div class="col-12 mt-3 text-right">
-                                <button type="submit" class="btn btn-outline-warning px-4" id="btn-renew">儲存</button>
+                            <div class="col-12 mt-3 text-center">
+                                <button type="submit" class="btn btn-outline-warning px-5" id="btn-renew">儲存</button>
                                 <!-- id不能用跟其他btn一樣 -->
                             </div>
                         </form>

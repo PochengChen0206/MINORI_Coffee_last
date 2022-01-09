@@ -140,6 +140,17 @@ img{
     width: 80%;
 }
 
+/* /////////////////////////////////// page title */
+.hc-page-title{
+    color: var(--main-color);
+    margin-bottom: 16px;
+}
+.hc-page-title a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+
 /* sign out 更改登入後使用者的名字顏色 */
 .pc-user a{
     color: #95720C; 

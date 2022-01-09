@@ -1,0 +1,162 @@
+<?php require_once 'db.inc.php'; ?>
+<?php session_start(); ?>
+
+<?php require_once 'tpl/head.inc.php' ?>
+<!-- main page -->
+<div class="container-fluid main-page">
+    <div class="row">
+        <!-- leftSide page -->
+        <div class="left-side">
+            <!-- ================================================= 新頁面加入 -->
+            <div class="left-side-push100">
+                <div class="hc-left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover; background-position: center">
+                    <!-- ======================================================================================= add content -->
+                    <!-- head -->
+                    <div class="hc-top-menus">
+                        <div class="hc-top-menu-container-pushTop">
+                            <div class="hc-top-menu-control">
+                                <!-- menu 1 -->
+                                <div class="hc-top-menu">
+                                    <a href="memberData.php">
+                                        個人資料
+                                    </a>
+                                </div>
+                                <!-- menu 2 -->
+                                <div class="hc-top-menu">
+                                    <a class="hc-top-menu-active" href="#">
+                                        訂單查詢
+                                    </a>
+                                </div>
+                                <!-- menu 3 -->
+                                <div class="hc-top-menu">
+                                    <a href="coupons_page.php">
+                                        優惠卷
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 左側頁面內容 -->
+                    <div class="hc-left-side-content">
+                        <div class="hc-left-side-container">
+                            <div class="hc-bean-menu">
+                                <!-- menu list -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ================================================= -->
+        </div>
+        <!-- rightSide page -->
+        <div class="right-side">
+            <div class="right-side-content">
+                <!-- right header -->
+                <div class="right-side-header">
+                    <!-- main icon -->
+                    <?php require_once 'tpl/mainicon.inc.php' ?>
+                    <!-- sign out -->
+                    <?php require_once 'tpl/signout.inc.php' ?>
+                </div>
+                <!-- ================================================= 新頁面加入 -->
+                <div class="hc-shopping-cart">
+                    <div class="hc-shopping-cart-container hc-shopping-bg">
+                        <!-- page title -->
+                        <div class="hc-page-title">
+                            <a href="javascript:;" class="hc-page-title-menu">
+                                <span>會員中心</span>
+                            </a>
+                            <span>/</span>
+                            <a href="javascript:;" class="hc-page-title-menu">
+                                <span>訂單查詢</span>
+                            </a>
+                        </div>
+                        <!-- table form -->
+                        <div class="hc-content-form">
+                            <!-- order list  -->
+                            <table class="hc-table">
+                                <thead>
+                                    <tr class="hc-table-title">
+                                        <th>
+                                            <h5>訂單編號</h5>
+                                        </th>
+                                        <th class="hc-hidden-xs">
+                                            <h5>狀態</h5>
+                                        </th>
+                                        <th class="hc-hidden-xs">
+                                            <h5>建立時間</h5>
+                                        </th>
+                                        <th class="hc-hidden-xs">
+                                            <h5>總計</h5>
+                                        </th>
+                                        <th class="hc-hidden-xs">
+                                            <h5>評價</h5>
+                                        </th>
+                                        <th class="hc-show-xs">
+                                            <h5>細項</h5>
+                                        </th>
+                                        <th>
+                                            <!-- trash -->
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <?php
+                                //訂單數量
+                                $count_orders = 0;
+
+                                //判斷是否登入
+                                if (isset($_SESSION['email'])) {
+                                    //取得所有與會員相關的訂單
+                                    $sql = "SELECT * FROM `orders` WHERE `email` = '{$_SESSION['email']}' ORDER BY `created_at` DESC, `order_id` DESC";
+                                    $stmt = $pdo->query($sql);
+
+                                    if ($stmt->rowCount() > 0) {
+                                        //記錄訂單數量
+                                        $count_orders = $stmt->rowCount();
+
+                                        //取得訂單資料
+                                        foreach ($stmt->fetchAll() as $obj) {
+                                ?>
+                                            <tbody class="hc-table-lists" id="hc-order-track">
+                                                <!-- order 1-->
+                                                <tr>
+                                                    <td><a href="orders_detail.php?order_id=<?= $obj['order_id'] ?>"><?= $obj['order_id'] ?></a></td>
+                                                    <!-- hide -->
+                                                    <td class="hc-hidden-xs text-success">已送達</td>
+                                                    <td class="hc-hidden-xs"><?= $obj['created_at'] ?></td>
+                                                    <td class="hc-hidden-xs">NT$<?= $obj['total'] ?></td>
+                                                    <td class="hc-hidden-xs">已評價</td>
+                                                    <!-- /////////// -->
+                                                    <td class="hc-show-xs">
+                                                        <div class="hc-show-item text-success">已送達</div>
+                                                        <div class="hc-show-item"><?= $obj['created_at'] ?></div>
+                                                        <div class="hc-show-item">NT$<?= $obj['total'] ?></div>
+                                                        <div class="hc-show-item">已評價</div>
+                                                    </td>
+                                                    <td class="hc-td-trash"><a href="javascript:;" class="hc-trash"><i class="fas fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                <?php
+                                        }
+                                    }
+                                }
+                                ?>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="6" class="text-end" style="color: white;">共 <?= $count_orders ?> 筆訂單</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- send button -->
+                        <div class="hc-hc-shopping-btn-grp d-flex justify-content-center">
+                            <div class="hc-payment">
+                                <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">回首頁</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================================================= -->
+
+                <?php require_once 'tpl/foot.inc.php' ?>

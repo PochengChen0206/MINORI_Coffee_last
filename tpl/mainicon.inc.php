@@ -14,9 +14,11 @@
         <i class="fas fa-shopping-bag"></i>
     </div>
     <div class="main-icon"><i class="fas fa-gift"></i></div>
-    <div class="main-icon search" method="get" action="search.php">
-        <!-- input -->
-        <input type="text" class="input search-input" placeholder="Search..." name="keyword">
+    <div class="main-icon search">
+        <form method="get" action="search.php">
+            <!-- input -->
+        <input type="search" class="input search-input" placeholder="請輸入商品名稱" name="keyword">
+        </form>
         <!-- button -->
         <button class="icon-btn search-btn">
             <i class="fas fa-search"></i>

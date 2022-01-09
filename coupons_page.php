@@ -23,7 +23,7 @@
                                 </div>
                                 <!-- menu 2 -->
                                 <div class="hc-top-menu">
-                                    <a href="javascript:;">
+                                    <a href="order_tracking_page.php">
                                         訂單查詢
                                     </a>
                                 </div>
@@ -69,7 +69,7 @@
                         <!-- page title -->
                         <div class="hc-page-title">
                             <a href="javascript:;" class="hc-page-title-menu">
-                                <span>首頁</span>
+                                <span>會員中心</span>
                             </a>
                             <span>/</span>
                             <a href="javascript:;" class="hc-page-title-menu">

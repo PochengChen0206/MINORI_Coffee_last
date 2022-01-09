@@ -37,7 +37,7 @@
                                     <label for="pwd_login" class="col-sm-2 col-form-label text-secondary">密碼</label>
                                     <div class="col-12">
                                         <input type="password" class="form-control" id="pwd_login" placeholder="請輸入您的密碼">
-                                        <a href="#">
+                                        <a href="password_forget.php" style="text-decoration: none;">
                                             <p class="text-right text-secondary mt-2">忘記密碼</p>
                                         </a>
                                     </div>

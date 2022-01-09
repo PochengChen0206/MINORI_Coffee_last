@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="./css/coupons_page.css">
     <link rel="stylesheet" href="./css/classpage.css">
+    <link rel="stylesheet" href="./css/order_tracking_page.css">
 
 </head>
 
