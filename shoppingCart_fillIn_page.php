@@ -18,9 +18,9 @@ $_SESSION['form'] = [];
 $_SESSION['form']['cartage'] = $_POST['cartage'];
 $_SESSION['form']['amountTotal'] = $_POST['amountTotal'];
 $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
 ?>
 
 <?php require_once 'tpl/head.inc.php' ?>

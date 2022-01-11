@@ -21,9 +21,9 @@ $_SESSION['form']['invoice_type'] = $_POST['invoice_type'];
 $_SESSION['form']['invoice_carrier'] = $_POST['invoice_carrier'];
 $_SESSION['form']['invoice_carrier_number'] = $_POST['invoice_carrier_number'];
 $_SESSION['form']['amountTotal_m'] = $_POST['amountTotal_m'];
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
 
 //信用卡資訊
 $card_number = sha1($_POST['card_number_1'] . $_POST['card_number_2'] . $_POST['card_number_3'] . $_POST['card_number_4']);
