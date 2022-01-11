@@ -10,7 +10,7 @@ $obj['info'] = '取得代碼失敗';
 if(isset($_POST['code'])) {
     try {
         //查詢代碼
-        $sql = "SELECT 1
+        $sql = "SELECT `percentage`
                 FROM `coupon`
                 WHERE `email` = '{$_SESSION['email']}'
                 AND `code` = '{$_POST['code']}'
@@ -24,6 +24,8 @@ if(isset($_POST['code'])) {
             //修改預設訊息
             $obj['success'] = true;
             $obj['info'] = "確認成功";
+            $obj['percentage'] = $stmt->fetch()['percentage'];
+            
         }else {
             $obj['info'] = "此代碼無法使用";
         }

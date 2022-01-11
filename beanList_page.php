@@ -97,7 +97,7 @@ $offset = ($page - 1) * $numPerPage;
                     <div class="hc-bean-products-container hc-shopping-bg">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="landing_page.php" class="hc-page-title-menu">
                                 <span>首頁</span>
                             </a>
                             <span>/</span>
@@ -151,7 +151,7 @@ $offset = ($page - 1) * $numPerPage;
                                                 $arr = $stmt->fetchAll();
                                                 foreach ($arr as $obj) {
                                             ?>
-                                                    <div class="hc-pds-card-control col-lg-4 col-md-6 col-6 ">
+                                                    <div class="hc-pds-card-control col-lg-4 col-md-6 col-12 ">
                                                         <div class="hc-pds-card">
                                                             <div class="hc-pds-img">
                                                                 <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">

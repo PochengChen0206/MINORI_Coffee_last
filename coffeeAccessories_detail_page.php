@@ -62,7 +62,7 @@ $arr = $pdo->query($sql)->fetchAll();
                     <div class="hc-bean-products-container hc-shopping-bg">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="landing_page.php" class="hc-page-title-menu">
                                 <span>首頁</span>
                             </a>
                             <span>/</span>

@@ -2,7 +2,7 @@
 <?php session_start(); ?>
 
 <?php
-//如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
+// 如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
 // if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email']) ) {
 //     header("location: shoppingCart_page.php");
 //     exit();
@@ -11,7 +11,7 @@
 
 <?php
 //將表單資訊寫入session ，之後建立訂單時，一起變成訂單資訊
-$_SESSION['form'] = [];
+// $_SESSION['form'] = [];
 $_SESSION['form']['recipient_email'] = $_POST['recipient_email'];
 $_SESSION['form']['recipient_name'] = $_POST['recipient_name'];
 $_SESSION['form']['recipient_phone_number'] = $_POST['recipient_phone_number'];
@@ -20,57 +20,10 @@ $_SESSION['form']['recipient_comments'] = $_POST['recipient_comments'];
 $_SESSION['form']['invoice_type'] = $_POST['invoice_type'];
 $_SESSION['form']['invoice_carrier'] = $_POST['invoice_carrier'];
 $_SESSION['form']['invoice_carrier_number'] = $_POST['invoice_carrier_number'];
-$_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
-?>
-
-<?php require_once 'tpl/head.inc.php' ?>
-
-<!-- 檢查是否成功印出 -->
-<!-- <?php
-        echo "<pre>";
-        print_r($_SESSION);
-        echo "</pre>";
-        ?> -->
-
-<?php
-# 總額 與優惠後總額
-$total = 0;
-$total_m = 0;
-
-#計算總價
-foreach ($_SESSION['cart'] as $key => $obj) {
-    $total += $obj['prod_price'] * $obj['prod_qty'];
-}
-
-/**
- * 先讓 總額 跟 優惠後總額一樣，
- * 之後看看是否使用優惠代碼，來決定實際的優惠後總額
- */
-$total_m = $total;
-
-// echo $total;
-
-//判斷優惠代碼是否存在，有的話則計算優惠後總額
-if ($_SESSION['form']['coupon_code'] != '') {
-    $sqlCoupon = "SELECT * FROM `coupon` WHERE `code` = '{$_SESSION['form']['coupon_code']}' AND `isUsed` = 0";
-    $stmt = $pdo->query($sqlCoupon);
-    if ($stmt->rowCount() > 0) {
-        //取得優惠資訊
-        $obj = $stmt->fetch();
-
-        //計算優惠後總額
-        $total_m = ceil($total * $obj['percentage']); //ceil無條件進位
-
-        //將優惠券設定為已使用
-        $sqlUpdate = "UPDATE`coupon` SET `isUsed` = 1 WHERE `code` = '{$_SESSION['form']['coupon_code']}'";
-        $pdo->query($sqlUpdate);
-    }
-}
-
-//確認輸出
-// echo $total;
-// echo "<br>";
-// echo $total_m;
+$_SESSION['form']['amountTotal_m'] = $_POST['amountTotal_m'];
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 
 //信用卡資訊
 $card_number = sha1($_POST['card_number_1'] . $_POST['card_number_2'] . $_POST['card_number_3'] . $_POST['card_number_4']);
@@ -80,9 +33,9 @@ $card_holder = sha1($_POST['card_holder']);
 
 // 建立訂單
 $sql = "INSERT INTO `orders`( 
-    `email`, `recipient_email`, `recipient_name`, `recipient_phone_number`, `recipient_address`, `recipient_comments`, `invoice_type`, `invoice_carrier`, `invoice_carrier_number`, `coupon_code`, `card_number`, `card_valid_date`, `card_ccv`, `card_holder`, `total`, `total_m`) 
+    `email`, `recipient_email`, `recipient_name`, `recipient_phone_number`, `recipient_address`, `recipient_comments`, `invoice_type`, `invoice_carrier`, `invoice_carrier_number`, `coupon_code`, `card_number`, `card_valid_date`, `card_ccv`, `card_holder`, `cartage`, `total`, `total_m`) 
     VALUES (
-    '{$_SESSION['email']}','{$_SESSION['form']['recipient_email']}','{$_SESSION['form']['recipient_name']}','{$_SESSION['form']['recipient_phone_number']}','{$_SESSION['form']['recipient_address']}','{$_SESSION['form']['recipient_comments']}','{$_SESSION['form']['invoice_type']}','{$_SESSION['form']['invoice_carrier']}','{$_SESSION['form']['invoice_carrier_number']}','{$_SESSION['form']['coupon_code']}','{$card_number}','{$card_valid_date}','{$card_ccv}','{$card_holder}',{$total},{$total_m}
+    '{$_SESSION['email']}','{$_SESSION['form']['recipient_email']}','{$_SESSION['form']['recipient_name']}','{$_SESSION['form']['recipient_phone_number']}','{$_SESSION['form']['recipient_address']}','{$_SESSION['form']['recipient_comments']}','{$_SESSION['form']['invoice_type']}','{$_SESSION['form']['invoice_carrier']}','{$_SESSION['form']['invoice_carrier_number']}','{$_SESSION['form']['coupon_code']}','{$card_number}','{$card_valid_date}','{$card_ccv}','{$card_holder}', {$_SESSION['form']['cartage']},{$_SESSION['form']['amountTotal']},{$_SESSION['form']['amountTotal_m'] }
     )";
 $stmt = $pdo->query($sql);
 
@@ -104,7 +57,7 @@ if ($stmt->rowCount() > 0) {
     //處理商品明細資訊
     foreach ($_SESSION['cart'] as $key => $obj) {
         //計算小計
-        $subtotal = $obj['prod_price'] * $obj['prod_qty'];
+        $subtotal = $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'];
 
         //新增商品明細
         $sqlDetail = "INSERT INTO`orders_detail`(`order_id`, `prod_id`, `prod_name`, `prod_price`, `prod_size`, `prod_grind`, `prod_qty`, `prod_subtotal`)VALUE(
@@ -115,6 +68,8 @@ if ($stmt->rowCount() > 0) {
     }
 }
 ?>
+
+<?php require_once 'tpl/head.inc.php' ?>
 
 <!-- main page -->
 <div class="container-fluid main-page">
@@ -143,7 +98,7 @@ if ($stmt->rowCount() > 0) {
                     <div class="hc-shopping-cart-container hc-shopping-bg">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="landing_page.php" class="hc-page-title-menu">
                                 <span>首頁</span>
                             </a>
                             <span>/</span>
@@ -192,8 +147,8 @@ if ($stmt->rowCount() > 0) {
                                         <td>
                                             <?php
                                             // 存取上一頁的總計
-                                            $amountTotal = $_SESSION['amountTotal']; ?>
-                                            <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
+                                            $amountTotal_m = $_SESSION['form']['amountTotal_m']; ?>
+                                            <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal_m ?></span></div>
                                         </td>
                                     </tr>
                             </table>
@@ -271,14 +226,13 @@ if ($stmt->rowCount() > 0) {
                         <!-- send button -->
                         <div class="hc-hc-shopping-btn-grp d-flex justify-content-between">
                             <div class="hc-payment">
-                                <a href="shoppingCart_fillIn_page.php" type="button" class="btn btn-outline-warning px-5">查看訂單</a>
+                                <a href="order_tracking_page.php" type="button" class="btn btn-outline-warning px-5">查看訂單</a>
                             </div>
                             <div class="hc-payment">
                                 <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" type="button" class="btn btn-outline-warning px-5">繼續逛商品</a>
                             </div>
                         </div>
                         <?php
-                        
                         //刪除購物車 和 表單資訊
                         unset($_SESSION['cart'], $_SESSION['form']);
                         ?>

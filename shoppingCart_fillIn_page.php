@@ -7,25 +7,22 @@
 //     header("location: shoppingCart_page.php");
 //     exit();
 // }
-?>
 
-<?php
 //如果購物車與、商品索引與數量同時存在，則修改指定索引的商品數量
 if (isset($_POST['qty'])) {
     foreach ($_POST['qty'] as $index => $value) {
         $_SESSION['cart'][$index]['prod_qty'] = $_POST['qty'][$index];
     }
 }
+$_SESSION['form'] = [];
+$_SESSION['form']['cartage'] = $_POST['cartage'];
+$_SESSION['form']['amountTotal'] = $_POST['amountTotal'];
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
 ?>
 
 <?php require_once 'tpl/head.inc.php' ?>
-
-<!-- 檢查是否成功印出 -->
-<!-- <?php
-        echo "<pre>";
-        print_r($_SESSION);
-        echo "</pre>";
-        ?> -->
 
 <!-- main page -->
 <div class="container-fluid main-page">
@@ -54,7 +51,7 @@ if (isset($_POST['qty'])) {
                     <div class="hc-shopping-cart-container hc-shopping-bg">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="landing_page.php" class="hc-page-title-menu">
                                 <span>首頁</span>
                             </a>
                             <span>/</span>
@@ -121,15 +118,41 @@ if (isset($_POST['qty'])) {
                                                         </div>
                                                     </td>
                                                 </tr> -->
-
-                                        <!-- <?php require_once 'tpl/coupon_account.inc.php' ?> -->
                                         <tr>
                                             <td>結帳金額:</td>
                                             <td>
                                                 <?php
                                                 // 存取上一頁的總計
-                                                $amountTotal = $_SESSION['amountTotal']; ?>
-                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
+                                                $amountTotal = $_SESSION['form']['amountTotal'];
+
+
+                                                $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
+                                                // print_r($_SESSION);
+                                                $amountTotal_m = 0;
+
+                                                //判斷優惠代碼是否存在，有的話則計算優惠後總額
+                                                if ($_SESSION['form']['coupon_code'] != '') {
+                                                    $sqlCoupon = "SELECT * FROM `coupon` WHERE `code` = '{$_SESSION['form']['coupon_code']}' AND `isUsed` = 0";
+                                                    $stmt = $pdo->query($sqlCoupon);
+
+                                                    if ($stmt->rowCount() > 0) {
+                                                        //取得優惠資訊
+                                                        $obj = $stmt->fetch();
+
+                                                        //計算優惠後總額
+                                                        $amountTotal_m = ceil($amountTotal * $obj['percentage']); //ceil無條件進位
+
+                                                        //將優惠券設定為已使用
+                                                        // $sqlUpdate = "UPDATE`coupon` SET `isUsed` = 1 WHERE `code` = '{$_SESSION['form']['coupon_code']}'";
+                                                        // $pdo->query($sqlUpdate);
+                                                    }
+                                                }else{
+                                                    $amountTotal_m = $amountTotal;
+                                                }
+                                                ?>
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal_m ?></span>
+                                                <input type="hidden" name="amountTotal_m" value="<?= $amountTotal_m ?>">
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>

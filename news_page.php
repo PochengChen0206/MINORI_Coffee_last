@@ -31,7 +31,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content">
+            <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat;">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->
@@ -42,13 +42,13 @@
                 <!-- ================================================= 新頁面加入 -->
                 <div class="hc-news-products">
                     <!-- box -->
-                    <div class="hc-box-title" style="background: url(./img/bg-gold.jpg);">
+                    <div class="hc-box-title-news" style="background: url(./img/bg-gold.jpg);">
                     </div>
                     <!-- news products -->
                     <div class="hc-news-products-container hc-shopping-bg">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="landing_page.php" class="hc-page-title-menu">
                                 <span>首頁</span>
                             </a>
                             <span>/</span>
@@ -84,9 +84,9 @@
                                     </div>
                                 </div>
                                 <!-- products content -->
-                                <div class="hc-products-grp">
+                                <div class="hc-products-grp-news">
                                     <!-- product grp 1 -->
-                                    <div class="hc-products-grp-control d-flex justify-content-center">
+                                    <div class="hc-products-grp-control-news d-flex justify-content-center">
                                         <!-- 免費試飲包 -->
                                         <div class="hc-news-section">
                                             <div class="hc-products-title">

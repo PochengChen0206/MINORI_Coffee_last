@@ -44,7 +44,7 @@
                 <!-- icon top -->
                 <div class="header-top-icon">
                     <div class="logo-img top-icon" style="width: 50px;">
-                        <a href="javascript:;">
+                        <a href="landing_page.php">
                             <img src="./img/logo-m.png" alt="" style="width:100%;">
                         </a>
                     </div>
@@ -162,7 +162,7 @@
                     </div>
                     <!-- logo -->
                     <div class="logo-img " style="width: 50px;">
-                        <a href="javascript:;"><img src="./img/logo-m.png" alt="" style="width:100%;"></a>
+                        <a href="landing_page.php"><img src="./img/logo-m.png" alt="" style="width:100%;"></a>
                     </div>
                     <!-- user -->
                     <div class="main-icon"><button class="icon-btn user-m-btn"><i class="fas fa-user"></i></button>

@@ -24,13 +24,13 @@ $('button.btn_plus').click(function (event) {
     } else {
         cartage = 120;
     }
-    
+
     $('span#total').text(total);
     $('span#cartage').text(cartage);
 
     let difference = 0;
     if (total > 1300) {
-        $('span#difference').addClass('pc-hide');  
+        $('span#difference').addClass('pc-hide');
     } else {
         $('span#difference').removeClass('pc-hide');
         difference = 1300 - total;
@@ -67,16 +67,16 @@ $('button.btn_minus').click(function (event) {
     } else {
         cartage = 120;
     }
-    
+
     $('span#total').text(total);
     $('span#cartage').text(cartage);
 
     let difference = 0;
-    
+
     if (total > 1300) {
         $('span#difference').addClass('pc-hide');
     } else {
-        
+
         $('span#difference').removeClass('pc-hide');
         difference = 1300 - total;
     }
@@ -94,9 +94,9 @@ $('a.delete').click(function (event) {
     let index = $(this).attr('data-index');
 
     $.get('deleteItem.php', { index: index }, function (obj) {
-        if(obj['success']){
+        if (obj['success']) {
             location.reload();
-        }else{
+        } else {
             alert(`${obj['info']}`);
         }
         console.log(obj);
@@ -106,31 +106,40 @@ $('a.delete').click(function (event) {
 
 
 //確認優惠代碼是否可用
-$('a#check_coupon_code').click(function(event){
+$('a#check_coupon_code').click(function (event) {
     event.preventDefault();
 
     //取得優惠代碼
     let code = $('input[name="coupon_code"]').val();
 
+    
+
     //如果代碼為空，就不往下執行
-    if(code == ''){
+    if (code == '') {
         alert(`請輸入優惠代碼`);
         return false;
     };
 
-    $.post("checkCoupon.php", {code:code}, function(obj){
+    $.post("checkCoupon.php", { code: code }, function (obj) {
         alert(`${obj['info']}`);
+        // alert(`${obj['percentage']}`);
         console.log(obj);
-    },'json')
+
+        let amountTotal = $('span#amountTotal').text();
+        amountTotal_m = Math.ceil(parseInt(amountTotal) * obj['percentage']);
+        $('span#amountTotal').text(amountTotal_m);
+        // alert(amountTotal_m);
+    }, 'json')
 });
 
 
+
 //填入收件人資訊
-$('input#member_info').click(function(event){
+$('input#member_info').click(function (event) {
     // console.log('hi');
 
     $.get('autofillin.php', function (obj) {
-    
+
         $('input#r-email').val(obj.data.email);
         $('input#r-name').val(obj.data.name);
         $('input#r-phnum').val(obj.data.phone_number);
@@ -145,7 +154,7 @@ $('input#member_info').click(function(event){
 });
 
 //點擊icon進入購物車
-$('div.shopping-card').click(function(event){
+$('div.shopping-card').click(function (event) {
     // console.log('hi');
     location.href = 'shoppingCart_page.php';
 });

@@ -159,7 +159,7 @@ img{
 .hc-news-container{
     padding: 0 50px;
 }
-.hc-box-title{
+.hc-box-title-ldp{
     position: absolute;
     top: 0;
     left: 0;
@@ -298,7 +298,7 @@ img{
 .hc-card-content-price{
     margin-bottom: 8px;
 }
-.hc-pds-card-mid{
+.hc-pds-card-mid-ldp{
     transform: translateY(60px);
 }
 /* ///////////////////// course */
@@ -489,14 +489,14 @@ img{
 }
 /* //////////////////////////////// RWD */
 @media screen and (max-width:1200px) {
-    .hc-box-title{
+    .hc-box-title-ldp{
         width: 40%;
     }
     .hc-pds{
         padding: 0;
         margin: 0;
     }
-    .hc-pds-card-mid{
+    .hc-pds-card-mid-ldp{
         transform: translateY(0px);
     }
     .hc-pds-card{
@@ -522,7 +522,7 @@ img{
     .left-side{
         display: none;
     }
-    .hc-box-title{
+    .hc-box-title-ldp{
         width: 40%;
     }
     /* /////////////////////////////// right page */
@@ -540,7 +540,7 @@ img{
         padding: 0;
         justify-content: center;
     }
-    .hc-pds-card-mid{
+    .hc-pds-card-mid-ldp{
         margin-top: 0;
     }
     .hc-pds-card{

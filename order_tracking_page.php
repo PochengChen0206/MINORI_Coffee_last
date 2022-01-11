@@ -152,7 +152,7 @@
                         <!-- send button -->
                         <div class="hc-hc-shopping-btn-grp d-flex justify-content-center">
                             <div class="hc-payment">
-                                <a href="javascript:;" type="button" class="btn btn-outline-warning px-5">回首頁</a>
+                                <a href="landing_page.php" type="button" class="btn btn-outline-warning px-5">回首頁</a>
                             </div>
                         </div>
                     </div>

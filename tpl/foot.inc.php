@@ -3,7 +3,7 @@
     <div class="footer_container">
         <div div class="col-lg-12 footer-content">
             <div class="footer-logo" style="width:20%">
-                <a href=""><img src="./img/logo.png" alt="" style="width: 100%;"></a>
+                <a href="landing_page.php"><img src="./img/logo.png" alt="" style="width: 100%;"></a>
             </div>
             <ul class="text-center d-flex flex-column ">
                 <li class="link_list">
@@ -70,7 +70,7 @@
     <div class="footer-m-content">
         <div class="col-md-6 col-12 footer-img pt-5 pb-5">
             <div class="img-container" style="width: 25%; margin: 0 auto;">
-                <a href=""><img src="./img/logo.png" alt="" style="width: 100%;"></a>
+                <a href="landing_page.php"><img src="./img/logo.png" alt="" style="width: 100%;"></a>
             </div>
         </div>
         <div class="col-md-6 col-12 d-flex text-center pb-5">

@@ -29,7 +29,7 @@
                     <div class="hc-shopping-cart-container hc-shopping-bg">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="landing_page.php" class="hc-page-title-menu">
                                 <span>首頁</span>
                             </a>
                             <span>/</span>
@@ -90,7 +90,6 @@
                                                 // 計算小計
                                                 $total += $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'];
                                         ?>
-
                                                 <!-- 表單切換 -->
                                                 <tr>
                                                     <td><?= $obj['prod_name'] ?></td>
@@ -164,7 +163,9 @@
                                         </tr>
                                         <tr>
                                             <td>運費:</td>
-                                            <td><span class="pc-cartage" id="cartage"><?= $cartage ?></span></td>
+                                            <td><span class="pc-cartage" id="cartage"><?= $cartage ?></span>
+                                            <input type="hidden" name="cartage" value="<?= $cartage ?>">
+                                        </td>
                                         </tr>
                                         <tr>
                                             <td><label for="colFormLabel">優惠代碼:</label>
@@ -181,9 +182,10 @@
                                         <tr>
                                             <td>結帳金額:</td>
                                             <td>
-                                                <?php $amountTotal = $total + $cartage;
-                                                ?>
-                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span></div>
+                                                <?php $amountTotal = $total + $cartage; ?>
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal?></span>
+                                                <input type="hidden" name="amountTotal" value="<?= $amountTotal ?>">
+                                            </div>
                                                 <?php
                                                 // 建立$_SESSION將總金額傳到下一頁
                                                 $_SESSION['amountTotal'] = $amountTotal;
@@ -210,6 +212,26 @@
                                     <button type="submit" class="btn btn-outline-warning px-5" id="pc-goToPay">前往結帳</button>
                                 </div>
                             </div>
+
+                            <!-- <div class="modal " id="prevent_Nextpage" tabindex="-1" aria-labelledby="prevent_Nextpage" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="prevent_Nextpage_Label">您尚未登入帳號</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-md-12">
+                                                    <p>結帳前請您先登入帳號或是註冊帳號。</p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <a type="button" class="btn btn-outline-warning px-5" href='loginSignup.php' id="pc-signup">登入</a>
+                                                    <a type="button" class="btn btn-outline-warning px-5" href='signupPage.php' id="pc-signup">註冊</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
                         </form>
                     </div>
                 </div>

@@ -14,7 +14,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content">
+            <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat;">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->
@@ -62,9 +62,9 @@
                                                     <h5>淬鍊過後的美好，讓生活更豐富充實</h5>
                                                 </div>
                                                 <div class="hc-about-content-p">
-                                                    <p> Minori源自日文実りある，実り(みのり)有充實、豐富的意思，希望透過每一杯咖啡的傳遞，啟發並滋潤人們的心靈，把全世界最好咖啡分享給你們。
+                                                    <p> MINORI源自日文実りある，実り(みのり)有充實、豐富的意思，希望透過每一杯咖啡的傳遞，啟發並滋潤人們的心靈，把全世界最好咖啡分享給你們。
                                                     </p>
-                                                    <p> 1998年四位愛好咖啡的同好共同創立於台灣，嚴選咖啡風味與品質把關，提供不同產區的精品咖啡豆，讓對咖啡挑嘴的您，可以一次滿足您的需求。
+                                                    <p> 2020年四位愛好咖啡的同好共同創立於台灣，嚴選咖啡風味與品質把關，提供不同產區的精品咖啡豆，讓對咖啡挑嘴的您，可以一次滿足您的需求。
                                                     </p>
                                                 </div>
                                             </div>
@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="hc-main-title-en d-flex flex-row-reverse mb-4">NEWS</div>
                                         <!-- box -->
-                                        <div class="hc-box-title" style="background: url(./img/bg-gold.jpg);">
+                                        <div class="hc-box-title-ldp" style="background: url(./img/bg-gold.jpg);">
                                         </div>
                                         <!-- cards -->
                                         <div class="hc-news-cards d-flex justify-content-center align-item-center">
@@ -114,7 +114,7 @@
                                                         <a href="javascript:;"><span>咖啡專欄</span> </a>
                                                     </div>
                                                     <div class="hc-child-card2 hc-child-card hc-news-bg-02">
-                                                        <a href="javascript:;"><span>試飲包</span> </a>
+                                                        <a href="news_page.php"><span>試飲包</span> </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,7 +165,7 @@
                                         </div>
                                         <div class="hc-main-title-en d-flex flex-row-reverse mb-4">COFFEE</div>
                                         <!-- box -->
-                                        <div class="hc-box-title" style="background: url(./img/bg-gold.jpg);">
+                                        <div class="hc-box-title-ldp" style="background: url(./img/bg-gold.jpg);">
                                         </div>
                                         <!-- product card -->
                                         <div class="hc-products-cards">
@@ -189,7 +189,7 @@
 
                                                 <!-- card 2 -->
                                                 <div class="hc-pds">
-                                                    <div class="hc-pds-card hc-pds-card-mid">
+                                                    <div class="hc-pds-card hc-pds-card-mid-ldp">
                                                         <div class="hc-pds-img">
                                                             <img src="./img/beans_s_004.jpg" alt="">
                                                         </div>
@@ -265,7 +265,7 @@
                                                 </div>
                                                 <!-- card 2 -->
                                                 <div class="hc-pds">
-                                                    <div class="hc-pds-card hc-pds-card-mid">
+                                                    <div class="hc-pds-card hc-pds-card-mid-ldp">
                                                         <div class="hc-pds-img">
                                                             <img src="./img/beans_s_034.jpg" alt="">
                                                         </div>
@@ -320,7 +320,7 @@
                                         </div>
                                         <div class="hc-main-title-en d-flex flex-row-reverse mb-4">COURSE</div>
                                         <!-- box -->
-                                        <div class="hc-box-title" style="background: url(./img/bg-gold.jpg);">
+                                        <div class="hc-box-title-ldp" style="background: url(./img/bg-gold.jpg);">
                                         </div>
                                         <!-- carousel -->
                                         <div class="hc-carousel">

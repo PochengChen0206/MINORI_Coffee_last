@@ -176,7 +176,7 @@ img{
     opacity: 20%;
     line-height: 1.125;
 }
-.hc-box-title{
+.hc-box-title-news{
     position: absolute;
     top: 150px;
     left: 0;
@@ -219,11 +219,11 @@ img{
     color: var(--main-color);
 }
 /* ///////////////////// products content */
-.hc-products-grp{
+.hc-products-grp-news{
     padding-top: 60px;
     width: 100%;
 }
-.hc-products-grp-control{
+.hc-products-grp-control-news{
     width: inherit;
     margin-bottom: 60px;
     display: flex;
