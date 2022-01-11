@@ -33,9 +33,9 @@ $card_holder = sha1($_POST['card_holder']);
 
 // 建立訂單
 $sql = "INSERT INTO `orders`( 
-    `email`, `recipient_email`, `recipient_name`, `recipient_phone_number`, `recipient_address`, `recipient_comments`, `invoice_type`, `invoice_carrier`, `invoice_carrier_number`, `coupon_code`, `card_number`, `card_valid_date`, `card_ccv`, `card_holder`, `cartage`, `total`, `total_m`) 
+    `email`, `recipient_email`, `recipient_name`, `recipient_phone_number`, `recipient_address`, `recipient_comments`, `invoice_type`, `invoice_carrier`, `invoice_carrier_number`, `coupon_code`, `card_number`, `card_valid_date`, `card_ccv`, `card_holder`, `cartage`, `total`, `total_m` ) 
     VALUES (
-    '{$_SESSION['email']}','{$_SESSION['form']['recipient_email']}','{$_SESSION['form']['recipient_name']}','{$_SESSION['form']['recipient_phone_number']}','{$_SESSION['form']['recipient_address']}','{$_SESSION['form']['recipient_comments']}','{$_SESSION['form']['invoice_type']}','{$_SESSION['form']['invoice_carrier']}','{$_SESSION['form']['invoice_carrier_number']}','{$_SESSION['form']['coupon_code']}','{$card_number}','{$card_valid_date}','{$card_ccv}','{$card_holder}', {$_SESSION['form']['cartage']},{$_SESSION['form']['amountTotal']},{$_SESSION['form']['amountTotal_m'] }
+    '{$_SESSION['email']}','{$_SESSION['form']['recipient_email']}','{$_SESSION['form']['recipient_name']}','{$_SESSION['form']['recipient_phone_number']}','{$_SESSION['form']['recipient_address']}','{$_SESSION['form']['recipient_comments']}','{$_SESSION['form']['invoice_type']}','{$_SESSION['form']['invoice_carrier']}','{$_SESSION['form']['invoice_carrier_number']}','{$_SESSION['form']['coupon_code']}','{$card_number}','{$card_valid_date}','{$card_ccv}','{$card_holder}', {$_SESSION['form']['cartage']},{$_SESSION['form']['amountTotal']}, {$_SESSION['form']['amountTotal_m']}
     )";
 $stmt = $pdo->query($sql);
 
@@ -67,6 +67,12 @@ if ($stmt->rowCount() > 0) {
         $pdo->query($sqlDetail);
     }
 }
+
+$cartTemp = $_SESSION['cart'];
+$formTemp = $_SESSION['form'];
+
+//刪除購物車 和 表單資訊
+unset($_SESSION['cart'], $_SESSION['form']);
 ?>
 
 <?php require_once 'tpl/head.inc.php' ?>
@@ -147,7 +153,7 @@ if ($stmt->rowCount() > 0) {
                                         <td>
                                             <?php
                                             // 存取上一頁的總計
-                                            $amountTotal_m = $_SESSION['form']['amountTotal_m']; ?>
+                                            $amountTotal_m = $formTemp['amountTotal_m']; ?>
                                             <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal_m ?></span></div>
                                         </td>
                                     </tr>
@@ -162,8 +168,8 @@ if ($stmt->rowCount() > 0) {
                                 </thead>
                                 <tbody class="hc-table-lists hc-tbody-credit" id="hc-credit">
                                     <?php
-                                    if (isset($_SESSION['cart'])) {
-                                        foreach ($_SESSION['cart'] as $key => $obj) {
+                                    if (isset($cartTemp)) {
+                                        foreach ($cartTemp as $key => $obj) {
                                     ?>
                                             <tr>
                                                 <td><?= $obj['prod_name'] ?></td>
@@ -192,7 +198,7 @@ if ($stmt->rowCount() > 0) {
                                         <td>收件人姓名:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <?= $_SESSION['form']['recipient_name'] ?>
+                                                <?= $formTemp['recipient_name'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -200,7 +206,7 @@ if ($stmt->rowCount() > 0) {
                                         <td>Email:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <?= $_SESSION['form']['recipient_email'] ?>
+                                                <?= $formTemp['recipient_email'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -208,7 +214,7 @@ if ($stmt->rowCount() > 0) {
                                         <td>電話:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <?= $_SESSION['form']['recipient_phone_number'] ?>
+                                                <?= $formTemp['recipient_phone_number'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -216,7 +222,7 @@ if ($stmt->rowCount() > 0) {
                                         <td>地址:</td>
                                         <td>
                                             <div class="col-sm-12 p-0">
-                                                <?= $_SESSION['form']['recipient_address'] ?>
+                                                <?= $formTemp['recipient_address'] ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -232,10 +238,6 @@ if ($stmt->rowCount() > 0) {
                                 <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" type="button" class="btn btn-outline-warning px-5">繼續逛商品</a>
                             </div>
                         </div>
-                        <?php
-                        //刪除購物車 和 表單資訊
-                        unset($_SESSION['cart'], $_SESSION['form']);
-                        ?>
                     </div>
                 </div>
                 <!-- ================================================= -->

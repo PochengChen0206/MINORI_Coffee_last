@@ -1,12 +1,19 @@
-//增加商品數量(購物車)
-$('button.btn_plus').click(function (event) {
+//增加商品數量(購物車)(同時對加減btn做判斷)
+$('button.btn_plus, button.btn_minus').click(function (event) {
     // 計算數量
     let btn = $(this);
     let index = btn.attr('data-index');
     let prod_price = btn.attr('data-prod-price');
     let input_qty = $(`input.qty[data-index="${index}"]`);
-    let prod_times = btn.attr('data-prod-times')
-    input_qty.val(parseInt(input_qty.val()) + 1);
+    let prod_times = btn.attr('data-prod-times');
+    //透過btn的長度作為判斷true 或是false，btn_plus的順序為最後一個next()為0，所以length為0當作false判斷
+    if(btn.next().length){
+        if (parseInt(input_qty.val()) - 1 < 1) return false;
+        input_qty.val(parseInt(input_qty.val()) - 1);
+    }
+    else{
+        input_qty.val(parseInt(input_qty.val()) + 1);
+    }
 
     //修改商品金額
     $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
@@ -16,8 +23,10 @@ $('button.btn_plus').click(function (event) {
 
     // 更新總計  取得每一個index的element
     $(`input.qty`).each(function (index, element) {
-        total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * prod_times);
+        total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * $(element).attr('data-prod-times'));
+        // console.log(total);
     });
+    
 
     if (total > 1300) {
         cartage = 0
@@ -39,52 +48,53 @@ $('button.btn_plus').click(function (event) {
 
     let amountTotal = total + cartage;
     $('span#amountTotal').text(amountTotal);
+    $('#inputAmountTotal').val(amountTotal);
 });
 
-//減少商品數量(購物車)
-$('button.btn_minus').click(function (event) {
-    let btn = $(this);
-    let index = btn.attr('data-index');
-    let prod_price = btn.attr('data-prod-price');
-    let input_qty = $(`input.qty[data-index="${index}"]`);
-    let prod_times = btn.attr('data-prod-times');
-    if (parseInt(input_qty.val()) - 1 < 1) return false;
-    input_qty.val(parseInt(input_qty.val()) - 1);
+//減少商品數量(購物車)(原始德倫老師版)
+// $('button.btn_minus').click(function (event) {
+    // let btn = $(this);
+    // let index = btn.attr('data-index');
+    // let prod_price = btn.attr('data-prod-price');
+    // let input_qty = $(`input.qty[data-index="${index}"]`);
+    // let prod_times = btn.attr('data-prod-times');
+    // if (parseInt(input_qty.val()) - 1 < 1) return false;
+    // input_qty.val(parseInt(input_qty.val()) - 1);
 
-    //修改商品金額
-    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
+    // //修改商品金額
+    // $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
 
-    let total = 0;
-    let cartage = 0;
+    // let total = 0;
+    // let cartage = 0;
 
-    // 更新總計
-    $(`input.qty`).each(function (index, element) {
-        total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * prod_times);
-    });
+    // // 更新總計
+    // $(`input.qty`).each(function (index, element) {
+    //     total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * $(element).attr('data-prod-times'));
+    // });
 
-    if (total > 1300) {
-        cartage = 0
-    } else {
-        cartage = 120;
-    }
+    // if (total > 1300) {
+    //     cartage = 0
+    // } else {
+    //     cartage = 120;
+    // }
 
-    $('span#total').text(total);
-    $('span#cartage').text(cartage);
+    // $('span#total').text(total);
+    // $('span#cartage').text(cartage);
 
-    let difference = 0;
+    // let difference = 0;
 
-    if (total > 1300) {
-        $('span#difference').addClass('pc-hide');
-    } else {
+    // if (total > 1300) {
+    //     $('span#difference').addClass('pc-hide');
+    // } else {
 
-        $('span#difference').removeClass('pc-hide');
-        difference = 1300 - total;
-    }
-    $('span#difference').text(difference);
+    //     $('span#difference').removeClass('pc-hide');
+    //     difference = 1300 - total;
+    // }
+    // $('span#difference').text(difference);
 
-    let amountTotal = total + cartage;
-    $('span#amountTotal').text(amountTotal);
-});
+    // let amountTotal = total + cartage;
+    // $('span#amountTotal').text(amountTotal);
+// });
 
 //刪除購物車內商品
 $('a.delete').click(function (event) {
@@ -123,11 +133,13 @@ $('a#check_coupon_code').click(function (event) {
     $.post("checkCoupon.php", { code: code }, function (obj) {
         alert(`${obj['info']}`);
         // alert(`${obj['percentage']}`);
-        console.log(obj);
+        // console.log(obj);
 
         let amountTotal = $('span#amountTotal').text();
         amountTotal_m = Math.ceil(parseInt(amountTotal) * obj['percentage']);
         $('span#amountTotal').text(amountTotal_m);
+        // $('#inputAmountTotal').val(amountTotal_m);
+
         // alert(amountTotal_m);
     }, 'json')
 });

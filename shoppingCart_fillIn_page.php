@@ -17,6 +17,7 @@ if (isset($_POST['qty'])) {
 $_SESSION['form'] = [];
 $_SESSION['form']['cartage'] = $_POST['cartage'];
 $_SESSION['form']['amountTotal'] = $_POST['amountTotal'];
+$_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
@@ -106,29 +107,27 @@ echo "</pre>";
                                         </tr>
                                     </thead>
                                     <tbody class="hc-table-lists hc-tbody-credit">
-                                        <!-- <tr>
-                                                    <td><label for="colFormLabel">優惠代碼:</label>
-                                                    </td>
-                                                    <td class="d-flex">
-                                                        <div class="col-8 p-0">
-                                                            <input type="text" class="form-control" name="coupon_code" placeholder="(請輸入優惠代碼)">
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <a href="#" class="btn btn-outline-warning" id="check_coupon_code">確認</a>
-                                                        </div>
-                                                    </td>
-                                                </tr> -->
+                                        <tr>
+                                            <td>優惠券代碼:</td>
+                                            <td>
+                                                <?php
+                                                if (isset($_SESSION['form']['coupon_code'])) {
+                                                    echo $_SESSION['form']['coupon_code'];
+                                                } else {
+                                                    echo "未使用優惠券代碼";
+                                                }
+                                                ?>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>結帳金額:</td>
                                             <td>
-                                                <?php
-                                                // 存取上一頁的總計
+                                            <?php
                                                 $amountTotal = $_SESSION['form']['amountTotal'];
+                                                
 
-
-                                                $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
-                                                // print_r($_SESSION);
                                                 $amountTotal_m = 0;
+                                                $amountTotal_m = $amountTotal;
 
                                                 //判斷優惠代碼是否存在，有的話則計算優惠後總額
                                                 if ($_SESSION['form']['coupon_code'] != '') {
@@ -146,8 +145,6 @@ echo "</pre>";
                                                         // $sqlUpdate = "UPDATE`coupon` SET `isUsed` = 1 WHERE `code` = '{$_SESSION['form']['coupon_code']}'";
                                                         // $pdo->query($sqlUpdate);
                                                     }
-                                                }else{
-                                                    $amountTotal_m = $amountTotal;
                                                 }
                                                 ?>
                                                 <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal_m ?></span>

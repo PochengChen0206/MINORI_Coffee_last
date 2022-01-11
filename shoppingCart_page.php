@@ -102,7 +102,7 @@
                                                         <button class="btn_minus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-minus"></i>
                                                         </button>
                                                         <!-- 數量 -->
-                                                        <input type="text" class="form-control qty mx-2" style="width: 40%;" name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" value="<?= $obj['prod_qty'] ?>">
+                                                        <input type="text" class="form-control qty mx-2" style="width: 40%;" name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>" value="<?= $obj['prod_qty'] ?>">
                                                         <!-- 增加商品 -->
                                                         <button class="btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-plus"></i>
                                                         </button>
@@ -183,8 +183,8 @@
                                             <td>結帳金額:</td>
                                             <td>
                                                 <?php $amountTotal = $total + $cartage; ?>
-                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal?></span>
-                                                <input type="hidden" name="amountTotal" value="<?= $amountTotal ?>">
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span>
+                                                <input type="hidden" name="amountTotal" id="inputAmountTotal" value="<?= $amountTotal ?>">
                                             </div>
                                                 <?php
                                                 // 建立$_SESSION將總金額傳到下一頁
