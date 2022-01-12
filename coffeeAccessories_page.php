@@ -34,7 +34,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                 </div>
 
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
+                                    <a class="hc-top-menu-active" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
                                 </div>
                             </div>
                         </div>

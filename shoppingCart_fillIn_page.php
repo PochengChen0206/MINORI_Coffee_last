@@ -90,7 +90,7 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
                                                     <td class="hc-hidden-xs"><?= $obj['prod_size'] ?></td>
                                                     <td class="hc-hidden-xs"><?= $obj['prod_grind'] ?></td>
                                                     <td class="hc-hidden-xs">數量<?= $obj['prod_qty'] ?></td>
-                                                    <td class="hc-hidden-xs">NT$<?= $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'] ?></td>
+                                                    <td class="hc-hidden-xs">NT$<?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?></td>
                                                 </tr>
                                         <?php
                                             }
@@ -147,7 +147,7 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
                                                     }
                                                 }
                                                 ?>
-                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal_m ?></span>
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= number_format($amountTotal_m) ?></span>
                                                 <input type="hidden" name="amountTotal_m" value="<?= $amountTotal_m ?>">
                                                 </div>
                                             </td>

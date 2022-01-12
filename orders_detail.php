@@ -60,8 +60,9 @@
                 </div>
                 <!-- ================================================= 新頁面加入 -->
                 <?php
-                if (isset($_SESSION['email'])) {
-                    $sql = "SELECT * FROM`orders` WHERE `email` = '{$_SESSION['email']}'";
+                if (isset($_GET['order_id'])) {
+                    $sql = "SELECT * FROM`orders` WHERE `order_id` = '{$_GET['order_id']}'";
+
                     $stmt = $pdo->query($sql);
 
                     if ($stmt->rowCount() > 0) {
@@ -102,7 +103,7 @@
                                                 <tr>
                                                     <td>付款金額:</td>
                                                     <td>
-                                                        <div class="hc-total">NT$<span><?= $obj['total_m'] ?></span>
+                                                        <div class="hc-total">NT$<span><?= number_format($obj['total_m']) ?></span>
                                                     </div>
                                                     </td>
                                                 </tr>
@@ -198,19 +199,22 @@
                                             ?>
                                             <tbody class="hc-table-lists" id="hc-lists">
                                                 <!-- 表單切換 -->
+                                                <?php
+                                                $prod_price_m = $obj2['prod_price'] * $obj2['prod_times']
+                                                ?>
                                                 <tr>
                                                     <td><?= $obj2['prod_name'] ?></td>
                                                     <td class="hc-hidden-xs"><?= $obj2['prod_size'] ?></td>
                                                     <td class="hc-hidden-xs"><?= $obj2['prod_grind'] ?></td>
                                                     <td class="hc-hidden-xs"><?= $obj2['prod_qty'] ?></td>
-                                                    <td class="hc-hidden-xs">NT$<span><?= $obj2['prod_price'] ?></span></td>
-                                                    <td class="hc-hidden-xs">NT$<span><?= $obj2['prod_subtotal'] ?></span></td>
+                                                    <td class="hc-hidden-xs">NT$<span><?= number_format($prod_price_m) ?></span></td>
+                                                    <td class="hc-hidden-xs">NT$<span><?= number_format($obj2['prod_subtotal']) ?></span></td>
                                                     <td class="hc-show-xs">
                                                         <div class="hc-show-item"><?= $obj2['prod_size'] ?></div>
                                                         <div class="hc-show-item"><?= $obj2['prod_grind'] ?></div>
                                                         <div class="hc-show-item"><?= $obj2['prod_qty'] ?></div>
-                                                        <div class="hc-show-item"><?= $obj2['prod_price'] ?></div>
-                                                        <div class="hc-show-item"><?= $obj2['prod_subtotal'] ?></div>
+                                                        <div class="hc-show-item"><?= number_format($prod_price_m) ?></div>
+                                                        <div class="hc-show-item"><?= number_format($obj2['prod_subtotal']) ?></div>
                                                     </td>
                                                 </tr>
                                             </tbody>

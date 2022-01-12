@@ -124,13 +124,13 @@
                                                     <!-- hide -->
                                                     <td class="hc-hidden-xs text-success">已送達</td>
                                                     <td class="hc-hidden-xs"><?= $obj['created_at'] ?></td>
-                                                    <td class="hc-hidden-xs">NT$<?= $obj['total'] ?></td>
+                                                    <td class="hc-hidden-xs">NT$<?= number_format($obj['total']) ?></td>
                                                     <td class="hc-hidden-xs">已評價</td>
                                                     <!-- /////////// -->
                                                     <td class="hc-show-xs">
                                                         <div class="hc-show-item text-success">已送達</div>
                                                         <div class="hc-show-item"><?= $obj['created_at'] ?></div>
-                                                        <div class="hc-show-item">NT$<?= $obj['total'] ?></div>
+                                                        <div class="hc-show-item">NT$<?= number_format($obj['total']) ?></div>
                                                         <div class="hc-show-item">已評價</div>
                                                     </td>
                                                     <td class="hc-td-trash"><a href="javascript:;" class="hc-trash"><i class="fas fa-trash-alt"></i></a>

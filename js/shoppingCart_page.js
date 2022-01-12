@@ -1,3 +1,13 @@
+//讓數字加入千分位,
+function formatPrice(price){
+    return String(price)
+    .split('')
+    .reverse()
+    .reduce((prev, next, index) =>{
+        return(index % 3 ? next : next + ',') + prev;
+    });
+}
+
 //增加商品數量(購物車)(同時對加減btn做判斷)
 $('button.btn_plus, button.btn_minus').click(function (event) {
     // 計算數量
@@ -16,7 +26,7 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
     }
 
     //修改商品金額
-    $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
+    $(`span[data-index="${index}"]`).text(formatPrice(parseInt(input_qty.val()) * prod_price * prod_times));
 
     let total = 0;
     let cartage = 0;
@@ -34,7 +44,7 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
         cartage = 120;
     }
 
-    $('span#total').text(total);
+    $('span#total').text(formatPrice(total));
     $('span#cartage').text(cartage);
 
     let difference = 0;
@@ -47,7 +57,7 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
     $('span#difference').text(difference);
 
     let amountTotal = total + cartage;
-    $('span#amountTotal').text(amountTotal);
+    $('span#amountTotal').text(formatPrice(amountTotal));
     $('#inputAmountTotal').val(amountTotal);
 });
 
@@ -136,8 +146,10 @@ $('a#check_coupon_code').click(function (event) {
         // console.log(obj);
 
         let amountTotal = $('span#amountTotal').text();
+        amountTotal = amountTotal.replace(',', '');
         amountTotal_m = Math.ceil(parseInt(amountTotal) * obj['percentage']);
-        $('span#amountTotal').text(amountTotal_m);
+        $('span#amountTotal').text( formatPrice(amountTotal_m) );
+        // console.log(formatPrice(amountTotal_m));
         // $('#inputAmountTotal').val(amountTotal_m);
 
         // alert(amountTotal_m);

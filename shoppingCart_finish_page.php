@@ -11,7 +11,6 @@
 
 <?php
 //將表單資訊寫入session ，之後建立訂單時，一起變成訂單資訊
-// $_SESSION['form'] = [];
 $_SESSION['form']['recipient_email'] = $_POST['recipient_email'];
 $_SESSION['form']['recipient_name'] = $_POST['recipient_name'];
 $_SESSION['form']['recipient_phone_number'] = $_POST['recipient_phone_number'];
@@ -60,9 +59,9 @@ if ($stmt->rowCount() > 0) {
         $subtotal = $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'];
 
         //新增商品明細
-        $sqlDetail = "INSERT INTO`orders_detail`(`order_id`, `prod_id`, `prod_name`, `prod_price`, `prod_size`, `prod_grind`, `prod_qty`, `prod_subtotal`)VALUE(
+        $sqlDetail = "INSERT INTO`orders_detail`(`order_id`, `prod_id`, `prod_name`, `prod_price`, `prod_size`,`prod_times`, `prod_grind`, `prod_qty`, `prod_subtotal`)VALUE(
             '{$order_id}', {$obj['prod_id']}, '{$obj['prod_name']}', {$obj['prod_price']},
-            '{$obj['prod_size']}', '{$obj['prod_grind']}', {$obj['prod_qty']}, {$subtotal}
+            '{$obj['prod_size']}', {$obj['prod_times']}, '{$obj['prod_grind']}', {$obj['prod_qty']}, {$subtotal}
         ) ";
         $pdo->query($sqlDetail);
     }
@@ -153,8 +152,9 @@ unset($_SESSION['cart'], $_SESSION['form']);
                                         <td>
                                             <?php
                                             // 存取上一頁的總計
-                                            $amountTotal_m = $formTemp['amountTotal_m']; ?>
-                                            <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal_m ?></span></div>
+                                            $amountTotal_m = $formTemp['amountTotal_m']; 
+                                            ?>
+                                            <div class="hc-total">NT$<span id="amountTotal"><?= number_format($amountTotal_m) ?></span></div>
                                         </td>
                                     </tr>
                             </table>
@@ -176,7 +176,7 @@ unset($_SESSION['cart'], $_SESSION['form']);
                                                 <td class="hc-hidden-xs"><?= $obj['prod_size'] ?></td>
                                                 <td class="hc-hidden-xs"><?= $obj['prod_grind'] ?></td>
                                                 <td class="hc-hidden-xs">數量<?= $obj['prod_qty'] ?></td>
-                                                <td class="hc-hidden-xs">NT$<?= $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'] ?></td>
+                                                <td class="hc-hidden-xs">NT$<?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?></td>
                                             </tr>
                                     <?php
                                         }

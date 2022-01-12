@@ -1,3 +1,13 @@
+//讓數字加入千分位,
+function formatPrice(price){
+  return String(price)
+  .split('')
+  .reverse()
+  .reduce((prev, next, index) =>{
+      return(index % 3 ? next : next + ',') + prev;
+  });
+}
+
 //減少商品數量
 $('button#pc_minus').click(function (event) {
   let input_qty = $('input#qty');
@@ -130,7 +140,7 @@ $('input.prod_size').click(function(event){
   //times的值需將原本為3的值定義為4，其餘1,2就按照index()取出的值就好
   // ?是if :是else
   times = (times === 3)? 4: times;
-  $('span#detailProdPrice').text( input_prod_price.val() * times);
+  $('span#detailProdPrice').text( formatPrice(input_prod_price.val() * times));
   
 })
 

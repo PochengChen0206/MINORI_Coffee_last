@@ -109,7 +109,7 @@
                                                     </td>
                                                     <td class="hc-hidden-xs pc-cartNT" style="white-space: nowrap;">
                                                         <span data-index="<?= $key ?>">
-                                                            <?= $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'] ?>
+                                                            <?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?>
                                                         </span>
                                                     </td>
                                                     <td class="hc-show-xs">
@@ -121,7 +121,7 @@
                                                             <span><?= $obj['prod_qty'] ?></span>
                                                             <button><i class="fas fa-plus"></i></button>
                                                         </div>
-                                                        <div class="hc-show-item"><?= $obj['prod_price'] ?></div>
+                                                        <div class="hc-show-item"><?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?></div>
                                                     </td>
                                                     <td class="hc-td-trash">
                                                         <a href="javascript:;" class="hc-trash delete" data-index="<?= $key ?>"><i class="fas fa-trash-alt"></i></a>
@@ -155,7 +155,7 @@
                                     <tbody class="hc-table-lists hc-tbody-credit" id="hc-credit">
                                         <tr>
                                             <td>商品總計:</td>
-                                            <td>NT$<span id="total"><?= $total ?></span></td>
+                                            <td>NT$<span id="total"><?= number_format($total) ?></span></td>
                                         </tr>
                                         <tr>
                                             <td>運送方式:</td>
@@ -183,14 +183,14 @@
                                             <td>結帳金額:</td>
                                             <td>
                                                 <?php $amountTotal = $total + $cartage; ?>
-                                                <div class="hc-total">NT$<span id="amountTotal"><?= $amountTotal ?></span>
+                                                <div class="hc-total">NT$<span id="amountTotal"><?= number_format($amountTotal) ?></span>
                                                 <input type="hidden" name="amountTotal" id="inputAmountTotal" value="<?= $amountTotal ?>">
                                             </div>
                                                 <?php
                                                 // 建立$_SESSION將總金額傳到下一頁
                                                 $_SESSION['amountTotal'] = $amountTotal;
                                                 ?>
-                                                <div>消費滿1300元免運費</div>
+                                                <div>消費滿1,300元免運費</div>
                                                 <div>
                                                     <?php
                                                     $strClass = "pc-hide";

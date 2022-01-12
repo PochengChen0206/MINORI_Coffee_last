@@ -32,7 +32,7 @@
                             <h3 class="hc-name"><?= $obj['prod_name'] ?></h3>
                         </div>
                         <h4 class="hc-products-price">
-                            <input type="hidden" name="detail_prod_price" value="<?= $obj['prod_price'] ?>">
+                            <input type="hidden" name="detail_prod_price" value="<?= number_format($obj['prod_price']) ?>">
                             NT$<span id="detailProdPrice"><?= $obj['prod_price'] ?></span>
                         </h4>
                         <div class="hc-products-list-grp hc-flavor d-flex">
@@ -175,7 +175,7 @@
                 <!-- product grp -->
                 <div class="hc-products-grp2-control swiper-wrapper">
                     <?php
-                    if (isset($_GET['sub_cat_id'])) {
+                    if (isset($_GET['sub_cat_id']) && $_GET['sub_cat_id'] != '') {
                         $sql =
                             "SELECT `prod_id`, `prod_name`,  `prod_thumbnail`, `prod_price`
                                            FROM `relative` 

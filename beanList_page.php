@@ -9,7 +9,7 @@ $arr = $pdo->query($sql)->fetchAll();
 <?php
 //整合特定商品類別分頁的$sql字串
 $where = "";
-if(isset($_GET['sub_cat_id'])){
+if (isset($_GET['sub_cat_id']) && $_GET['sub_cat_id'] != '') {
     $where = "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}";
 }
 
@@ -55,7 +55,7 @@ $offset = ($page - 1) * $numPerPage;
                         <div class="hc-top-menu-container-pushTop">
                             <div class="hc-top-menu-control">
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
+                                    <a class="hc-top-menu-active" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
                                 </div>
 
                                 <div class="hc-top-menu">
@@ -132,50 +132,48 @@ $offset = ($page - 1) * $numPerPage;
                                 <!-- products content -->
                                 <div class="hc-products-grp">
                                     <!-- product grp 1 -->
-                                    <?php if (isset($_GET['sub_cat_id'])) { ?>
-                                        <div class="hc-products-grp-control">
-                                            <!-- product card 1 -->
-                                            <?php
-                                           $sql = 
-                                           "SELECT `prod_id`, `prod_name`,  `prod_thumbnail`, `prod_price`
+                                    <div class="hc-products-grp-control">
+                                        <!-- product card 1 -->
+                                        <?php
+                                        $sql =
+                                            "SELECT `prod_id`, `prod_name`,  `prod_thumbnail`, `prod_price`
                                            FROM `relative` 
                                            INNER JOIN `categories` 
                                            ON`relative`.`cat_id` = `categories`.`id`
                                            INNER JOIN`products`
-                                           ON`relative`.`prod_id`=`products`.`id`
-                                           WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']}
-                                           LIMIT {$offset}, {$numPerPage}";
+                                           ON`relative`.`prod_id`=`products`.`id` ";
+                                        if (isset($_GET['sub_cat_id']) && $_GET['sub_cat_id'] != '') {
+                                            $sql.= "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']} ";
+                                        }
+                                        $sql.= "LIMIT {$offset}, {$numPerPage}";
 
-                                            $stmt = $pdo->query($sql);
-                                            if ($stmt->rowCount() > 0) {
-                                                $arr = $stmt->fetchAll();
-                                                foreach ($arr as $obj) {
-                                            ?>
-                                                    <div class="hc-pds-card-control col-lg-4 col-md-6 col-12 ">
-                                                        <div class="hc-pds-card">
-                                                            <div class="hc-pds-img">
-                                                                <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= $_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">
-                                                                    <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
-                                                                </a>
+                                        $stmt = $pdo->query($sql);
+                                        if ($stmt->rowCount() > 0) {
+                                            $arr = $stmt->fetchAll();
+                                            foreach ($arr as $obj) {
+                                        ?>
+                                                <div class="hc-pds-card-control col-lg-4 col-md-6 col-12 ">
+                                                    <div class="hc-pds-card">
+                                                        <div class="hc-pds-img">
+                                                            <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= @$_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">
+                                                                <img src="<?= $obj['prod_thumbnail'] ?>" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="hc-card-content-container">
+                                                            <div class="hc-card-content-title">
+                                                                <h5><?= $obj['prod_name'] ?></h5>
                                                             </div>
-                                                            <div class="hc-card-content-container">
-                                                                <div class="hc-card-content-title">
-                                                                    <h5><?= $obj['prod_name'] ?></h5>
-                                                                </div>
-                                                                <div class="hc-card-content-price">
-                                                                    <span>NT$<?= $obj['prod_price'] ?>~</span>
-                                                                </div>
+                                                            <div class="hc-card-content-price">
+                                                                <span>NT$<?= number_format($obj['prod_price']) ?>~</span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                            <?php
-                                                }
+                                                </div>
+                                        <?php
                                             }
-                                            ?>
-                                        </div>
-                                    <?php 
-                                    }
-                                    ?>
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
