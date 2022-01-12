@@ -100,29 +100,34 @@ img{
     height: 100%;
     z-index: 2;
 }
+/*/////////// menu list */
 .hc-left-side-container{
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
-    padding: 0 100px;
 }
 .hc-bean-menu{
-    padding-top: 120px;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    padding-bottom: 60px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
 }
-/*/////////// menu list */
-.hc-bean-menu .hc-bean-menu-drop{
+.hc-bean-menu-drop{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    padding-bottom: 60px;
+    height: 200px;
+    padding: 0;
 }
 .hc-bean-menu-control{
     width: 100px;
 }
-.first-list .hc-bean-menu-list{
+.hc-bean-menu-list{
     color: var(--main-color);
     font-weight: 700;
     text-decoration: none;
@@ -131,7 +136,7 @@ img{
 .second-list{
     cursor: pointer;
 }
-.hc-bean-menu .list-drop-menu{
+.list-drop-menu{
     padding: 0;
 }
 /* ///////////////////////// rightSide page*/
@@ -169,11 +174,11 @@ img{
     opacity: 20%;
     line-height: 1.125;
 }
-.hc-box-title{
+.hc-bean-box{
     position: absolute;
     top: 150px;
     left: 0;
-    width: 40%;
+    width: 50%;
     height: 60px;
 }
 /* ///////////////////// filter */
@@ -295,17 +300,12 @@ img{
 }
 
 
-/* ///////豆單分類標題///// */
-.pc-cat-title {
-    color: var(--main-color);
-}
-
 
 /* //////////////////////////////// RWD */
 @media screen and (max-width:576px) {
     /* left side */
     .left-side{
-        height: 500px;
+        height: 700px;
         width: 100%;
     }
     .left-side-push100{

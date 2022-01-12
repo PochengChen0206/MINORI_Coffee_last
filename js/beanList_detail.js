@@ -1,11 +1,15 @@
-//讓數字加入千分位,
+//讓數字加入千分位, 要再轉成數字，避免無法計算
 function formatPrice(price){
-  return String(price)
-  .split('')
-  .reverse()
-  .reduce((prev, next, index) =>{
-      return(index % 3 ? next : next + ',') + prev;
-  });
+  //方法一
+  // return String(price)
+  // .split('')
+  // .reverse()
+  // .reduce((prev, next, index) =>{
+  //     return(index % 3 ? next : next + ',') + prev;
+  // });
+
+  //方法二
+  return String(price).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 //減少商品數量
@@ -140,8 +144,13 @@ $('input.prod_size').click(function(event){
   //times的值需將原本為3的值定義為4，其餘1,2就按照index()取出的值就好
   // ?是if :是else
   times = (times === 3)? 4: times;
-  $('span#detailProdPrice').text( formatPrice(input_prod_price.val() * times));
   
+  num=input_prod_price.val().toString();
+  num=num.replace(/,/gi, '');
+  num=parseInt(num);
+  $('span#detailProdPrice').text( formatPrice(num* times));
+
+  // console.log(a);
 })
 
 

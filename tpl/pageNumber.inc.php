@@ -22,8 +22,8 @@
                     //當目前第幾頁($page)等於顯示在網頁上的分頁號碼($i)，就加上class
                     $strClass = "";
                     if ($page == $i) $strClass = "page-link-active";
-                    //$i 列出的數字範圍，會大於「目前第幾頁」($page)減 5，以及小於「目前第幾頁」($page)加5
-                    if ($i > $page - 5 && $i < $page + 5){
+                    //$i 列出的數字範圍，會大於「目前第幾頁」($page)減 4，以及小於「目前第幾頁」($page)加4
+                    if ($i > $page - 4 && $i < $page + 4){
                 ?>
                     <!-- 中間頁 -->
                     <li class="page-item <?= $strClass ?>">

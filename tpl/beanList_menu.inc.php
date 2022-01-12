@@ -8,9 +8,10 @@
                 foreach ($arr1 as $obj1) {
                 ?>
                     <!-- 分類 -->
-                    <div class="list list-drop hc-bean-menu-drop pc-cat-title">
-                        <?= $obj1['cat_name'] ?>
-
+                    <div class="list list-drop hc-bean-menu-drop">
+                        <div class="hc-bean-menu-list">
+                            <?= $obj1['cat_name'] ?>
+                        </div>
                         <ul class="list-drop-menu" style="display: block;">
                             <!-- 分類子層  -->
                             <?php $sql = "SELECT `id`, `cat_name`

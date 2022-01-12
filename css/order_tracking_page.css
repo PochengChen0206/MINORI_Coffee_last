@@ -106,18 +106,22 @@ img{
     padding: 0 100px;
 }
 .hc-bean-menu{
-    padding-top: 120px;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    padding-bottom: 60px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
 }
 /*/////////// menu list */
-.hc-bean-menu .hc-bean-menu-drop{
+.hc-bean-menu-drop{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    padding-bottom: 60px;
+    height: 200px;
+    padding: 0;
 }
 .hc-bean-menu-control{
     width: 100px;

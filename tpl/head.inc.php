@@ -102,13 +102,13 @@
                             <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1'>豆單</a>
                         </li>
                         <li class="second-list">
-                            <a href='http://localhost/MINORI_Coffee_last/featured.php'>嚴選商品</a>
+                            <a href='featured.php'>嚴選商品</a>
                         </li>
                         <li class="second-list">
                             <a href='beanList_page.php'>熱銷排行</a>
                         </li>
                         <li class="second-list">
-                            <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=4'>咖啡器材</a>
+                            <a href='coffeeAccessories_page.php'>咖啡器材</a>
                         </li>
                     </ul>
                 </div>
@@ -217,13 +217,13 @@
                             <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1'>豆單</a>
                         </li>
                         <li class="second-list">
-                            <a href='beanList_page.php'>嚴選商品</a>
+                            <a href='featured.php'>嚴選商品</a>
                         </li>
                         <li class="second-list">
                             <a href='beanList_page.php'>熱銷排行</a>
                         </li>
                         <li class="second-list">
-                            <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=4'>咖啡器材</a>
+                            <a href='coffeeAccessories_page'>咖啡器材</a>
                         </li>
                     </ul>
                 </div>

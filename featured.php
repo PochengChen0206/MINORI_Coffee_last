@@ -312,21 +312,21 @@
     <div id="myContainer">
         <div class="ms-left">
             <div class="ms-section" id="left1">
-                <a href="javascript">
-                    <img class="scrollimg" src="./img/beans_select_005.jpg" alt="">
+                <a href="javascript" class="a-light">
+                    <img class="scrollimg" src="./img/beans_select_009.jpg" alt="">
                 </a>
             </div>
 
             <div class="ms-section" id="left2">
-                <h1>巨石莊園 藝妓</h1>
-                <h6>成熟蘋果、黑醋栗等深色水果、些許肉桂、奶油和香檳的尾韻。</h6>
-                <p>599元起</p>
-                <button class="btn btn-warning yc-btn">點我看更多</button>
+                <h1>碧雅莊園 藝妓</h1>
+                <h6>玫瑰花、荔枝、豐富的熱帶水果、奶油厚實的口感。</h6>
+                <p>1399元起</p>
+                <a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=9&prod_id=5" class="btn btn-warning yc-btn">點我看更多</a>
             </div>
 
 
             <div class="ms-section" id="left3">
-                <a href="javascript">
+                <a href="javascript" class="a-light">
                     <img class="scrollimg" src="./img/beans_select_034.jpg" alt="">
                 </a>
             </div>
@@ -334,15 +334,15 @@
 
         <div class="ms-right">
             <div class="ms-section" id="right1">
-                <h1>碧雅莊園 藝妓</h1>
-                <h6>玫瑰花、荔枝、豐富的熱帶水果、奶油厚實的口感。</h6>
-                <p>1399元起</p>
-                <button class="btn btn-warning yc-btn">點我看更多</button>
+                <h1>巨石莊園 藝妓</h1>
+                <h6>成熟蘋果、黑醋栗等深色水果、些許肉桂、奶油和香檳的尾韻。</h6>
+                <p>599元起</p>
+                <a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=9" class="btn btn-warning yc-btn">點我看更多</a>
             </div>
 
             <div class="ms-section" id="left3">
-                <a href="javascript">
-                    <img class="scrollimg" src="./img/beans_select_009.jpg" alt="">
+                <a class="a-light" href="javascript">
+                    <img class="scrollimg" src="./img/beans_select_005.jpg" alt="">
                 </a>
             </div>
 
@@ -350,7 +350,7 @@
                 <h1>凱薩路易斯 火山藝伎</h1>
                 <h6>在溫度稍微下降，哈密瓜精緻的風味出現，整體清爽、酸值迷人。</h6>
                 <p>1198元起</p>
-                <button class="btn btn-warning yc-btn">點我看更多</button>
+                <a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=34" class="btn btn-warning yc-btn">點我看更多</a>
             </div>
         </div>
     </div>
@@ -374,7 +374,7 @@
     <script src="./lib/splide.min.js"></script>
     <!-- vanilla js -->
     <script src="./lib/vanilla-tilt.js"></script>
-    
+
     <script type="text/javascript" src="./js/jquery.multiscroll.js"></script>
 
 

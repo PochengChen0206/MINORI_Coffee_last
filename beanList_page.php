@@ -48,7 +48,7 @@ $offset = ($page - 1) * $numPerPage;
         <div class="left-side">
             <!-- ================================================= 新頁面加入 -->
             <div class="left-side-push100">
-                <div class="hc-left-side-bg" style="background: url(./img/beans_l_034.jpg) no-repeat; background-size: cover;">
+                <div class="hc-left-side-bg" style="background: url(./img/beans_l_034.jpg) no-repeat; background-size: cover; background-position: center center;">
                     <!-- ======================================================================================= add content -->
                     <!-- head -->
                     <div class="hc-top-menus">
@@ -59,7 +59,7 @@ $offset = ($page - 1) * $numPerPage;
                                 </div>
 
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[1]['id'] ?>"><?= $arr[1]['cat_name'] ?></a>
+                                    <a class="hc-top-menu" href="featured.php"><?= $arr[1]['cat_name'] ?></a>
                                 </div>
 
                                 <div class="hc-top-menu">
@@ -67,7 +67,7 @@ $offset = ($page - 1) * $numPerPage;
                                 </div>
 
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
+                                    <a class="hc-top-menu" href="coffeeAccessories_page.php"><?= $arr[3]['cat_name'] ?></a>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ $offset = ($page - 1) * $numPerPage;
                 <!-- ================================================= 新頁面加入 -->
                 <div class="hc-bean-products">
                     <!-- box -->
-                    <div class="hc-box-title" style="background: url(./img/bg-gold.jpg);">
+                    <div class="hc-bean-box" style="background: url(./img/bg-gold.jpg);">
                     </div>
                     <!-- bean products -->
                     <div class="hc-bean-products-container hc-shopping-bg">

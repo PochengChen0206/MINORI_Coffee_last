@@ -32,11 +32,11 @@ overflow: hidden;
 }
 
 /* 反射效果 */
-.ms-section a:hover::before{
+.ms-section .a-light:hover::before{
 transition: all 0.5s;
 left:850px;
 }
-.ms-section a:before{
+.ms-section .a-light:before{
 content: "";                  
 position: absolute;
 width: 50px;
