@@ -122,10 +122,10 @@ $offset = ($page - 1) * $numPerPage;
                                             <div class="icon list-icon hc-filter-icon"><i class="fas fa-chevron-down"></i></div>
                                         </div>
                                         <ul class="hc-drop-lists">
-                                            <li class="hc-drop-list">價格 高-低</li>
-                                            <li class="hc-drop-list">價格 低-高</li>
-                                            <li class="hc-drop-list">日期 新-舊</li>
-                                            <li class="hc-drop-list">日期 舊-新</li>
+                                            <li class="hc-drop-list" id="price_HtoL">價格 高-低</li>
+                                            <li class="hc-drop-list" id="price_LtoH">價格 低-高</li>
+                                            <li class="hc-drop-list" id="price_NtoO">日期 新-舊</li>
+                                            <li class="hc-drop-list" id="price_OtoN">日期 舊-新</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -143,9 +143,9 @@ $offset = ($page - 1) * $numPerPage;
                                            INNER JOIN`products`
                                            ON`relative`.`prod_id`=`products`.`id` ";
                                         if (isset($_GET['sub_cat_id']) && $_GET['sub_cat_id'] != '') {
-                                            $sql.= "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']} ";
+                                            $sql .= "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']} ";
                                         }
-                                        $sql.= "LIMIT {$offset}, {$numPerPage}";
+                                        $sql .= "LIMIT {$offset}, {$numPerPage}";
 
                                         $stmt = $pdo->query($sql);
                                         if ($stmt->rowCount() > 0) {
@@ -164,7 +164,7 @@ $offset = ($page - 1) * $numPerPage;
                                                                 <h5><?= $obj['prod_name'] ?></h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$<?= number_format($obj['prod_price']) ?>~</span>
+                                                                NT$<span value="$obj['prod_price']"><?= number_format($obj['prod_price']) ?></span>~
                                                             </div>
                                                         </div>
                                                     </div>

@@ -1,11 +1,11 @@
 //讓數字加入千分位,
-function formatPrice(price){
+function formatPrice(price) {
     return String(price)
-    .split('')
-    .reverse()
-    .reduce((prev, next, index) =>{
-        return(index % 3 ? next : next + ',') + prev;
-    });
+        .split('')
+        .reverse()
+        .reduce((prev, next, index) => {
+            return (index % 3 ? next : next + ',') + prev;
+        });
 }
 
 //增加商品數量(購物車)(同時對加減btn做判斷)
@@ -17,11 +17,11 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
     let input_qty = $(`input.qty[data-index="${index}"]`);
     let prod_times = btn.attr('data-prod-times');
     //透過btn的長度作為判斷true 或是false，btn_plus的順序為最後一個next()為0，所以length為0當作false判斷
-    if(btn.next().length){
+    if (btn.next().length) {
         if (parseInt(input_qty.val()) - 1 < 1) return false;
         input_qty.val(parseInt(input_qty.val()) - 1);
     }
-    else{
+    else {
         input_qty.val(parseInt(input_qty.val()) + 1);
     }
 
@@ -36,7 +36,7 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
         total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * $(element).attr('data-prod-times'));
         // console.log(total);
     });
-    
+
 
     if (total > 1300) {
         cartage = 0
@@ -63,47 +63,47 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
 
 //減少商品數量(購物車)(原始德倫老師版)
 // $('button.btn_minus').click(function (event) {
-    // let btn = $(this);
-    // let index = btn.attr('data-index');
-    // let prod_price = btn.attr('data-prod-price');
-    // let input_qty = $(`input.qty[data-index="${index}"]`);
-    // let prod_times = btn.attr('data-prod-times');
-    // if (parseInt(input_qty.val()) - 1 < 1) return false;
-    // input_qty.val(parseInt(input_qty.val()) - 1);
+// let btn = $(this);
+// let index = btn.attr('data-index');
+// let prod_price = btn.attr('data-prod-price');
+// let input_qty = $(`input.qty[data-index="${index}"]`);
+// let prod_times = btn.attr('data-prod-times');
+// if (parseInt(input_qty.val()) - 1 < 1) return false;
+// input_qty.val(parseInt(input_qty.val()) - 1);
 
-    // //修改商品金額
-    // $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
+// //修改商品金額
+// $(`span[data-index="${index}"]`).text(parseInt(input_qty.val()) * prod_price * prod_times);
 
-    // let total = 0;
-    // let cartage = 0;
+// let total = 0;
+// let cartage = 0;
 
-    // // 更新總計
-    // $(`input.qty`).each(function (index, element) {
-    //     total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * $(element).attr('data-prod-times'));
-    // });
+// // 更新總計
+// $(`input.qty`).each(function (index, element) {
+//     total += (parseInt($(element).val()) * $(element).attr('data-prod-price') * $(element).attr('data-prod-times'));
+// });
 
-    // if (total > 1300) {
-    //     cartage = 0
-    // } else {
-    //     cartage = 120;
-    // }
+// if (total > 1300) {
+//     cartage = 0
+// } else {
+//     cartage = 120;
+// }
 
-    // $('span#total').text(total);
-    // $('span#cartage').text(cartage);
+// $('span#total').text(total);
+// $('span#cartage').text(cartage);
 
-    // let difference = 0;
+// let difference = 0;
 
-    // if (total > 1300) {
-    //     $('span#difference').addClass('pc-hide');
-    // } else {
+// if (total > 1300) {
+//     $('span#difference').addClass('pc-hide');
+// } else {
 
-    //     $('span#difference').removeClass('pc-hide');
-    //     difference = 1300 - total;
-    // }
-    // $('span#difference').text(difference);
+//     $('span#difference').removeClass('pc-hide');
+//     difference = 1300 - total;
+// }
+// $('span#difference').text(difference);
 
-    // let amountTotal = total + cartage;
-    // $('span#amountTotal').text(amountTotal);
+// let amountTotal = total + cartage;
+// $('span#amountTotal').text(amountTotal);
 // });
 
 //刪除購物車內商品
@@ -129,18 +129,19 @@ $('a.delete').click(function (event) {
 $('a#check_coupon_code').click(function (event) {
     event.preventDefault();
 
-    // let email = $('input#email').val();
-    // console.log(email);
+    //判斷是否登入帳號
+    let session_check = $('#check_session').val();
+    console.log(session_check);
 
-    // if( email == ''){
-    //     alert(`請先登入帳號`);
-    //     return false;
-    // }
+    if (session_check === '0') {
+        alert(`請先登入帳號`);
+        return false;
+    }
 
     //取得優惠代碼
     let code = $('input[name="coupon_code"]').val();
 
-    
+
 
     //如果代碼為空，就不往下執行
     if (code == '') {
@@ -149,15 +150,22 @@ $('a#check_coupon_code').click(function (event) {
     };
 
     $.post("checkCoupon.php", { code: code }, function (obj) {
-        
         alert(`${obj['info']}`);
         // alert(`${obj['percentage']}`);
-        // console.log(obj);
 
-        let amountTotal = $('span#amountTotal').text();
-        amountTotal = amountTotal.replace(',', '');
-        amountTotal_m = Math.ceil(parseInt(amountTotal) * obj['percentage']);
-        $('span#amountTotal').text( formatPrice(amountTotal_m) );
+        //判斷優惠券是否正確，如果失敗就存取原本的總計(total)價格(目前是德倫老師版下一頁的php會計算，如果是eason老師版需要php也計算才可以把值拿到下一頁)
+        if (obj['success']) {
+            let amountTotal = $('span#amountTotal').text();
+            amountTotal = amountTotal.replace(',', '');
+            amountTotal_m = Math.ceil(parseInt(amountTotal) * obj['percentage']);
+            $('span#amountTotal').text(formatPrice(amountTotal_m));
+        } else {
+            $('span#amountTotal').text($('span#total').text());
+            // $('#inputAmountTotal').val(amountTotal);
+
+        }
+
+        console.log(obj['success']);
         // console.log(formatPrice(amountTotal_m));
         // $('#inputAmountTotal').val(amountTotal_m);
 
@@ -191,4 +199,25 @@ $('div.shopping-card').click(function (event) {
     // console.log('hi');
     location.href = 'shoppingCart_page.php';
 });
+
+
+$('button#paymentCheck').on('click', function () {
+    //判斷是否登入帳號
+    let session_check = $('#check_session').val();
+    if (session_check === '1') {
+        //登入帳號的情況下點擊送值的btn
+        $('#paymentSubmit').click();
+    } else {
+        Swal.fire({
+            icon: 'warning',
+            title: '尚未登入帳號',
+            text: '請先登入帳號或註冊帳號',
+            footer: '<a href="loginSignup.php">還沒註冊帳號嗎?</a>'
+          })
+
+        // $('#exampleModal').modal('show');
+        
+    }
+});
+
 

@@ -147,6 +147,9 @@
 <script src="./lib/splide.min.js"></script>
 <!-- vanilla js -->
 <script src="./lib/vanilla-tilt.js"></script>
+<!-- sweetalert2 -->
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="./lib/sweetalert2.all.min.js"></script>
 
 
 <!-- js -->

@@ -164,8 +164,8 @@
                                         <tr>
                                             <td>運費:</td>
                                             <td><span class="pc-cartage" id="cartage"><?= $cartage ?></span>
-                                            <input type="hidden" name="cartage" value="<?= $cartage ?>">
-                                        </td>
+                                                <input type="hidden" name="cartage" value="<?= $cartage ?>">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><label for="colFormLabel">優惠代碼:</label>
@@ -176,6 +176,8 @@
                                                 </div>
                                                 <div class="col-4">
                                                     <a href="#" class="btn btn-outline-warning" id="check_coupon_code">確認</a>
+                                                    <!-- 判斷是否登入帳號 -->
+                                                    <input type="hidden" id="check_session" value="<?= isset($_SESSION['email']) ? 1 : 0; ?>">
                                                 </div>
                                             </td>
                                         </tr>
@@ -184,8 +186,8 @@
                                             <td>
                                                 <?php $amountTotal = $total + $cartage; ?>
                                                 <div class="hc-total">NT$<span id="amountTotal"><?= number_format($amountTotal) ?></span>
-                                                <input type="hidden" name="amountTotal" id="inputAmountTotal" value="<?= $amountTotal ?>">
-                                            </div>
+                                                    <input type="hidden" name="amountTotal" id="inputAmountTotal" value="<?= $amountTotal ?>">
+                                                </div>
                                                 <?php
                                                 // 建立$_SESSION將總金額傳到下一頁
                                                 $_SESSION['amountTotal'] = $amountTotal;
@@ -209,29 +211,31 @@
                                     <button type="button" onclick="history.back()" class="btn btn-outline-warning px-5">回上一頁</button>
                                 </div>
                                 <div class="hc-payment">
-                                    <button type="submit" class="btn btn-outline-warning px-5" id="pc-goToPay">前往結帳</button>
+                                    <button id="paymentSubmit" type="submit" class="d-none btn btn-outline-warning px-5">前往結帳</button>
+                                    <button type="button" class=" btn btn-outline-warning px-5" id="paymentCheck">前往結帳</button>
                                 </div>
                             </div>
 
-                            <!-- <div class="modal " id="prevent_Nextpage" tabindex="-1" aria-labelledby="prevent_Nextpage" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="prevent_Nextpage_Label">您尚未登入帳號</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="col-md-12">
-                                                    <p>結帳前請您先登入帳號或是註冊帳號。</p>
-                                                </div>
-                                                <div class="col-12">
-                                                    <a type="button" class="btn btn-outline-warning px-5" href='loginSignup.php' id="pc-signup">登入</a>
-                                                    <a type="button" class="btn btn-outline-warning px-5" href='signupPage.php' id="pc-signup">註冊</a>
-                                                </div>
-                                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

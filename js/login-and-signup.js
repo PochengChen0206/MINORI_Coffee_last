@@ -350,7 +350,7 @@ $('a#logout').click(function(event){
             alert(`${obj['info']}`);
 
             setTimeout(function() {
-                location.href = 'loginSignup.php';
+                location.href = 'landing_page.php';
                 // location.reload();
             }, 500);
         }
