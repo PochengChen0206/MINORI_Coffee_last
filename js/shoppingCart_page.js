@@ -129,6 +129,14 @@ $('a.delete').click(function (event) {
 $('a#check_coupon_code').click(function (event) {
     event.preventDefault();
 
+    // let email = $('input#email').val();
+    // console.log(email);
+
+    // if( email == ''){
+    //     alert(`請先登入帳號`);
+    //     return false;
+    // }
+
     //取得優惠代碼
     let code = $('input[name="coupon_code"]').val();
 
@@ -141,6 +149,7 @@ $('a#check_coupon_code').click(function (event) {
     };
 
     $.post("checkCoupon.php", { code: code }, function (obj) {
+        
         alert(`${obj['info']}`);
         // alert(`${obj['percentage']}`);
         // console.log(obj);

@@ -6,8 +6,15 @@ require_once 'db.inc.php';
 $obj['success'] = false;
 $obj['info'] = '取得代碼失敗';
 
+
+
 //確認代碼是否存在
 if(isset($_POST['code'])) {
+    if(!isset($_SESSION['email'])){
+        $obj['info'] = '請登入帳號';
+        // return false;
+    }
+
     try {
         //查詢代碼
         $sql = "SELECT `percentage`
