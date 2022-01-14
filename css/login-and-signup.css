@@ -125,7 +125,7 @@ img{
 }
 
 .login-and-signup form{
-    width: 100%;
+    width: 500px;
 }
 
 .pc-page-title{
@@ -137,7 +137,7 @@ img{
 }
 
 .pc-memberCenter-content{
-    width: 80%;
+    width: 500px;
 }
 
 /* /////////////////////////////////// page title */
@@ -164,5 +164,5 @@ img{
 }
 
 .signupPage-content{
-    width: 80%;
+    width: 500px;
 }

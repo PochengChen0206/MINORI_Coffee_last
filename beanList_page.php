@@ -117,16 +117,22 @@ $offset = ($page - 1) * $numPerPage;
                                     <div class="hc-main-title-en d-flex mb-4">COFFEE</div>
                                     <!-- filter -->
                                     <div class="hc-main-filter-control">
-                                        <div class="hc-main-filter d-flex">
+                                        <!-- <div class="hc-main-filter d-flex">
                                             <h6>商品排序</h6>
                                             <div class="icon list-icon hc-filter-icon"><i class="fas fa-chevron-down"></i></div>
-                                        </div>
-                                        <ul class="hc-drop-lists">
+                                        </div> -->
+                                        <select class="custom-select" id="beanList_select">
+                                            <option class="hc-drop-list" value="&field=prod_price&orderby=desc">價格 高-低</option>
+                                            <option class="hc-drop-list" value="&field=prod_price&orderby=asc">價格 低-高</option>
+                                            <option class="hc-drop-list" value="&field=created_at&orderby=desc" selected>日期 新-舊</option>
+                                            <option class="hc-drop-list" value="&field=created_at&orderby=asc">日期 舊-新</option>
+                                        </select>
+                                        <!-- <ul class="hc-drop-lists">
                                             <li class="hc-drop-list" id="price_HtoL">價格 高-低</li>
                                             <li class="hc-drop-list" id="price_LtoH">價格 低-高</li>
                                             <li class="hc-drop-list" id="price_NtoO">日期 新-舊</li>
                                             <li class="hc-drop-list" id="price_OtoN">日期 舊-新</li>
-                                        </ul>
+                                        </ul> -->
                                     </div>
                                 </div>
                                 <!-- products content -->
@@ -145,6 +151,12 @@ $offset = ($page - 1) * $numPerPage;
                                         if (isset($_GET['sub_cat_id']) && $_GET['sub_cat_id'] != '') {
                                             $sql .= "WHERE `relative`.`cat_id` = {$_GET['sub_cat_id']} ";
                                         }
+
+                                        if (isset($_GET['field']) && isset($_GET['orderby'])) {
+                                            $sql .= "ORDER BY `products`.`{$_GET['field']}` {$_GET['orderby']} ";
+                                            // $sql. = "WHERE `relative`.`pr` = {$_GET['prod_price']} ORDER BY DESC ";
+                                        }
+
                                         $sql .= "LIMIT {$offset}, {$numPerPage}";
 
                                         $stmt = $pdo->query($sql);

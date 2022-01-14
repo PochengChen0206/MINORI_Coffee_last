@@ -329,9 +329,10 @@ $('button#btn_login').click(function (event) {
             alert(`${obj['info']}`);
             //當成功訊息執行時，等數秒，執行自訂程式
             setTimeout(function () {
-                location.href = 'memberData.php';
+                //回到登入前的上一頁
+                history.back();
                 // location.reload();
-            }, 1000);
+            }, 500);
         } else {
             alert(`${obj['info']}`);
         }

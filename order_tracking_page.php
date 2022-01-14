@@ -50,7 +50,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content">
+            <div class="right-side-content" style="height:100vh;">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->
@@ -122,16 +122,16 @@
                                                 <tr>
                                                     <td><a href="orders_detail.php?order_id=<?= $obj['order_id'] ?>"><?= $obj['order_id'] ?></a></td>
                                                     <!-- hide -->
-                                                    <td class="hc-hidden-xs text-success">已送達</td>
+                                                    <td class="hc-hidden-xs text-success">發送中</td>
                                                     <td class="hc-hidden-xs"><?= $obj['created_at'] ?></td>
                                                     <td class="hc-hidden-xs">NT$<?= number_format($obj['total']) ?></td>
-                                                    <td class="hc-hidden-xs">已評價</td>
+                                                    <td class="hc-hidden-xs">未填寫</td>
                                                     <!-- /////////// -->
                                                     <td class="hc-show-xs">
-                                                        <div class="hc-show-item text-success">已送達</div>
+                                                        <div class="hc-show-item text-success">發送中</div>
                                                         <div class="hc-show-item"><?= $obj['created_at'] ?></div>
                                                         <div class="hc-show-item">NT$<?= number_format($obj['total']) ?></div>
-                                                        <div class="hc-show-item">已評價</div>
+                                                        <div class="hc-show-item">未填寫</div>
                                                     </td>
                                                     <td class="hc-td-trash"><a href="javascript:;" class="hc-trash"><i class="fas fa-trash-alt"></i></a>
                                                     </td>

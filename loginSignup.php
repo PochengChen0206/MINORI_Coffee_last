@@ -42,7 +42,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-around">
+                                <div class="d-flex flex-column align-items-center">
                                     <div class="form-group">
                                         <div class="mt-2">
                                             <button type="submit" class="btn btn-outline-warning px-5" id="btn_login">登入</button>
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="mt-2">
-                                            <a type="button" class="btn btn-outline-warning px-5" href='signupPage.php' id="pc-signup">註冊</a>
+                                            <a type="button" class="text-warning px-5" href='signupPage.php' id="pc-signup">立即註冊</a>
                                         </div>
                                     </div>
                                 </div>
