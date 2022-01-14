@@ -82,6 +82,7 @@ img{
 }
 .hc-hidden-xs{
     display: table-cell;/*important*/
+    text-align: center;
 }
 .hc-content-form{
     padding-top: 30px;

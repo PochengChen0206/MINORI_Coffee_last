@@ -212,7 +212,8 @@ $('button#paymentCheck').on('click', function () {
             icon: 'warning',
             title: '尚未登入帳號',
             text: '請先登入帳號或註冊帳號',
-            footer: '<a href="loginSignup.php">還沒註冊帳號嗎?</a>'
+            confirmButtonColor:'#CC9A06',
+            footer: '<a href="loginSignup.php">登入/註冊</a>'
           })
 
         // $('#exampleModal').modal('show');

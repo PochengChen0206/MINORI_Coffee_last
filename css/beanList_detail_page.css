@@ -272,6 +272,7 @@ img{
     background-color: transparent;
     border-style: none;
     border-radius: 0;
+    color: rgba(255, 255, 255, 0.5);
 }
 .hc-input-num>input:focus{
     background-color: transparent;

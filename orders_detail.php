@@ -114,7 +114,7 @@
                                                     if( $obj['coupon_code'] != ""){
                                                         echo $obj['coupon_code'];
                                                     }else{
-                                                        echo "未使用優惠券代碼";
+                                                        echo "未使用優惠券";
                                                     }
                                                     ?>
                                                     </td>

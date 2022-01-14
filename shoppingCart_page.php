@@ -107,7 +107,7 @@
                                                         <button class="btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-plus"></i>
                                                         </button>
                                                     </td>
-                                                    <td class="hc-hidden-xs pc-cartNT" style="white-space: nowrap;">
+                                                    <td class="hc-hidden-xs pc-cartNT" width="25%" style="white-space: nowrap;">
                                                         <span data-index="<?= $key ?>">
                                                             <?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?>
                                                         </span>
@@ -181,7 +181,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="height:100px">
                                             <td>結帳金額:</td>
                                             <td>
                                                 <?php $amountTotal = $total + $cartage; ?>
