@@ -304,7 +304,7 @@ img {
     position: absolute;
     right: 50px;
     width: 180px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0);
     border-radius: 6px;
     display: none;
     z-index: 10;
@@ -375,7 +375,7 @@ img {
 .header-m{
     display: none;
     position: fixed;
-    z-index: 499;
+    z-index: 499;/*important*/
     width: 100%;
 }
 /* ////////////////////////// header-m-ly-top */

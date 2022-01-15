@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./css/order_tracking_page.css">
     <link rel="stylesheet" href="./css/landing_page.css">
     <link rel="stylesheet" href="./css/news_page.css">
+    <link rel="stylesheet" href="./css/about_page.css">
 
 </head>
 
@@ -75,7 +76,7 @@
             <div class="menu_container">
                 <!-- list -->
                 <div class="list">
-                    <a class="list-title" href="javascript:;">關於我們</a>
+                    <a class="list-title" href="about_page.php">關於我們</a>
                 </div>
                 <div class="list">
                     <a href="javascript:;">最新消息</a>

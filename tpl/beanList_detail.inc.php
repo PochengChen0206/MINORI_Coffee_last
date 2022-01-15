@@ -26,7 +26,7 @@
                     <div class="hc-main-title-en d-flex mb-4">COFFEE</div>
                 </div>
                 <!-- products content -->
-                <div class="hc-products-detail-grp">
+                <div class="hc-products-detail-grp hc-products-push-pd">
                     <div class="hc-products-detail-control">
                         <div class="hc-products-name">
                             <h3 class="hc-name"><?= $obj['prod_name'] ?></h3>

@@ -7,8 +7,8 @@
 <div class="container-fluid main-page">
     <div class="row">
         <!-- leftSide page -->
-        <div class="left-side">
-            <div class="left-side-bg">
+        <div class="left-side" style="background-color:black;">
+            <div class="left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover;">
                 <!-- ======================================================================================= add content -->
             </div>
         </div>
@@ -41,7 +41,7 @@
                                         <!-- title -->
                                         <div class="hc-main-title-control d-flex flex-row-reverse">
                                             <div class="hc-main-title d-flex">
-                                                <div class="hc-more"> <span>more</span>
+                                                <div class="hc-more"><span>more</span>
                                                     <div class="hc-line-control d-flex align-items-center">
                                                         <div class="hc-line"></div>
                                                         <div class="hc-more-icon"><a href="javascript:;">
@@ -49,16 +49,16 @@
                                                             </a></div>
                                                     </div>
                                                 </div>
-                                                <div class="hc-text"><a href="javascript:;">
+                                                <div class="hc-text"><a href="about_page.php">
                                                         <h4>關於我們</h4>
                                                     </a></div>
                                             </div>
                                         </div>
                                         <div class="hc-main-title-en d-flex flex-row-reverse mb-4">ABOUT US</div>
                                         <!-- main content -->
-                                        <div class="hc-about-content d-flex flex-row-reverse mb-4">
-                                            <div class="hc-about-content-control">
-                                                <div class="hc-about-content-title">
+                                        <div class="hc-about-content-ldp d-flex flex-row-reverse mb-4">
+                                            <div class="hc-about-content-control-ldp">
+                                                <div class="hc-about-content-title-ldp">
                                                     <h5>淬鍊過後的美好，讓生活更豐富充實</h5>
                                                 </div>
                                                 <div class="hc-about-content-p">
@@ -70,18 +70,18 @@
                                             </div>
                                         </div>
                                         <div class="hc-about-lists d-flex">
-                                            <div class="hc-about-list">
+                                            <div class="hc-about-list-ldp">
                                                 <div class="hc-about-list-img">
                                                     <img src="./img/insist_1.jpg" alt="">
                                                 </div>
                                                 <span>烘豆師精選配方咖啡豆</span>
                                             </div>
-                                            <div class="hc-about-list">
+                                            <div class="hc-about-list-ldp">
                                                 <div class="hc-about-list-img"><img src="./img/insist_2.jpg" alt="">
                                                 </div>
                                                 <span>天然無污染的新鮮食材</span>
                                             </div>
-                                            <div class="hc-about-list">
+                                            <div class="hc-about-list-ldp">
                                                 <div class="hc-about-list-img" style="background-size: cover;"><img src="./img/insist_3.jpg" alt="">
                                                 </div>
                                                 <span>在家就能品嘗嚴選咖啡</span>
@@ -122,7 +122,7 @@
                                             <div class="hc-card hc-mid-card">
                                                 <div class="hc-card-control d-flex flex-column">
                                                     <div class="hc-child-card2 hc-child-card hc-first-card hc-news-bg-03">
-                                                        <a href="javascript:;"><span>新品上市</span> </a>
+                                                        <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1&sub_cat_id=13"><span>新品上市</span> </a>
                                                     </div>
                                                     <div class="hc-child-card1 hc-child-card hc-news-bg-04">
                                                         <a href="javascript:;"><span>最新課程</span> </a>
@@ -136,7 +136,7 @@
                                                         <a href="javascript:;"><span>優惠活動</span> </a>
                                                     </div>
                                                     <div class="hc-child-card2 hc-child-card hc-news-bg-06">
-                                                        <a href="javascript:;"><span>熱銷商品</span> </a>
+                                                        <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1&sub_cat_id=9"><span>熱銷商品</span> </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -174,14 +174,14 @@
                                                 <div class="hc-pds">
                                                     <div class="hc-pds-card">
                                                         <div class="hc-pds-img">
-                                                            <img src="./img/beans_s_002.jpg" alt="">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=2"><img src="./img/beans_s_002.jpg" alt=""></a>
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5>耶加雪菲 晨之莓</h5>
+                                                                <h5>花神</h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$199 ~ NT$1,599</span>
+                                                                <span>NT$349~</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -191,14 +191,14 @@
                                                 <div class="hc-pds">
                                                     <div class="hc-pds-card hc-pds-card-mid-ldp">
                                                         <div class="hc-pds-img">
-                                                            <img src="./img/beans_s_004.jpg" alt="">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=11&prod_id=4"><img src="./img/beans_s_004.jpg" alt=""></a>
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5>耶加雪菲 晨之莓</h5>
+                                                                <h5>吉格薩</h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$199 ~ NT$1,599</span>
+                                                                <span>NT$399</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -207,14 +207,16 @@
                                                 <div class="hc-pds">
                                                     <div class="hc-pds-card">
                                                         <div class="hc-pds-img">
-                                                            <img src="./img/beans_s_013.jpg" alt="">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=13">
+                                                                <img src="./img/beans_s_013.jpg" alt="">
+                                                            </a>
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5>耶加雪菲 晨之莓</h5>
+                                                                <h5>斯里蘭卡的調酒師</h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$199 ~ NT$1,599</span>
+                                                                <span>NT$519~</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -237,7 +239,7 @@
                                                             </a></div>
                                                     </div>
                                                 </div>
-                                                <div class="hc-text"><a href="javascript:;">
+                                                <div class="hc-text"><a href="featured.php">
                                                         <h4>熱銷排行</h4>
                                                     </a></div>
                                             </div>
@@ -251,14 +253,14 @@
                                                 <div class="hc-pds">
                                                     <div class="hc-pds-card">
                                                         <div class="hc-pds-img">
-                                                            <img src="./img/beans_s_005.jpg" alt="">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=9&prod_id=5"><img src="./img/beans_s_005.jpg" alt=""></a>
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5>耶加雪菲 晨之莓</h5>
+                                                                <h5>碧雅莊園 藝妓</h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$199 ~ NT$1,599</span>
+                                                                <span>NT$1,399~</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -267,14 +269,14 @@
                                                 <div class="hc-pds">
                                                     <div class="hc-pds-card hc-pds-card-mid-ldp">
                                                         <div class="hc-pds-img">
-                                                            <img src="./img/beans_s_034.jpg" alt="">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=34"><img src="./img/beans_s_034.jpg" alt=""></a>
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5>耶加雪菲 晨之莓</h5>
+                                                                <h5>凱薩路易斯 火山藝伎</h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$199 ~ NT$1,599</span>
+                                                                <span>NT$1,198~</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -283,14 +285,14 @@
                                                 <div class="hc-pds">
                                                     <div class="hc-pds-card">
                                                         <div class="hc-pds-img">
-                                                            <img src="./img/beans_s_009.jpg" alt="">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=9"><img src="./img/beans_s_009.jpg" alt=""></a>
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5>耶加雪菲 晨之莓</h5>
+                                                                <h5>巨石莊園 藝妓</h5>
                                                             </div>
                                                             <div class="hc-card-content-price">
-                                                                <span>NT$199 ~ NT$1,599</span>
+                                                                <span>NT$599~</span>
                                                             </div>
                                                         </div>
                                                     </div>

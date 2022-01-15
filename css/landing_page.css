@@ -28,7 +28,7 @@ img{
 }
 .hc-first-page{
     width: inherit;
-    height: 580px;
+    height: 600px;
 }
 .right-side-header{
     position: absolute;
@@ -120,16 +120,17 @@ img{
     line-height: 1.125;
 }
 /* main content */
-.hc-about-content-control{
+.hc-about-content-control-ldp{
     width: 500px;
 }
-.hc-about-content-title{
+.hc-about-content-title-ldp{
     border-bottom: solid 1px var(--main-color);
     margin-bottom: 24px;
 }
-.hc-about-content-title h5{
+.hc-about-content-title-ldp h5{
     font-weight: 700;
     color: var(--main-color);
+    margin-bottom: 8px;
 }
 .hc-about-content-p{
     color: #ffff;
@@ -137,7 +138,7 @@ img{
     font-size: 1rem;
     line-height: 2.1;
 }
-.hc-about-list{
+.hc-about-list-ldp{
     padding: 8px;
     text-align: center;
     color: #ffff;
@@ -163,7 +164,7 @@ img{
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 50%;
     height: 60px;
 }
 /* cards */

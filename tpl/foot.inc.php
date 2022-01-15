@@ -77,7 +77,7 @@
             <div class="col">
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2">
-                        <a href="#" class="nav-link p-0 text-white">關於我們</a>
+                        <a href="about_page.php" class="nav-link p-0 text-white">關於我們</a>
                     </li>
                     <li class="nav-item mb-2">
                         <a href="#" class="nav-link p-0 text-white">最新消息</a>
@@ -162,6 +162,7 @@
 <script src="./js/coupons_page.js"></script>
 <script src="./js/landing_page.js"></script>
 <script src="./js/news_page.js"></script>
+<script src="./js/about_page.js"></script>
 
 </body>
 

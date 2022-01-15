@@ -320,7 +320,7 @@
             <div class="ms-section" id="left2">
                 <h1>碧雅莊園 藝妓</h1>
                 <h6>玫瑰花、荔枝、豐富的熱帶水果、奶油厚實的口感。</h6>
-                <p>1399元起</p>
+                <p>NT$1,399~</p>
                 <a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=9&prod_id=5" class="btn btn-warning yc-btn">點我看更多</a>
             </div>
 
@@ -336,7 +336,7 @@
             <div class="ms-section" id="right1">
                 <h1>巨石莊園 藝妓</h1>
                 <h6>成熟蘋果、黑醋栗等深色水果、些許肉桂、奶油和香檳的尾韻。</h6>
-                <p>599元起</p>
+                <p>NT$599~</p>
                 <a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=9" class="btn btn-warning yc-btn">點我看更多</a>
             </div>
 
@@ -349,7 +349,7 @@
             <div class="ms-section" id="right3">
                 <h1>凱薩路易斯 火山藝伎</h1>
                 <h6>在溫度稍微下降，哈密瓜精緻的風味出現，整體清爽、酸值迷人。</h6>
-                <p>1198元起</p>
+                <p>NT$1,198~</p>
                 <a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=34" class="btn btn-warning yc-btn">點我看更多</a>
             </div>
         </div>

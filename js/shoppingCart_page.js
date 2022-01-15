@@ -212,13 +212,24 @@ $('button#paymentCheck').on('click', function () {
             icon: 'warning',
             title: '尚未登入帳號',
             text: '請先登入帳號或註冊帳號',
-            confirmButtonColor:'#CC9A06',
+            confirmButtonColor: '#CC9A06',
             footer: '<a href="loginSignup.php">登入/註冊</a>'
-          })
-
-        // $('#exampleModal').modal('show');
-        
+        })
     }
+
+    // let prod_check = $('#total').val();
+
+    // if (prod_check == 0) {
+    //     Swal.fire({
+    //         icon: 'warning',
+    //         title: '購物車目前沒有商品',
+    //         text: '請先將商品加入購物車',
+    //         confirmButtonColor: '#CC9A06',
+    //         footer: '<a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1&sub_cat_id=9">立刻挑選商品</a>'
+    //     })
+    // }
 });
+
+
 
 

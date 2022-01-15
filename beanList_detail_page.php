@@ -31,7 +31,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                 <div class="hc-top-menu-container-pushTop">
                                     <div class="hc-top-menu-control">
                                         <div class="hc-top-menu">
-                                            <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
+                                            <a class="hc-top-menu-active" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
                                         </div>
 
                                         <div class="hc-top-menu">
@@ -39,11 +39,11 @@ $arr = $pdo->query($sql)->fetchAll();
                                         </div>
 
                                         <div class="hc-top-menu">
-                                            <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[2]['id'] ?>"><?= $arr[2]['cat_name'] ?></a>
+                                            <a class="hc-top-menu" href="featured.php"><?= $arr[2]['cat_name'] ?></a>
                                         </div>
 
                                         <div class="hc-top-menu">
-                                            <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
+                                            <a class="hc-top-menu" href="coffeeAccessories_page.php"><?= $arr[3]['cat_name'] ?></a>
                                         </div>
                                     </div>
                                 </div>

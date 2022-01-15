@@ -252,7 +252,7 @@ img{
 .hc-products-third-title{
     margin-bottom: 8px;
 }
-.hc-products-content{
+.hc-products-content-news{
     font-size: 1.25rem;
     line-height: 1.31;
     color: var(--font-main-color);
@@ -274,7 +274,7 @@ img{
     opacity: 50%;
     margin-right: 16px;
 }
-.hc-products-content>span{
+.hc-products-content-news>span{
     color: var(--main-color);
 }
 .hc-warning{

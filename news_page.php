@@ -67,7 +67,7 @@
                                     <!-- title -->
                                     <div class="hc-main-title-en d-flex mb-4">NEWS</div>
                                     <!-- back -->
-                                    <div class="hc-back">
+                                    <!-- <div class="hc-back">
                                         <div class="hc-back-icon-control">
                                             <a href="landing_page.html">
                                                 <div>
@@ -81,7 +81,7 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- products content -->
                                 <div class="hc-products-grp-news">
@@ -102,13 +102,13 @@
                                                 <div class="hc-products-question">
                                                     <div class="hc-products-third-title d-flex align-items-center">
                                                         <span class="hc-dot"></span>
-                                                        <div class="hc-products-content">
+                                                        <div class="hc-products-content-news">
                                                             加入會員將獲得乙次 <span>免費試飲包</span>
                                                         </div>
                                                     </div>
                                                     <div class="hc-products-third-title d-flex align-items-center">
                                                         <span class="hc-dot"></span>
-                                                        <div class="hc-products-content">
+                                                        <div class="hc-products-content-news">
                                                             點選 <span>加入購物車</span>即可體驗本月份的熱銷商品前三名
                                                         </div>
                                                     </div>
@@ -127,12 +127,12 @@
                                                     </li>
                                                     <li>
                                                         <p>
-                                                            - 如當月熱銷商品庫存不足，minori將會自動更換試飲包內容。
+                                                            - 如當月熱銷商品庫存不足，MINORI將會自動更換試飲包內容。
                                                         </p>
                                                     </li>
                                                     <li>
                                                         <p>
-                                                            - Minori保有修正﹑暫停與結束活動之權利。
+                                                            - MINORI保有修正﹑暫停與結束活動之權利。
                                                         </p>
                                                     </li>
                                                     <li>
