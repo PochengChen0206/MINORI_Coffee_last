@@ -26,7 +26,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                 </div>
 
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[1]['id'] ?>"><?= $arr[1]['cat_name'] ?></a>
+                                    <a class="hc-top-menu" href="featured.php"><?= $arr[1]['cat_name'] ?></a>
                                 </div>
 
                                 <div class="hc-top-menu">
@@ -34,7 +34,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                 </div>
 
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
+                                    <a class="hc-top-menu-active" href="coffeeAccessories_page.php"><?= $arr[3]['cat_name'] ?></a>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                 <span>首頁</span>
                             </a>
                             <span>/</span>
-                            <a href="javascript:;" class="hc-page-title-menu">
+                            <a href="coffeeAccessories_page.php" class="hc-page-title-menu">
                                 <span>咖啡器材</span>
                             </a>
                             <span>/</span>
@@ -91,7 +91,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                         <div class="hc-products-name">
                                             <h3 class="hc-name">日本Kalita手沖壺(SSW 1000)</h3>
                                         </div>
-                                        <h4 class="hc-products-price">NT$2,999</h4>
+                                        <h4 class="hc-products-price">NT$2,000</h4>
                                         <div class="hc-products-list-grp hc-flavor d-flex">
                                             <div class="hc-products-list-secondTitle">
                                                 <h5>特色</h5>
@@ -144,27 +144,31 @@ $arr = $pdo->query($sql)->fetchAll();
                                                     </div>
                                                 </div>
 
-                                                <div class="hc-products-list-grp hc-process-part2-grp d-flex">
+                                                <<div class="hc-products-list-grp hc-process-part2-grp d-flex">
                                                     <div class="hc-products-list-secondTitle">
                                                         <h5>數量</h5>
                                                     </div>
                                                     <div class="hc-process-control">
-                                                        <button class="hc-num-btn hc-plus"><i class="fas fa-plus"></i></button>
+                                                        <button class="hc-num-btn hc-minus" type="button">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
                                                         <div class="hc-input-num">
-                                                            <input type="text" class="form-control text-center" id="inputNumber" placeholder="1">
+                                                            <input type="text" class="form-control text-center" value="1">
                                                         </div>
-                                                        <button class="hc-num-btn hc-minus"><i class="fas fa-minus"></i></button>
+                                                        <button class="hc-num-btn hc-plus" type="button">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
                                                     </div>
-                                                </div>
+                                            </div>
 
-                                                <div class="hc-products-list-grp hc-process-part2-grp d-flex hc-buy">
-                                                    <div class="hc-products-list-secondTitle">
-                                                        <h5>結帳</h5>
-                                                    </div>
-                                                    <div class="hc-process-control">
-                                                        <button class="hc-shoping-btn hc-shoping-push-btn">直接購買</button>
-                                                        <button class="hc-shoping-btn"><i class="fas fa-shopping-bag"></i></button>
-                                                    </div>
+                                            <div class="hc-products-list-grp hc-process-part2-grp d-flex hc-buy">
+                                                <div class="hc-products-list-secondTitle">
+                                                    <h5>結帳</h5>
+                                                </div>
+                                                <div class="hc-process-control">
+                                                    <button type="button" class="btn btn-outline-warning px-4">立即購買</button>
+                                                    <!-- 加入購物車 -->
+                                                    <button type="button" class="btn btn-outline-warning px-4 ml-2">加入購物車</button>
                                                 </div>
                                             </div>
                                         </div>

@@ -86,7 +86,7 @@ img{
 /* mask */
 .hc-left-side-bg::before{
     content: "";
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);

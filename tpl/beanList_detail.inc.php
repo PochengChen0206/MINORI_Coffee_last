@@ -35,7 +35,7 @@
                             <input type="hidden" name="detail_prod_price" value="<?= number_format($obj['prod_price']) ?>">
                             NT$<span id="detailProdPrice"><?= number_format($obj['prod_price']) ?></span>
                         </h4>
-                        <div class="hc-products-list-grp hc-flavor d-flex">
+                        <div class="hc-products-list-grp-f hc-flavor d-flex">
                             <div class="hc-products-list-secondTitle">
                                 <h5>風味</h5>
                             </div>

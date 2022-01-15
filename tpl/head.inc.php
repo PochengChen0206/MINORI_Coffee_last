@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="./css/landing_page.css">
     <link rel="stylesheet" href="./css/news_page.css">
     <link rel="stylesheet" href="./css/about_page.css">
-
 </head>
 
 

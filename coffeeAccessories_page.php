@@ -116,7 +116,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                         <div class="hc-pds-card-control col-lg-4 col-md-6">
                                             <div class="hc-pds-card">
                                                 <div class="hc-pds-img">
-                                                    <a href="javascript:;">
+                                                    <a href="http://localhost/MINORI_Coffee_last/coffeeAccessories_detail_page.php">
                                                         <img src="./img/product_coffeeMaker_002.jpg" alt="">
                                                     </a>
                                                 </div>
