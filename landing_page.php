@@ -148,7 +148,7 @@
                                                         <a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1&sub_cat_id=13"><span>新品上市</span> </a>
                                                     </div>
                                                     <div class="hc-child-card1 hc-child-card hc-news-bg-04">
-                                                        <a href="javascript:;"><span>最新課程</span> </a>
+                                                        <a href="classpage.php"><span>最新課程</span> </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -457,7 +457,7 @@
                                     </li>
                                 <?php } ?>
                                 <li class="link_list">
-                                    <a href="javascript:;">咖啡地圖</a>
+                                    <a href="coffeemap.php">咖啡地圖</a>
                                 </li>
                                 <li class="link_list">
                                     <a href="faq.php">常見問題</a>
@@ -527,7 +527,7 @@
                                         </li>
                                     <?php } ?>
                                     <li class="nav-item mb-2">
-                                        <a href="#" class="nav-link p-0 text-white">咖啡地圖</a>
+                                        <a href="coffeemap.php" class="nav-link p-0 text-white">咖啡地圖</a>
                                     </li>
                                     <li class="nav-item mb-2">
                                         <a href="faq.php" class="nav-link p-0 text-white">常見問題</a>
@@ -547,7 +547,7 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">課程資訊</a></li>
                                     <li class="nav-item mb-2"><a href="companyclass.php" class="nav-link p-0 text-white" style="font-size: 12px;">企業包班</a></li>
-                                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">團體課程</a></li>
+                                    <li class="nav-item mb-2"><a href="groupclass.php" class="nav-link p-0 text-white" style="font-size: 12px;">團體課程</a></li>
                                     <li class="nav-item mb-2"><a href="classpage.php" class="nav-link p-0 text-white" style="font-size: 12px;">個人課程</a></li>
                                 </ul>
                             </div>
@@ -589,6 +589,7 @@
 
     <!-- js -->
     <script src="./js/index.js"></script>
+    <script src="./js/login-and-signup.js"></script>
     <script src="./js/landing_page.js"></script>
 
     </body>

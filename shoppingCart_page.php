@@ -122,12 +122,12 @@
                                                         <!-- 將購物車中的商品索引，透過 form 帶到下一頁去 -->
                                                         <input type="hidden" name="index[]" value="<?= $key ?>">
                                                         <!-- 減少商品 -->
-                                                        <button class="btn_minus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-minus"></i>
+                                                        <button class="hc-hidden-xs btn_minus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-minus"></i>
                                                         </button>
                                                         <!-- 數量 -->
-                                                        <input type="text" class="form-control qty mx-2" style="width: 40%;" name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>" value="<?= $obj['prod_qty'] ?>">
+                                                        <input type="text" class="hc-hidden-xs form-control qty table-checkout-quantity-input mx-2" name="qty[]" placeholder="" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>" value="<?= $obj['prod_qty'] ?>">
                                                         <!-- 增加商品 -->
-                                                        <button class="btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-plus"></i>
+                                                        <button class="hc-hidden-xs btn_plus" type="button" data-index="<?= $key ?>" data-prod-price="<?= $obj['prod_price'] ?>" data-prod-times="<?= $obj['prod_times'] ?>"><i class="fas fa-plus"></i>
                                                         </button>
                                                     </td>
                                                     <td class="hc-hidden-xs pc-cartNT" width="25%" style="white-space: nowrap;">
@@ -144,7 +144,11 @@
                                                             <span><?= $obj['prod_qty'] ?></span>
                                                             <button><i class="fas fa-plus"></i></button>
                                                         </div>
-                                                        <div class="hc-show-item"><?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?></div>
+                                                        <div class="hc-show-item pc-cartNT">
+                                                            <span data-index="<?= $key ?>">
+                                                                <?= number_format($obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times']) ?>
+                                                            </span>
+                                                        </div>
                                                     </td>
                                                     <td class="hc-td-trash">
                                                         <a href="javascript:;" class="hc-trash delete" data-index="<?= $key ?>"><i class="fas fa-trash-alt"></i></a>

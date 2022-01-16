@@ -112,12 +112,6 @@ img{
     color: var(--font-main-color);
     background-color: rgba(255, 255, 255, 0.2);
 }
-/* .hc-table-lists tr:first-child{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100px;
-} */
 .hc-table-lists tr td{
     padding:16px 24px;
 }
@@ -133,10 +127,22 @@ img{
     font-weight: 700;
     opacity: 50%;
 }
+.table-checkout-quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid transparent;
+    color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
 .hc-table-lists tr{
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.hc-table-lists tr td button:hover{
+.hc-table-lists tr td button:active{
     opacity: 1;
 }
 .hc-table-lists tr td span{

@@ -24,6 +24,7 @@ $('button.btn_plus, button.btn_minus').click(function (event) {
     else {
         input_qty.val(parseInt(input_qty.val()) + 1);
     }
+    console.log(input_qty);
 
     //修改商品金額
     $(`span[data-index="${index}"]`).text(formatPrice(parseInt(input_qty.val()) * prod_price * prod_times));

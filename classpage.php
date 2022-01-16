@@ -338,6 +338,7 @@
             <script src="./lib/bootstrap.bundle.min.js"></script>
             <!-- js -->
             <script src="./js/index.js"></script>
+            <script src="./js/login-and-signup.js"></script>
             <!-- bean js -->
             <script src="./js/beanList_page.js"></script>
 

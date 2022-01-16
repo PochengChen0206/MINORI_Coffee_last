@@ -377,14 +377,14 @@
                                         <div class="hc-comments d-flex align-items-center flex-column">
                                             <!-- card -->
                                             <?php
-                                            if (isset($_SESSION['email'])) {
+                                            if (isset($_GET['order_id'])) {
                                                 $sql = "SELECT `orders_detail`.`prod_name`,  `products`.`prod_thumbnail`, `email` 
                                                     FROM `orders_detail`
                                                     INNER JOIN `products`
                                                     ON `orders_detail`.`prod_id` = `products`.`id`
                                                     INNER JOIN `orders`
-                                                    ON `orders_detail`.`order_id` = `orders`.`order_id`";
-
+                                                    ON `orders_detail`.`order_id` = `orders`.`order_id`
+                                                    WHERE `orders_detail`.`order_id`= '{$_GET['order_id']}'";
                                                 $stmt = $pdo->query($sql);
                                                 if ($stmt->rowCount() > 0) {
                                                     foreach ($stmt->fetchAll() as $obj) {
@@ -699,6 +699,7 @@
     <script src="./lib/bootstrap.bundle.min.js"></script>
     <!-- js -->
     <script src="./js/index.js"></script>
+    <script src="./js/login-and-signup.js"></script>
     <!-- star js -->
     <script src="./js/star.js"></script>
 </body>

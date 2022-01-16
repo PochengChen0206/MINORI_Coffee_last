@@ -149,13 +149,13 @@
                                                     <td class="hc-hidden-xs text-success">發送中</td>
                                                     <td class="hc-hidden-xs"><?= $obj['created_at'] ?></td>
                                                     <td class="hc-hidden-xs">NT$<?= number_format($obj['total_m']) ?></td>
-                                                    <td class="hc-hidden-xs"><a href="comment_page.php">未填寫</a></td>
+                                                    <td class="hc-hidden-xs"><a href="comment_page.php?order_id=<?= $obj['order_id'] ?>">未填寫</a></td>
                                                     <!-- /////////// -->
                                                     <td class="hc-show-xs">
                                                         <div class="hc-show-item text-success">發送中</div>
                                                         <div class="hc-show-item"><?= $obj['created_at'] ?></div>
                                                         <div class="hc-show-item">NT$<?= number_format($obj['total']) ?></div>
-                                                        <div class="hc-show-item"><a href="comment_page.php">未填寫</a></div>
+                                                        <div class="hc-show-item"><a href="comment_page.php?order_id=<?= $obj['order_id'] ?>">未填寫</a></div>
                                                     </td>
                                                     <td class="hc-td-trash"><a href="javascript:;" class="hc-trash"><i class="fas fa-trash-alt"></i></a>
                                                     </td>
