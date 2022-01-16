@@ -151,13 +151,6 @@ img{
 }
 
 
-/* sign out 更改登入後使用者的名字顏色 */
-.pc-user a{
-    color: #95720C; 
-}
-
-
-
 /* 登入頁 */
 .signupPage{
     height: 100vh;

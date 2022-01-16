@@ -13,7 +13,7 @@
         </div>
         <i class="fas fa-shopping-bag"></i>
     </div>
-    <div class="main-icon"><i class="fas fa-gift"></i></div>
+    <div class="main-icon" id="get_gift"><i class="fas fa-gift"></i></div>
     <div class="main-icon search">
         <form method="get" action="search.php">
             <!-- input -->

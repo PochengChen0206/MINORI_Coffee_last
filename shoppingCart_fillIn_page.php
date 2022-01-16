@@ -1,12 +1,36 @@
 <?php require_once 'db.inc.php'; ?>
 <?php session_start(); ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINORI coffee</title>
+    <!-- bootstrap@4.6 -->
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./lib/awesome.all.min.css">
+    <!--jquery UI-->
+    <link rel="stylesheet" href="./lib/jquery-ui.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
+    <!-- splide 3.6.9 js -->
+    <link rel="stylesheet" href="./lib/splide.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/shoppingCart_page.css">
+</head>
+
 <?php
 //如果這個階段沒有購物車，或沒有登入帳號，就將頁面轉回商品確認頁
-// if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email'])) {
-//     header("location: shoppingCart_page.php");
-//     exit();
-// }
+if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 || !isset($_SESSION['email'])) {
+    header("location: shoppingCart_page.php");
+    exit();
+}
 
 //如果購物車與、商品索引與數量同時存在，則修改指定索引的商品數量
 if (isset($_POST['qty'])) {
@@ -23,7 +47,7 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
 // echo "</pre>";
 ?>
 
-<?php require_once 'tpl/head.inc.php' ?>
+<?php require_once 'tpl/header.inc.php' ?>
 
 <!-- main page -->
 <div class="container-fluid main-page">

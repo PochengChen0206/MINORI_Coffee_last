@@ -194,12 +194,6 @@ $('input#member_info').click(function (event) {
     }, 'json');
 });
 
-//點擊icon進入購物車
-$('div.shopping-card').click(function (event) {
-    // console.log('hi');
-    location.href = 'shoppingCart_page.php';
-});
-
 
 $('button#paymentCheck').on('click', function () {
     //判斷是否登入帳號

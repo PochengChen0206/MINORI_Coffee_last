@@ -259,9 +259,9 @@ img {
 }
 .search-active{
     background-color: rgb(236, 236, 236);
-    width: 150px;
+    width: 180px;
     height: 36px;
-    transform: translateX(-150px);
+    transform: translateX(-180px);
 }
 /* /////////////////////// hamburger */
 .menu-btn {
@@ -543,4 +543,9 @@ img {
     .right-side-header{
         display: none;
     }
+}
+
+/* sign out 更改登入後使用者的名字顏色 */
+.pc-user a{
+    color: #95720C; 
 }

@@ -69,7 +69,14 @@ window.onload = function () {
 };
 
 
-// $('a#pc-bean').click(function(event){
-//     event.preventDefault();
-//     location.href = 'http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1';
-// });
+//點擊禮物圖案連結至試飲包頁面
+$('div#get_gift').click(function (event) {
+    // console.log('hi');
+    location.href = 'news_page.php';
+});
+
+//點擊icon進入購物車
+$('div.shopping-card').click(function (event) {
+    // console.log('hi');
+    location.href = 'shoppingCart_page.php';
+});

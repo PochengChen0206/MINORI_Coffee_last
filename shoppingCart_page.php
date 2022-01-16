@@ -1,7 +1,30 @@
 <?php require_once 'db.inc.php'; ?>
 <?php session_start(); ?>
 
-<?php require_once 'tpl/head.inc.php' ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINORI coffee</title>
+    <!-- bootstrap@4.6 -->
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./lib/awesome.all.min.css">
+    <!--jquery UI-->
+    <link rel="stylesheet" href="./lib/jquery-ui.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
+    <!-- splide 3.6.9 js -->
+    <link rel="stylesheet" href="./lib/splide.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/shoppingCart_page.css">
+</head>
+
+<?php require_once 'tpl/header.inc.php' ?>
 <!-- main page -->
 <div class="container-fluid main-page">
     <div class="row">
