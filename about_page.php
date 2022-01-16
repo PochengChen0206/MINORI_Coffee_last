@@ -18,7 +18,7 @@
             <!-- ================================================= -->
         </div>
         <!-- rightSide page -->
-        <div class="right-side">
+        <div class="right-side" style="overflow: hidden;">
             <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat;">
                 <!-- right header -->
                 <div class="right-side-header">
