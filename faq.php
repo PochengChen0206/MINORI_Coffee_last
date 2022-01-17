@@ -51,40 +51,11 @@
                 <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat;">
                     <!-- right header -->
                     <div class="right-side-header">
-                        <!-- main icon -->
-                        <div class="r-side-header-container main-icons">
-                            <div class="main-icon"><button class="icon-btn user-btn"><i
-                                        class="fas fa-user"></i></button></div>
-                            <div class="main-icon"><i class="fas fa-gift"></i></div>
-                            <div class="main-icon shopping-card">
-                                <div class="nums">1</div> <i class="fas fa-shopping-bag"></i>
-                            </div>
-                            <div class="main-icon search">
-                                <!-- input -->
-                                <input type="text" class="input search-input" placeholder="Search...">
-                                <!-- button -->
-                                <button class="icon-btn search-btn">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- sign out -->
-                        <div class="signOut-menu dropdown-menu-sw">
-                            <div class="signOut-menu-container">
-                                <div class="user signOut-list">
-                                    <p>用戶 <a href="javascript:;">User</a></p>
-                                </div>
-                                <div class="signOut-list">
-                                    <div class="signOut-second-list">
-                                        <a href="javascript:;">登入/註冊</a>
-                                    </div>
-                                </div>
-                                <div class="signOut signOut-list">
-                                    <a href="javascript:;">登出</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- main icon  每一頁都要放不更動-->
+                    <?php require_once 'tpl/mainicon.inc.php' ?>
+                    <!-- sign out  每一頁都要放不更動-->
+                    <?php require_once 'tpl/signout.inc.php' ?>
+                </div>
                     <!-- ================================================= 新頁面加入 -->
                     <div class="hc-news-products">
                         <!-- box -->

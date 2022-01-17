@@ -181,7 +181,7 @@
                                                             </a></div>
                                                     </div>
                                                 </div>
-                                                <div class="hc-text"><a href="javascript:;">
+                                                <div class="hc-text"><a href="featured.php">
                                                         <h4>嚴選商品</h4>
                                                     </a></div>
                                             </div>
@@ -190,85 +190,6 @@
                                         <!-- box -->
                                         <div class="hc-box-title-ldp" style="background: url(./img/bg-gold.jpg);">
                                         </div>
-                                        <!-- product card -->
-                                        <div class="hc-products-cards">
-                                            <div class="hc-pds-card-control d-flex">
-                                                <!-- card 1 -->
-                                                <div class="hc-pds">
-                                                    <div class="hc-pds-card">
-                                                        <div class="hc-pds-img">
-                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=2"><img src="./img/beans_s_002.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="hc-card-content-container">
-                                                            <div class="hc-card-content-title">
-                                                                <h5>花神</h5>
-                                                            </div>
-                                                            <div class="hc-card-content-price">
-                                                                <span>NT$349~</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- card 2 -->
-                                                <div class="hc-pds">
-                                                    <div class="hc-pds-card hc-pds-card-mid-ldp">
-                                                        <div class="hc-pds-img">
-                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=11&prod_id=4"><img src="./img/beans_s_004.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="hc-card-content-container">
-                                                            <div class="hc-card-content-title">
-                                                                <h5>吉格薩</h5>
-                                                            </div>
-                                                            <div class="hc-card-content-price">
-                                                                <span>NT$399</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- card 3 -->
-                                                <div class="hc-pds">
-                                                    <div class="hc-pds-card">
-                                                        <div class="hc-pds-img">
-                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=13">
-                                                                <img src="./img/beans_s_013.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="hc-card-content-container">
-                                                            <div class="hc-card-content-title">
-                                                                <h5>斯里蘭卡的調酒師</h5>
-                                                            </div>
-                                                            <div class="hc-card-content-price">
-                                                                <span>NT$519~</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- products 2-->
-                                <div class="hc-main-products">
-                                    <div class="hc-products-container">
-                                        <!-- title -->
-                                        <div class="hc-main-title-control d-flex flex-row-reverse">
-                                            <div class="hc-main-title d-flex">
-                                                <div class="hc-more"> <span>more</span>
-                                                    <div class="hc-line-control d-flex align-items-center">
-                                                        <div class="hc-line"></div>
-                                                        <div class="hc-more-icon"><a href="javascript:;">
-                                                                <i class="fas fa-angle-right"></i>
-                                                            </a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="hc-text"><a href="featured.php">
-                                                        <h4>熱銷排行</h4>
-                                                    </a></div>
-                                            </div>
-                                        </div>
-                                        <div class="hc-main-title-en d-flex flex-row-reverse mb-4">COFFEE</div>
-
                                         <!-- product card -->
                                         <div class="hc-products-cards">
                                             <div class="hc-pds-card-control d-flex">
@@ -316,6 +237,84 @@
                                                             </div>
                                                             <div class="hc-card-content-price">
                                                                 <span>NT$599~</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- products 2-->
+                                <div class="hc-main-products">
+                                    <div class="hc-products-container">
+                                        <!-- title -->
+                                        <div class="hc-main-title-control d-flex flex-row-reverse">
+                                            <div class="hc-main-title d-flex">
+                                                <div class="hc-more"> <span>more</span>
+                                                    <div class="hc-line-control d-flex align-items-center">
+                                                        <div class="hc-line"></div>
+                                                        <div class="hc-more-icon"><a href="javascript:;">
+                                                                <i class="fas fa-angle-right"></i>
+                                                            </a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="hc-text"><a href="beans_hot.php">
+                                                        <h4>熱銷排行</h4>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                        <div class="hc-main-title-en d-flex flex-row-reverse mb-4">COFFEE</div>
+
+                                        <!-- product card -->
+                                        <div class="hc-products-cards">
+                                            <div class="hc-pds-card-control d-flex">
+                                                <!-- card 1 -->
+                                                <div class="hc-pds">
+                                                    <div class="hc-pds-card">
+                                                        <div class="hc-pds-img">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=2"><img src="./img/beans_s_002.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="hc-card-content-container">
+                                                            <div class="hc-card-content-title">
+                                                                <h5>花神</h5>
+                                                            </div>
+                                                            <div class="hc-card-content-price">
+                                                                <span>NT$349~</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- card 2 -->
+                                                <div class="hc-pds">
+                                                    <div class="hc-pds-card hc-pds-card-mid-ldp">
+                                                        <div class="hc-pds-img">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=11&prod_id=4"><img src="./img/beans_s_004.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="hc-card-content-container">
+                                                            <div class="hc-card-content-title">
+                                                                <h5>吉格薩</h5>
+                                                            </div>
+                                                            <div class="hc-card-content-price">
+                                                                <span>NT$399</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- card 3 -->
+                                                <div class="hc-pds">
+                                                    <div class="hc-pds-card">
+                                                        <div class="hc-pds-img">
+                                                            <a href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=13">
+                                                                <img src="./img/beans_s_013.jpg" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="hc-card-content-container">
+                                                            <div class="hc-card-content-title">
+                                                                <h5>斯里蘭卡的調酒師</h5>
+                                                            </div>
+                                                            <div class="hc-card-content-price">
+                                                                <span>NT$519~</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -471,10 +470,10 @@
                                     <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1'>豆單</a>
                                 </li>
                                 <li class="link_list" style="font-size:12px;">
-                                    <a href="javascript:;">嚴選商品</a>
+                                    <a href="featured.php">嚴選商品</a>
                                 </li>
                                 <li class="link_list" style="font-size:12px;">
-                                    <a href="featured.php">熱銷排行</a>
+                                    <a href="beans_hot.php">熱銷排行</a>
                                 </li>
                                 <li class="link_list" style="font-size:12px;">
                                     <a href="coffeeAccessories_page.php">咖啡器材</a>
@@ -488,7 +487,7 @@
                                     <a href="companyclass.php">企業包班</a>
                                 </li>
                                 <li class="link_list" style="font-size:12px;">
-                                    <a href="javascript:;">團體課程</a>
+                                    <a href="groupclass.php">團體課程</a>
                                 </li>
                                 <li class="link_list" style="font-size:12px;">
                                     <a href="classpage.php">個人課程</a>
@@ -538,8 +537,8 @@
                                 <ul class="nav flex-column">
                                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">所有商品</a></li>
                                     <li class="nav-item mb-2"><a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" class="nav-link p-0 text-white" style="font-size: 12px;">豆單</a></li>
-                                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">嚴選商品</a></li>
-                                    <li class="nav-item mb-2"><a href="featured.php" class="nav-link p-0 text-white" style="font-size: 12px;">熱銷排行</a></li>
+                                    <li class="nav-item mb-2"><a href="featured.php" class="nav-link p-0 text-white" style="font-size: 12px;">嚴選商品</a></li>
+                                    <li class="nav-item mb-2"><a href="beans_hot.php" class="nav-link p-0 text-white" style="font-size: 12px;">熱銷排行</a></li>
                                     <li class="nav-item mb-2"><a href="coffeeAccessories_page.php" class="nav-link p-0 text-white" style="font-size: 12px;">咖啡器材</a></li>
                                 </ul>
                             </div>

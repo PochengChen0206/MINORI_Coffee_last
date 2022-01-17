@@ -59,11 +59,11 @@ $arr = $pdo->query($sql)->fetchAll();
                                         </div>
 
                                         <div class="hc-top-menu">
-                                            <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[1]['id'] ?>"><?= $arr[1]['cat_name'] ?></a>
+                                            <a class="hc-top-menu" href="featured.php"><?= $arr[1]['cat_name'] ?></a>
                                         </div>
 
                                         <div class="hc-top-menu">
-                                            <a class="hc-top-menu" href="featured.php"><?= $arr[2]['cat_name'] ?></a>
+                                            <a class="hc-top-menu" href="beans_hot.php"><?= $arr[2]['cat_name'] ?></a>
                                         </div>
 
                                         <div class="hc-top-menu">

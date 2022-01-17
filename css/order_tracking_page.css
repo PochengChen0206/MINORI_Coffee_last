@@ -230,8 +230,9 @@ img{
     opacity: 100%;
     color: var(--font-main-color);
 }
-
-
+.order-count{
+    text-align: end;
+}
 /* //////////////////////////////// RWD */
 @media screen and (max-width:1200px) {
     .hc-shopping-cart-container{

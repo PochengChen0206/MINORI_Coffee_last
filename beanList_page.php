@@ -86,7 +86,7 @@ $offset = ($page - 1) * $numPerPage;
                                 </div>
 
                                 <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="featured.php"><?= $arr[2]['cat_name'] ?></a>
+                                    <a class="hc-top-menu" href="beans_hot.php"><?= $arr[2]['cat_name'] ?></a>
                                 </div>
 
                                 <div class="hc-top-menu">

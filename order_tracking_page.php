@@ -74,7 +74,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content" style="height:100vh;">
+            <div class="right-side-content">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->
@@ -168,7 +168,7 @@
                                 ?>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="6" class="text-end" style="color: white;">共 <?= $count_orders ?> 筆訂單</td>
+                                        <td colspan="6" class="order-count" style="color: white;">共 <?= $count_orders ?> 筆訂單</td>
                                     </tr>
                                 </tfoot>
                             </table>
