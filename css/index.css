@@ -12,6 +12,9 @@ img {
 .main-page{
     width: 100%;
 }
+body{
+    background-color: black;
+}
 /* icons */
 .icon{
     width: 18px;
@@ -334,7 +337,6 @@ img {
 .signOut-list a{
     width: 700px;
     color: #ffff;
-    opacity: 50%;
     text-decoration: none;
 }
 .signOut-list a:hover{

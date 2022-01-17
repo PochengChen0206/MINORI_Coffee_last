@@ -1,4 +1,5 @@
 window.onload = function () {
+    $('.humburger').prop('checked', false);
     // ==================== header menu
     const navSlide = function () {
         const burger_btn = document.querySelector('.humburger');
@@ -6,6 +7,12 @@ window.onload = function () {
         // 點擊 humburger 彈出menu內容
         burger_btn.addEventListener('click', function () {
             menu.classList.toggle('menu-active');
+            if ($('.menu').hasClass('menu-active')) {
+                console.log('has checked');
+                $('.humburger').prop('checked', true);
+            } else {
+                $('.humburger').prop('checked', false);
+            }
         });
     }
     navSlide();

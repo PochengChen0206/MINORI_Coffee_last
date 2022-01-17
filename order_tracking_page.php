@@ -74,7 +74,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content">
+            <div class="right-side-content" style="height: 1080px;">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->
@@ -144,12 +144,12 @@
                                             <tbody class="hc-table-lists" id="hc-order-track">
                                                 <!-- order 1-->
                                                 <tr>
-                                                    <td><a href="orders_detail.php?order_id=<?= $obj['order_id'] ?>"><?= $obj['order_id'] ?></a></td>
+                                                    <td><a class="track-num" href="orders_detail.php?order_id=<?= $obj['order_id'] ?>"><?= $obj['order_id'] ?></a></td>
                                                     <!-- hide -->
                                                     <td class="hc-hidden-xs text-success">發送中</td>
                                                     <td class="hc-hidden-xs"><?= $obj['created_at'] ?></td>
                                                     <td class="hc-hidden-xs">NT$<?= number_format($obj['total_m']) ?></td>
-                                                    <td class="hc-hidden-xs"><a href="comment_page.php?order_id=<?= $obj['order_id'] ?>">未填寫</a></td>
+                                                    <td class="hc-hidden-xs"><a class="comment-pc" href="comment_page.php?order_id=<?= $obj['order_id'] ?>">未填寫</a></td>
                                                     <!-- /////////// -->
                                                     <td class="hc-show-xs">
                                                         <div class="hc-show-item text-success">發送中</div>

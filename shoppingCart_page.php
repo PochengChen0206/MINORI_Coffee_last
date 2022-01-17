@@ -238,6 +238,7 @@
                                     <button type="button" onclick="history.back()" class="btn btn-outline-warning px-5">回上一頁</button>
                                 </div>
                                 <div class="hc-payment">
+                                    <!-- 此button不在螢幕上顯示主要為傳值到下一頁 -->
                                     <button id="paymentSubmit" type="submit" class="d-none btn btn-outline-warning px-5">前往結帳</button>
                                     <button type="button" class=" btn btn-outline-warning px-5" id="paymentCheck">前往結帳</button>
                                 </div>

@@ -38,7 +38,7 @@ if (
 
             //註冊成功
             // $coupon_code = md5( date("YmdHis") );
-            $coupon_code = "WELCOME".date("Ymd");
+            $coupon_code = "WELCOME20OFF";
             $sqlCoupon = "INSERT INTO `coupon` (`email`, `code`, `percentage`)
                 VALUE('{$_POST['email']}', '{$coupon_code}', 0.8)";
             $pdo->query($sqlCoupon);

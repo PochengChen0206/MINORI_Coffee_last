@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- rightSide page -->
-        <div class="right-side">
+        <div class="right-side" id="ldp_rightSide">
             <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat;">
                 <!-- right header -->
                 <div class="right-side-header">
@@ -48,7 +48,7 @@
                 <!-- ================================================= 新頁面加入 -->
                 <div class="hc-landing-page">
                     <div class="landing-page-content" style="background: url(./img/bg-dark.png) repeat;">
-                        <div class="hc-first-page" style="background: url(./img/main_right.jpg) no-repeat; background-size: cover;">
+                        <div class="hc-first-page hc-r-top-img" style="background: url(./img/main_right.jpg) no-repeat; background-size: cover;">
                         </div>
                         <div class="hc-first-page-bottom d-flex justify-content-center align-items-center">
                             <div class="hc-first-page-bottom-control">
@@ -367,7 +367,9 @@
                                                                                 <span>03</span>
                                                                             </div>
                                                                             <div class="slide-content-card">
-                                                                                <h5>個人課程</h5>
+                                                                                <a href="classpage.php">
+                                                                                    <h5>個人課程</h5>
+                                                                                </a>
                                                                                 <p>拉花、咖啡入門、手沖入門，愛鑽研咖啡知識的您，歡迎來與我們交流。
                                                                                 </p>
                                                                             </div>

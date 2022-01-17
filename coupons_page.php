@@ -112,29 +112,41 @@
                                     <!-- product grp 1 -->
                                     <div class="hc-coupons d-flex align-items-center flex-column">
                                         <!-- ticket card 動態生成 -->
-                                        <!-- <div class="hc-coupon-list">
-                                                <div class="hc-coupon-ticket">
-                                                    <div class="hc-coupon-ticket-bg">
-                                                        <h5 class="hc-ticket-title">折扣 NT$<span>100</span>
-                                                        </h5>
-                                                        <p>給所有商品使用</p>
-                                                    </div>
+                                        <?php
+                                        if(isset($_SESSION)){
+                                            $sql = "SELECT`code` FROM`coupon` WHERE`email` = '{$_SESSION['email']}'";
+                                            $stmt = $pdo->query($sql);
+                                            if($stmt->rowCount() > 0){
+                                                foreach($stmt->fetchAll() as $obj){
+                                        ?>
+                                        <div class="hc-coupon-list">
+                                            <div class="hc-coupon-ticket">
+                                                <div class="hc-coupon-ticket-bg">
+                                                    <h5 class="hc-ticket-title">折扣<span>20%</span>OFF
+                                                    </h5>
+                                                    <p>優惠碼<?= $obj['code'] ?></p>
                                                 </div>
-                                                <div class="hc-coupon-content">
-                                                    <p>使用期限</p>
-                                                    <div>111年12月31日</div>
-                                                    <button class="hc-coupon-btn">領取</button>
-                                                </div>
-                                            </div> -->
+                                            </div>
+                                            <div class="hc-coupon-content">
+                                                <p>使用期限</p>
+                                                <div>111年12月31日</div>
+                                                <button class="hc-coupon-btn">領取</button>
+                                            </div>
+                                        </div>
+                                        <?php
+                                            }
+                                            }
+                                         }
+                                        ?>
                                     </div>
                                 </div>
                                 <!-- show more -->
-                                <div class="hc-showMore">
+                                <!-- <div class="hc-showMore">
                                     <button class="hc-showMore-btn">Show
                                         More
                                     </button>
                                     <div class="hc-icon-down"><i class="fas fa-chevron-down"></i></div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- button -->

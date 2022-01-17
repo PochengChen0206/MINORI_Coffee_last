@@ -33,6 +33,8 @@ VanillaTilt.init(document.querySelectorAll(".hc-about-list-img"), {
 // animate
 const header = document.querySelector(".header");
 const left_bg = document.querySelector("#ldp_left_bg");
+const right_page = document.querySelector("#ldp_rightSide");
+const right_top_bg = document.querySelector(".hc-r-top-img");
 anime({
     // 目標
     targets: header,
@@ -48,9 +50,25 @@ anime({
     // 目標
     targets: left_bg,
     translateX: [-100, 0],
-    width:[0,'50%'],
     duration: 1500,// 時間
-    delay: anime.stagger(200, {start: 600}),
+    delay: anime.stagger(200, { start: 600 }),
+    easing: 'easeInOutQuad',
+    opacity: [0, 1],
+});
+anime({
+    // 目標
+    targets: right_page,
+    duration: 1500,// 時間
+    delay: anime.stagger(200, { start: 1200 }),
+    easing: 'easeInOutQuad',
+    opacity: [0, 1],
+});
+anime({
+    // 目標
+    targets: right_top_bg,
+    translateY: [-200, 0],
+    duration: 1500,// 時間
+    delay: anime.stagger(200, { start: 1600 }),
     easing: 'easeInOutQuad',
     opacity: [0, 1],
 });

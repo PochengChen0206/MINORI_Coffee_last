@@ -197,10 +197,10 @@
                                     </div>
                                     <div class="hc-card-content-container">
                                         <div class="hc-card-content-title">
-                                            <h5><?= $obj['prod_name'] ?></h5>
+                                            <h6><?= $obj['prod_name'] ?></h6>
                                         </div>
                                         <div class="hc-card-content-price">
-                                            <span>NT$<?= $obj['prod_price'] ?></span>
+                                            <span>NT$<?= number_format($obj['prod_price']) ?></span>
                                         </div>
                                     </div>
                                 </div>

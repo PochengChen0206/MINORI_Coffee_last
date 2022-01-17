@@ -28,7 +28,7 @@ img{
 }
 .hc-first-page{
     width: inherit;
-    height: 600px;
+    height: 800px;
 }
 .right-side-header{
     position: absolute;
@@ -275,11 +275,10 @@ img{
 }
 .hc-pds{
     width: 100%;
-    padding: 0 4px;
+    padding: 0 8px;
     margin-bottom: 80px;
 }
 .hc-pds-card{
-    background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
     height: 100%;
     transition: all 0.3s ease-out;

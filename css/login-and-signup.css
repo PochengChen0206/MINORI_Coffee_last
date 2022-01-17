@@ -118,6 +118,7 @@ img{
     height: 100vh;
 
 }
+
 .pc-bg-logo{
     background: url(../img/logo-bg.svg) no-repeat;
     background-position: 110% top;
@@ -158,4 +159,11 @@ img{
 
 .signupPage-content{
     width: 500px;
+}
+
+@media screen and (max-width:576px) {
+    /* 左側消失 */
+    .left-side{
+        display: none;
+    }
 }

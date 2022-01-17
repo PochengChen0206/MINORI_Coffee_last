@@ -221,6 +221,9 @@ img{
 .hc-table-lists tr td span{
     padding: 0 8px;
 }
+.orders-detail-td{
+    text-align: center;
+}
 .hc-trash{
     text-decoration: none;
     opacity: 50%;
@@ -232,6 +235,24 @@ img{
 }
 .order-count{
     text-align: end;
+}
+.track-num{
+    color: #ffff;
+    text-decoration: none;
+}
+.track-num:hover{
+    color: #ffff;
+    opacity: 0.5;
+    text-decoration: none;
+}
+.comment-pc{
+    color: var(--warning-color);
+    text-decoration: none;
+}
+.comment-pc:hover{
+    color: var(--warning-color);
+    opacity: 0.5;
+    text-decoration: none;
 }
 /* //////////////////////////////// RWD */
 @media screen and (max-width:1200px) {

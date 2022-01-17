@@ -361,7 +361,7 @@
                                 </a>
                             </div>
                             <!-- coupons products -->
-                            <div class="hc-coupons-products-content">
+                            <div class="hc-coupons-products-content" style="height: 100vh;">
                                 <div class="hc-coupons-products-content-container">
                                     <div class="hc-main-title-control d-flex justify-content-between">
                                         <!-- title -->
@@ -400,17 +400,6 @@
                                                                         <div class="d-flex">
                                                                             <h6>評價</h6>
                                                                             <div class="hc-star-icon">
-                                                                                <!-- =================================== star -->
-                                                                                <!-- <ul class="d-flex">
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                    </ul> -->
                                                                                 <div class="star-widget d-flex">
                                                                                     <div class="star-grp">
                                                                                         <input class="input" type="radio" name="rate" id="rate-5">
@@ -452,38 +441,6 @@
                                                 }
                                             }
                                             ?>
-                                            <!-- card 2-->
-                                            <!-- <div class="hc-comment-card">
-                                                <div class="hc-comment-card-control">
-                                                    <a class="hc-comment-card-link" href="javascript:;">
-                                                        <div class="hc-comment-img">
-                                                            <img src="./img/product_coffeeMaker_002.jpg" alt="">
-                                                        </div>
-                                                        <div class="hc-comment-content ">
-                                                            <h5 class="hc-comment-conten-title">水洗 蒲隆地 加賀處理廠（半磅起）</h5>
-                                                            <div class="d-flex">
-                                                                <h6>評價</h6>
-                                                                <div class="hc-star-icon">
-                                                                    <ul class="d-flex">
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6>內容</h6>
-                                                                <textarea class="hc-textarea" id="exampleFormControlTextarea1" placeholder="請分享您對於本商品的評價"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div> -->
                                         </div>
                                         <!-- show more -->
                                         <div class="hc-showMore">
@@ -495,90 +452,6 @@
                                         <!-- button -->
                                         <div class="hc-coupons-button">
                                             <a type="button" class="btn btn-outline-warning px-5 send-btn" href="javascript:;">送出</a>
-                                        </div>
-                                    </div>
-                                    <!-- products content -->
-                                    <div class="hc-products-grp hc-course-comment">
-                                        <div class="hc-comments-title-control d-flex justify-content-center">
-                                            <h4 class="hc-comments-title">課程回饋</h4>
-                                        </div>
-                                        <!-- product grp 1 -->
-                                        <div class="hc-comments d-flex align-items-center flex-column">
-                                            <!-- card -->
-                                            <div class="hc-comment-card">
-                                                <div class="hc-comment-card-control">
-                                                    <a class="hc-comment-card-link" href="javascript:;">
-                                                        <div class="hc-comment-img">
-                                                            <img src="./img/course_001.jpg" alt="">
-                                                        </div>
-                                                        <div class="hc-comment-content ">
-                                                            <h5 class="hc-comment-conten-title">手沖咖啡學｜搞懂原理，成為咖啡職人</h5>
-                                                            <div class="d-flex">
-                                                                <h6>評價</h6>
-                                                                <div class="hc-star-icon">
-                                                                    <ul class="d-flex">
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6>內容</h6>
-                                                                <textarea class="hc-textarea" id="exampleFormControlTextarea1" placeholder="請分享您對於本商品的評價"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- card 2-->
-                                            <div class="hc-comment-card">
-                                                <div class="hc-comment-card-control">
-                                                    <a class="hc-comment-card-link" href="javascript:;">
-                                                        <div class="hc-comment-img">
-                                                            <img src="./img/course_001.jpg" alt="">
-                                                        </div>
-                                                        <div class="hc-comment-content ">
-                                                            <h5 class="hc-comment-conten-title">手沖咖啡學｜搞懂原理，成為咖啡職人</h5>
-                                                            <div class="d-flex">
-                                                                <h6>評價</h6>
-                                                                <div class="hc-star-icon">
-                                                                    <ul class="d-flex">
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star hc-star-active"></i>
-                                                                        </li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                        <li><i class="fas fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6>內容</h6>
-                                                                <textarea class="hc-textarea" id="exampleFormControlTextarea1" placeholder="請分享您對於本商品的評價"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- show more -->
-                                        <div class="hc-showMore">
-                                            <button class="hc-showMore-btn">Show
-                                                More
-                                            </button>
-                                            <div class="hc-icon-down"><i class="fas fa-chevron-down"></i></div>
-                                        </div>
-                                        <!-- button -->
-                                        <div class="hc-coupons-button">
-                                            <a type="button" class="btn btn-outline-warning px-5" href="javascript:;">送出</a>
                                         </div>
                                     </div>
                                 </div>

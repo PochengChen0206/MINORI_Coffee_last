@@ -100,19 +100,23 @@ $arr = $pdo->query($sql)->fetchAll();
                             </a>
                         </div>
                         <!-- bean products -->
-                        <div class="hc-coffee-products-content">
+                        <div class="hc-coffee-products-content" style="margin-bottom: 60px;">
                             <div class="hc-coffee-products-content-container">
                                 <div class="hc-main-title-control d-flex justify-content-between">
                                     <!-- title -->
                                     <div class="hc-main-title-en d-flex mb-4">DRIPPER</div>
                                 </div>
                                 <!-- products content -->
-                                <div class="hc-products-detail-grp">
-                                    <div class="hc-products-detail-control">
-                                        <div class="hc-products-detail-img" style="width: 300px; margin-bottom: 24px;">
-                                            <img src="./img/product_coffeeMaker_002.jpg" alt="">
-                                        </div>
-
+                                <!-- products content -->
+                                <div class="hc-products-detail-grp hc-products-coffee hc-products-bottomLine">
+                                    <div class="hc-products-detail-img">
+                                        <img src="./img/product_coffeeMaker_002.jpg" alt="">
+                                    </div>
+                                    <div class="hc-products-coffee-control">
+                                        <!-- <div class="hc-products-detail-img"
+                                                style="width: 300px; margin-bottom: 24px;">
+                                                <img src="./img/product_coffeeMaker_002.jpg" alt="">
+                                            </div> -->
                                         <div class="hc-products-name">
                                             <h3 class="hc-name">日本Kalita手沖壺(SSW 1000)</h3>
                                         </div>
@@ -123,7 +127,7 @@ $arr = $pdo->query($sql)->fetchAll();
                                             </div>
                                             <p>耐熱，保溫，可用洗烘碗機清洗</p>
                                         </div>
-                                        <div class="hc-products-content hc-products-bottomLine">
+                                        <div class="hc-products-content">
                                             <div class="hc-products-content-title">
                                                 <h5>關於產品</h5>
                                             </div>
@@ -169,28 +173,20 @@ $arr = $pdo->query($sql)->fetchAll();
                                                     </div>
                                                 </div>
 
-                                                <<div class="hc-products-list-grp hc-process-part2-grp d-flex">
+                                                <div class="hc-products-list-grp hc-process-part2-grp d-flex">
                                                     <div class="hc-products-list-secondTitle">
                                                         <h5>數量</h5>
                                                     </div>
                                                     <div class="hc-process-control">
-                                                        <button class="hc-num-btn hc-minus" type="button">
-                                                            <i class="fas fa-minus"></i>
-                                                        </button>
+                                                        <button class="hc-num-btn hc-plus"><i class="fas fa-minus "></i></button>
                                                         <div class="hc-input-num">
-                                                            <input type="text" class="form-control text-center" value="1">
+                                                            <input type="text" class="form-control text-center" id="inputNumber" placeholder="1">
                                                         </div>
-                                                        <button class="hc-num-btn hc-plus" type="button">
-                                                            <i class="fas fa-plus"></i>
-                                                        </button>
+                                                        <button class="hc-num-btn hc-minus"><i class="fas fa-minus fas fa-plus"></i></button>
                                                     </div>
-                                            </div>
-
-                                            <div class="hc-products-list-grp hc-process-part2-grp d-flex hc-buy">
-                                                <div class="hc-products-list-secondTitle">
-                                                    <h5>結帳</h5>
                                                 </div>
-                                                <div class="hc-process-control">
+                                                <div class="hc-products-list-grp hc-process-part2-grp d-flex hc-buy">
+                                                    <!-- 立即購買 -->
                                                     <button type="button" class="btn btn-outline-warning px-4">立即購買</button>
                                                     <!-- 加入購物車 -->
                                                     <button type="button" class="btn btn-outline-warning px-4 ml-2">加入購物車</button>
@@ -199,7 +195,6 @@ $arr = $pdo->query($sql)->fetchAll();
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <!-- relate products -->

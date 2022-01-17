@@ -221,7 +221,7 @@
                                             if($stmt->rowCount() > 0){
                                                 foreach($stmt->fetchAll() as $obj2 ){
                                             ?>
-                                            <tbody class="hc-table-lists" id="hc-lists">
+                                            <tbody class="hc-table-lists orders-detail-td" id="hc-lists">
                                                 <!-- 表單切換 -->
                                                 <?php
                                                 $prod_price_m = $obj2['prod_price'] * $obj2['prod_times']

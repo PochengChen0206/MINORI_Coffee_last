@@ -21,21 +21,8 @@
     <link rel="stylesheet" href="./lib/splide.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/login-and-signup.css">
-    <link rel="stylesheet" href="./css/beanList_page.css">
-    <link rel="stylesheet" href="./css/coffeeAccessories_page.css">
-    <link rel="stylesheet" href="./css/couponGet.css">
-    <link rel="stylesheet" href="./css/beanList_detail_page.css">
-    <link rel="stylesheet" href="./css/shoppingCart_page.css">
-    <link rel="stylesheet" href="./css/card.css">
-    <link rel="stylesheet" href="./css/coupons_page.css">
-    <link rel="stylesheet" href="./css/classpage.css">
-    <link rel="stylesheet" href="./css/order_tracking_page.css">
-    <link rel="stylesheet" href="./css/landing_page.css">
-    <link rel="stylesheet" href="./css/news_page.css">
     <link rel="stylesheet" href="./css/jquery.multiscroll.css">
     <link rel="stylesheet" href="./css/featured.css">
-
 </head>
 
 <body>

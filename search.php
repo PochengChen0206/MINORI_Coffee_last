@@ -1,6 +1,31 @@
 <?php require_once 'db.inc.php'; ?>
 <?php session_start(); ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINORI coffee</title>
+    <!-- bootstrap@4.6 -->
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./lib/awesome.all.min.css">
+    <!--jquery UI-->
+    <link rel="stylesheet" href="./lib/jquery-ui.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
+    <!-- splide 3.6.9 js -->
+    <link rel="stylesheet" href="./lib/splide.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/login-and-signup.css">
+    <link rel="stylesheet" href="./css/beanList_page.css">
+    <link rel="stylesheet" href="./css/beanList_detail_page.css">
+</head>
+
 <?php
 $sql = "SELECT `id`, `cat_name`  FROM`categories` WHERE `parent_id` = 0";
 $arr = $pdo->query($sql)->fetchAll();
@@ -40,7 +65,8 @@ $offset = ($page - 1) * $numPerPage;
 // 啟用的話168行的$sql 要加 LIMIT {$offset}, {$numPerPage}";
 ?>
 
-<?php require_once 'tpl/head.inc.php' ?>
+<?php require_once 'tpl/header.inc.php' ?>
+
 <!-- main page -->
 <div class="container-fluid main-page">
     <div class="row">
@@ -52,28 +78,25 @@ $offset = ($page - 1) * $numPerPage;
                     <!-- ======================================================================================= add content -->
                     <!-- head -->
                     <div class="hc-top-menus">
-                        <div class="hc-top-menu-container-pushTop">
-                            <div class="hc-top-menu-control">
-                                <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
-                                </div>
+                        <div class="hc-top-menu-control">
+                            <div class="hc-top-menu">
+                                <a class="hc-top-menu-active" href="beanList_page.php?cat_id=<?= $arr[0]['id'] ?>"><?= $arr[0]['cat_name'] ?></a>
+                            </div>
 
-                                <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[1]['id'] ?>"><?= $arr[1]['cat_name'] ?></a>
-                                </div>
+                            <div class="hc-top-menu">
+                                <a class="hc-top-menu" href="featured.php"><?= $arr[1]['cat_name'] ?></a>
+                            </div>
 
-                                <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="beanList_page.php?cat_id=<?= $arr[2]['id'] ?>"><?= $arr[2]['cat_name'] ?></a>
-                                </div>
+                            <div class="hc-top-menu">
+                                <a class="hc-top-menu" href="beans_hot.php"><?= $arr[2]['cat_name'] ?></a>
+                            </div>
 
-                                <div class="hc-top-menu">
-                                    <a class="hc-top-menu" href="coffeeAccessories_page.php?cat_id=<?= $arr[3]['id'] ?>"><?= $arr[3]['cat_name'] ?></a>
-                                </div>
+                            <div class="hc-top-menu">
+                                <a class="hc-top-menu" href="coffeeAccessories_page.php"><?= $arr[3]['cat_name'] ?></a>
                             </div>
                         </div>
                     </div>
                     <!-- 左側頁面內容 -->
-                    <?php require_once 'tpl/beanList_menu.inc.php' ?>
                 </div>
             </div>
             <!-- ================================================= -->
@@ -115,19 +138,6 @@ $offset = ($page - 1) * $numPerPage;
                                 <div class="hc-main-title-control d-flex justify-content-between">
                                     <!-- title -->
                                     <div class="hc-main-title-en d-flex mb-4">COFFEE</div>
-                                    <!-- filter -->
-                                    <div class="hc-main-filter-control">
-                                        <div class="hc-main-filter d-flex">
-                                            <h6>商品排序</h6>
-                                            <div class="icon list-icon hc-filter-icon"><i class="fas fa-chevron-down"></i></div>
-                                        </div>
-                                        <ul class="hc-drop-lists">
-                                            <li class="hc-drop-list">價格 高-低</li>
-                                            <li class="hc-drop-list">價格 低-高</li>
-                                            <li class="hc-drop-list">日期 新-舊</li>
-                                            <li class="hc-drop-list">日期 舊-新</li>
-                                        </ul>
-                                    </div>
                                 </div>
                                 <!-- products content -->
                                 <div class="hc-products-grp">

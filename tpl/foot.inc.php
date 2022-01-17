@@ -154,7 +154,7 @@
 <script src="./js/beanList_page.js"></script>
 <script src="./js/beanList_detail.js"></script>
 <script src="./js/shoppingCart_page.js"></script>
-<script src="./js/coupons_page.js"></script>
+<!-- <script src="./js/coupons_page.js"></script> -->
 <script src="./js/landing_page.js"></script>
 <script src="./js/news_page.js"></script>
 <script src="./js/about_page.js"></script>

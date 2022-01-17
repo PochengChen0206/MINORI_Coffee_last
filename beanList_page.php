@@ -187,7 +187,7 @@ $offset = ($page - 1) * $numPerPage;
                                             $arr = $stmt->fetchAll();
                                             foreach ($arr as $obj) {
                                         ?>
-                                                <div class="hc-pds-card-control col-lg-4 col-md-6 col-12 ">
+                                                <div class="hc-pds-card-control col-lg-4 col-sm-6">
                                                     <div class="hc-pds-card">
                                                         <div class="hc-pds-img">
                                                             <a href="beanList_detail_page.php?cat_id=<?= $_GET['cat_id'] ?>&sub_cat_id=<?= @$_GET['sub_cat_id'] ?>&prod_id=<?= $obj['prod_id'] ?>">
@@ -196,7 +196,7 @@ $offset = ($page - 1) * $numPerPage;
                                                         </div>
                                                         <div class="hc-card-content-container">
                                                             <div class="hc-card-content-title">
-                                                                <h5><?= $obj['prod_name'] ?></h5>
+                                                                <h6><?= $obj['prod_name'] ?></h6>
                                                             </div>
                                                             <div class="hc-card-content-price">
                                                                 NT$<span value="$obj['prod_price']"><?= number_format($obj['prod_price']) ?></span>~

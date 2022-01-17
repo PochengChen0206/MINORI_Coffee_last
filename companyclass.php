@@ -60,7 +60,7 @@
                             <div class="yi-bean-menu">
                                 <!-- menu list -->
                                 <div class="left-info">
-                                    <h3 class="left-side-title">企業課程</h3>
+                                    <h3 class="left-side-title">企業包班</h3>
                                     <p class="left-side-text">
                                         可依據各企業的課程需求、上課時間和預算，從我們既有的課程大綱中選擇您所需要的內容，為貴公司客製化專屬的限定課程。</p>
                                     <p class="left-side-text">請先填寫右側表單，表單送出後會有專人盡快與您聯絡!
@@ -293,7 +293,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            企業課程確認
+                            企業包班確認
                             <!-- <h5 class="modal-title" id="staticBackdropLabel">企業包班確認</h5> -->
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
