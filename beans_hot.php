@@ -50,7 +50,7 @@
 
 <?php require_once 'tpl/header.inc.php' ?>
 <!-- right header  -->
-<div class="right-side-header">
+<div class="right-side-header" style="position: fixed;">
 	<!-- main icon -->
 	<?php require_once 'tpl/mainicon.inc.php' ?>
 	<!-- sign out -->
