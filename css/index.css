@@ -505,7 +505,7 @@ img {
     transition: all 0.3s ease;
 }
 .search-m-active{
-    width: 150px;
+    width: 170px;
     transform: translateX(50px);
 }
 /* ////////////////////////// footer-m */

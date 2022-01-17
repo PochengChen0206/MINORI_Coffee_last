@@ -31,7 +31,7 @@
     <div class="row">
         <!-- leftSide page -->
         <div class="left-side" style="background-color:black;">
-            <div class="left-side-bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover;">
+            <div class="left-side-bg" id="ldp_left_bg" style="background: url(./img/main_left.jpg) no-repeat; background-size: cover;">
                 <!-- ======================================================================================= add content -->
             </div>
         </div>

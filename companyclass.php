@@ -36,7 +36,7 @@
                                 <!-- menu 1 -->
                                 <div class="hc-top-menu">
                                     <a class="hc-top-menu-active" href="companyclass.php">
-                                        企業課程
+                                        企業包班
                                     </a>
                                 </div>
                                 <!-- menu 2 -->
@@ -98,7 +98,7 @@
                             </a>
                             <span>/</span>
                             <a href="javascript:;" class="hc-page-title-menu">
-                                <span>企業課程</span>
+                                <span>企業包班</span>
                             </a>
                         </div>
                         <!-- bean products -->

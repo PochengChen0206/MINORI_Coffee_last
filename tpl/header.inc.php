@@ -68,7 +68,7 @@
                             <a href='featured.php'>嚴選商品</a>
                         </li>
                         <li class="second-list">
-                            <a href='beanList_page.php'>熱銷排行</a>
+                            <a href='featured.php'>熱銷排行</a>
                         </li>
                         <li class="second-list">
                             <a href='coffeeAccessories_page.php'>咖啡器材</a>
@@ -99,13 +99,13 @@
                     </div>
                     <ul class="list-drop-menu">
                         <li class="second-list">
-                            <a href='faq.php'>購物流程</a>
+                            <a href='faq.php#yi_guide'>購物流程</a>
                         </li>
                         <li class="second-list">
-                            <a href='faq.php'>退換貨</a>
+                            <a href='faq.php#yi_return'>退換貨</a>
                         </li>
                         <li class="second-list">
-                            <a href='javascript:;'>課程募資</a>
+                            <a href='faq.php#yi_qa'>Q&A</a>
                         </li>
                     </ul>
                 </div>
@@ -140,11 +140,11 @@
                 <div class="main-m-icons d-flex mb-4 pb-2">
                     <div class="main-icon"><i class="fas fa-gift"></i></div>
                     <div class="main-icon shopping-card">
-                        <div class="nums">1</div> <i class="fas fa-shopping-bag"></i>
+                        <div class="nums">0</div> <i class="fas fa-shopping-bag"></i>
                     </div>
                     <div class="main-icon search">
                         <!-- input -->
-                        <input type="text" class="input search-m-input" placeholder="Search...">
+                        <input type="text" class="input search-m-input" placeholder="請輸入商品名稱">
                         <!-- button -->
                         <button class="icon-btn search-m-btn">
                             <i class="fas fa-search"></i>
@@ -214,13 +214,13 @@
                     </div>
                     <ul class="list-drop-menu">
                         <li class="second-list">
-                            <a href='faq.php'>購物流程</a>
+                            <a href='faq.php#yi_guide'>購物流程</a>
                         </li>
                         <li class="second-list">
-                            <a href='faq.php'>退換貨</a>
+                            <a href='faq.php#yi_return'>退換貨</a>
                         </li>
                         <li class="second-list">
-                            <a href='javascript:;'>課程募資</a>
+                            <a href='faq.php#yi_qa'>Q&A</a>
                         </li>
                     </ul>
                 </div>

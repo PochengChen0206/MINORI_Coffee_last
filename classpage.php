@@ -36,7 +36,7 @@
                                 <!-- menu 1 -->
                                 <div class="hc-top-menu">
                                     <a href="companyclass.php">
-                                        企業課程
+                                        企業包班
                                     </a>
                                 </div>
                                 <!-- menu 2 -->

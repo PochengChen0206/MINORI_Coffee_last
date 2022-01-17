@@ -31,13 +31,13 @@
                         style="background: url(./img/coffee-class_01.jpg) no-repeat; background-size: cover;">
                         <!-- ======================================================================================= add content -->
                         <div class="left-div">
-                            <a class="yi-p" href="">
+                            <a class="yi-p" href="#yi_guide">
                                 <p>購物流程</p>
                             </a>
-                            <a class="yi-p" href="">
+                            <a class="yi-p" href="#yi_return">
                                 <p>退換貨</p>
                             </a>
-                            <a class="yi-p" href="">
+                            <a class="yi-p" href="#yi_qa">
                                 <p>Q&A</p>
                             </a>
                         </div>
@@ -132,7 +132,7 @@
                                             <!-- 購物流程 -->
                                             <div class="hc-news-section">
                                                 <div class="hc-products-title">
-                                                    <h5>購物流程</h5>
+                                                    <h5 id="yi_guide">購物流程</h5>
                                                 </div>
                                                 <div class="yi-shopping">
                                                     <img src="./img/icon_shopping_bag.png" alt="">
@@ -180,7 +180,7 @@
 
                                                 <div class="hc-news-section">
                                                     <div class="hc-products-title">
-                                                        <h5>退換貨</h5>
+                                                        <h5 id="yi_return">退換貨</h5>
                                                     </div>
                                                     <div class="yi-products-h6">
                                                         <p>【退換貨須知】</p>
@@ -260,14 +260,12 @@
                                                         </p>
                                                     </div>
                                                 </div>
-                                            
-
                                             </div>
                                         </div>
                                         <div class="yi-section">
                                         <div class="yi-news-section">
                                             <div class="hc-products-title">
-                                                <h5>Q&A</h5>
+                                                <h5 id="yi_qa">Q&A</h5>
                                             </div>
                                             <div class="accordion" id="accordionExample">
                                                 <div class="card">

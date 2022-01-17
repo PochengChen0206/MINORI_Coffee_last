@@ -32,7 +32,7 @@ VanillaTilt.init(document.querySelectorAll(".hc-about-list-img"), {
 });
 // animate
 const header = document.querySelector(".header");
-const left_bg = document.querySelector(".left-side-bg");
+const left_bg = document.querySelector("#ldp_left_bg");
 anime({
     // 目標
     targets: header,
