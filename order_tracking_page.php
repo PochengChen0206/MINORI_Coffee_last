@@ -74,7 +74,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content" style="height: 1080px;">
+            <div class="right-side-content" style="min-height: 800px;">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->

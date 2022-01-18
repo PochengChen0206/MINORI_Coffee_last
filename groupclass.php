@@ -187,7 +187,7 @@
                                         </li>
                                     <?php } ?>
                                     <li class="link_list">
-                                        <a href="javascript:;">咖啡地圖</a>
+                                        <a href="coffeemap.php">咖啡地圖</a>
                                     </li>
                                     <li class="link_list">
                                         <a href="faq.php">常見問題</a>
@@ -201,10 +201,10 @@
                                         <a href='http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1'>豆單</a>
                                     </li>
                                     <li class="link_list" style="font-size:12px;">
-                                        <a href="javascript:;">嚴選商品</a>
+                                        <a href="featured.php">嚴選商品</a>
                                     </li>
                                     <li class="link_list" style="font-size:12px;">
-                                        <a href="featured.php">熱銷排行</a>
+                                        <a href="beans_hot.php">熱銷排行</a>
                                     </li>
                                     <li class="link_list" style="font-size:12px;">
                                         <a href="coffeeAccessories_page.php">咖啡器材</a>
@@ -257,7 +257,7 @@
                                             </li>
                                         <?php } ?>
                                         <li class="nav-item mb-2">
-                                            <a href="#" class="nav-link p-0 text-white">咖啡地圖</a>
+                                            <a href="coffeemap.php" class="nav-link p-0 text-white">咖啡地圖</a>
                                         </li>
                                         <li class="nav-item mb-2">
                                             <a href="faq.php" class="nav-link p-0 text-white">常見問題</a>
@@ -268,8 +268,8 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">所有商品</a></li>
                                         <li class="nav-item mb-2"><a href="http://localhost/MINORI_Coffee_last/beanList_page.php?cat_id=1" class="nav-link p-0 text-white" style="font-size: 12px;">豆單</a></li>
-                                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white" style="font-size: 12px;">嚴選商品</a></li>
-                                        <li class="nav-item mb-2"><a href="featured.php" class="nav-link p-0 text-white" style="font-size: 12px;">熱銷排行</a></li>
+                                        <li class="nav-item mb-2"><a href="featured.php" class="nav-link p-0 text-white" style="font-size: 12px;">嚴選商品</a></li>
+                                        <li class="nav-item mb-2"><a href="beans_hot.php" class="nav-link p-0 text-white" style="font-size: 12px;">熱銷排行</a></li>
                                         <li class="nav-item mb-2"><a href="coffeeAccessories_page.php" class="nav-link p-0 text-white" style="font-size: 12px;">咖啡器材</a></li>
                                     </ul>
                                 </div>

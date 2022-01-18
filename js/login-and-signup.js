@@ -1,9 +1,14 @@
 // 選擇生日
-$('input#birthdate').datepicker({
-    dateFormat: 'yy-mm-dd'
-});
+//放在try裡面就算失敗也不會抱錯讓功能被卡住
+try{
+    $('input#birthdate').datepicker({
+        dateFormat: 'yy-mm-dd'
+    });
+}
+catch{
 
-
+}
+  
 //註冊
 $('button#btn_register').click(function (event) {
     //避免元素的預設事件觸發
@@ -19,8 +24,6 @@ $('button#btn_register').click(function (event) {
 
      //檢查姓名是否輸入
      if (input_name.val() == '') {
-        // alert(`請輸入姓名`);
-        // return false;
         input_name
         .addClass("border border-danger border-2")
         .tooltip({
@@ -343,8 +346,9 @@ $('button#btn_login').click(function (event) {
 //isActivated 要改為1 才可以成功登入
 
 //登出
-$('a#logout').click(function(event){
+$('a#logout').on('click',function(event){
     event.preventDefault();
+    console.log('hi');
 
     $.get('logout.php', function(obj){
         if(obj['success']){

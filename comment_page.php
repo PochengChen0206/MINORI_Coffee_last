@@ -70,7 +70,7 @@
         </div>
         <!-- rightSide page -->
         <div class="right-side">
-            <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat;">
+            <div class="right-side-content" style="background: url(./img/bg-dark.png) repeat; min-height: 800px;">
                 <!-- right header -->
                 <div class="right-side-header">
                     <!-- main icon -->
@@ -100,7 +100,7 @@
                             </a>
                         </div>
                         <!-- coupons products -->
-                        <div class="hc-coupons-products-content" style="height: 100vh;">
+                        <div class="hc-coupons-products-content">
                             <div class="hc-coupons-products-content-container">
                                 <div class="hc-main-title-control d-flex justify-content-between">
                                     <!-- title -->
@@ -335,23 +335,6 @@
 <script src="./lib/jquery-3.6.0.min.js"></script>
 <!-- bootstrap@4.6 -->
 <script src="./lib/bootstrap.bundle.min.js"></script>
-<!-- 無法登出只好先放在這 -->
-<script>
-    $('a#logout').click(function(event) {
-        event.preventDefault();
-
-        $.get('logout.php', function(obj) {
-            if (obj['success']) {
-                alert(`${obj['info']}`);
-
-                setTimeout(function() {
-                    location.href = 'landing_page.php';
-                    // location.reload();
-                }, 500);
-            }
-        }, 'json');
-    });
-</script>
 <!-- js -->
 <script src="./js/index.js"></script>
 <script src="./js/login-and-signup.js"></script>
