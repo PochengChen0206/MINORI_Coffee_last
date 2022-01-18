@@ -53,6 +53,7 @@ if (
             //建立session資料
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['name'] = $_POST['name'];
+            $_SESSION['pwd'] = $pwd;
           
 
         }

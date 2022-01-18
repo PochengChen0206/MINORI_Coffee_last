@@ -244,7 +244,7 @@ $('a#btn_setting').click(function (event) {
     }
 
     
-    //送出POST請求， 註冊帳號
+    //送出POST請求， 登錄帳號
     let objUser = {
         name: input_name.val(),
         birthdate: input_birthdate.val(),

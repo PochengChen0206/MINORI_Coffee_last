@@ -71,7 +71,7 @@ $offset = ($page - 1) * $numPerPage;
         <div class="left-side">
             <!-- ================================================= 新頁面加入 -->
             <div class="left-side-push100">
-                <div class="hc-left-side-bg" style="background: url(./img/beans_l_034.jpg) no-repeat; background-size: cover; background-position: center center;">
+                <div class="hc-left-side-bg" style="background: url(./img/beans_bg.jpg) no-repeat; background-size: cover; background-position: center center;">
                     <!-- ======================================================================================= add content -->
                     <!-- head -->
                     <div class="hc-top-menus">

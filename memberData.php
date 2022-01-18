@@ -86,36 +86,38 @@
                     <div class="pc-memberCenter-content container">
                         <!-- page title -->
                         <div class="hc-page-title">
-                                <a href="javascript:;" class="hc-page-title-menu">
-                                    <span>會員中心</span>
-                                </a>
-                                <span>/</span>
-                                <a href="javascript:;" class="hc-page-title-menu">
-                                    <span>個人資料</span>
-                                </a>
-                            </div>
+                            <a href="javascript:;" class="hc-page-title-menu">
+                                <span>會員中心</span>
+                            </a>
+                            <span>/</span>
+                            <a href="javascript:;" class="hc-page-title-menu">
+                                <span>個人資料</span>
+                            </a>
+                        </div>
                         <!-- <h2 class="pc-page-title text-center">個人資料</h2> -->
-                        <form class="row g-3" id="myForm">
+                        <form class="row g-3" id="myForm" accept="./renew.php" method="POST">
                             <div class="col-md-6">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
-                                <input type="text" class="form-control" id="name" value="<?= $_SESSION['name'] ?>">
+                                <input type="text" class="form-control" id="name" name="name" value="<?= $_SESSION['name'] ?>">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
-                                <input type="text" class="form-control" id="birthdate" value="<?= $_SESSION['birthdate'] ?>">
+                                <input type="text" class="form-control" id="birthdate" name="birthdate" value="<?= isset($_SESSION['birthdate'])?$_SESSION['birthdate']:'' ?>">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
-                                <input type="text" class="form-control" id="phone_number" value="<?= $_SESSION['phone_number'] ?>">
+                                <input type="text" class="form-control" id="phone_number" name="phone_number" value="<?= isset($_SESSION['phone_number'])?$_SESSION['phone_number']:'' ?>">
                             </div>
                             <div class="col-12 mt-2">
                                 <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
-                                <input type="text" class="form-control" id="address" value="<?= $_SESSION['address'] ?>">
+                                <input type="text" class="form-control" id="address" name="address" value="<?= isset($_SESSION['address'])?$_SESSION['address']:'' ?>">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
-                                <input type="email" class="form-control" id="email" value="<?= $_SESSION['email'] ?>">
+                                <input type="email" class="form-control" id="email" name="email" value="<?= $_SESSION['email'] ?>">
                             </div>
+
+                            <input type="password" id="pwd" name="pwd" value="<?= $_SESSION['pwd'] ?>" hidden>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-outline-warning px-5" id="btn-renew">儲存</button>
                                 <!-- id不能用跟其他btn一樣 -->
@@ -126,3 +128,5 @@
                 <!-- ================================================= -->
 
                 <?php require_once 'tpl/foot.inc.php' ?>
+
+                

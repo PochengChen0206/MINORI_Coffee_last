@@ -158,6 +158,7 @@
 <script src="./js/landing_page.js"></script>
 <script src="./js/news_page.js"></script>
 <script src="./js/about_page.js"></script>
+<script src="./js/renew.js"></script>
 
 </body>
 

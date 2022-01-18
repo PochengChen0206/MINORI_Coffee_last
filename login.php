@@ -40,7 +40,7 @@ if( isset($_POST['email']) && isset($_POST['pwd']) ){
             $_SESSION['birthdate'] = $objUser['birthdate'];
             $_SESSION['address'] = $objUser['address'];
             $_SESSION['phone_number'] = $objUser['phone_number'];
-            // $_SESSION['pwd'] = $pwd;
+            $_SESSION['pwd'] = $pwd;
 
 
         }
