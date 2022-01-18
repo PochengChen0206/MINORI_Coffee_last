@@ -334,12 +334,14 @@
                                                         <div class="hc-line"></div>
                                                         <div class="hc-more-icon"><a href="javascript:;">
                                                                 <i class="fas fa-angle-right"></i>
-                                                            </a></div>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="hc-text"><a href="javascript:;">
                                                         <h4>課程資訊</h4>
-                                                    </a></div>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="hc-main-title-en d-flex flex-row-reverse mb-4">COURSE</div>
