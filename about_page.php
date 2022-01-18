@@ -102,7 +102,7 @@
                                                 </div>
                                                 <div class="hc-about-content col-6 hc-about-content-r">
                                                     <h4 class="hc-about-content-title">我們的故事</h4>
-                                                    <p><span>2020年</span>在台灣集結了四位愛好咖啡的同好，共同創立了MINORI Coffee，立志把最完美的咖啡提供給您。
+                                                    <p><span>2020年</span>在台灣集結了四位愛好咖啡的同好，共同創立了MINORI coffee，立志把最完美的咖啡提供給您。
                                                         這塊土地上愛好咖啡的人十分眾多，希望MINORI能在眾多品牌中脫穎而出，帶給咖啡愛好者更完美的咖啡感官體驗。
                                                         因此從生豆採購、烘焙到包裝設計，我們都親自操刀把關！打造充實、豐富的咖啡體驗，透過每一杯咖啡的傳遞，啟發並滋潤人們的心靈，滋潤生活的每一天。
                                                     </p>
