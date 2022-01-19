@@ -36,7 +36,7 @@ if (
             $obj['success'] = true;
             $obj['info'] = '會員資料登錄成功';
 
-            //註冊成功
+            //登錄成功
             // $coupon_code = md5( date("YmdHis") );
             $coupon_code = "WELCOME20OFF";
             $sqlCoupon = "INSERT INTO `coupon` (`email`, `code`, `percentage`)
