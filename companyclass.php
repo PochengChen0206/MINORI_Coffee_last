@@ -310,19 +310,19 @@
                             <div class="footerbox">
                                 <div class="fone">
                                     <p>收件人姓名:</p>
-                                    <p>XXX有限公司</p>
+                                    <p>楊先生</p>
                                 </div>
                                 <div class="fone">
                                     <p>收件地址:</p>
-                                    <p>106台北市大安區復興南路一段390號2樓</p>
+                                    <p>擺渡人中心</p>
                                 </div>
                                 <div class="fone">
                                     <p>報名人數:</p>
-                                    <p>45人</p>
+                                    <p>100人</p>
                                 </div>
                                 <div class="fone">
                                     <p>開課日期:</p>
-                                    <p>2021.11.30</p>
+                                    <p>2022/01/21</p>
                                 </div>
                             </div>
                         </div>
