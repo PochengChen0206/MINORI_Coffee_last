@@ -86,12 +86,8 @@
                     <div class="pc-memberCenter-content container">
                         <!-- page title -->
                         <div class="hc-page-title">
-                            <a href="javascript:;" class="hc-page-title-menu">
-                                <span>會員中心</span>
-                            </a>
-                            <span>/</span>
-                            <a href="javascript:;" class="hc-page-title-menu">
-                                <span>個人資料</span>
+                            <a href="javascript:;" class="hc-page-title-menu text-center">
+                                <h2>個人資料</h2>
                             </a>
                         </div>
                         <!-- <h2 class="pc-page-title text-center">個人資料</h2> -->

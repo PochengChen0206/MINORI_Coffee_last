@@ -65,7 +65,7 @@
 			<div>
 				<h1 style="margin:400px 290px 0px 0px;">花神</h1>
 				<h6 style="margin:0px 0px 0px 100px;font-size: 20px;">帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。</h6>
-				<p style="padding:20px 0px 0px 0px;font-size: 14px;margin-left:290px; margin-top:100px;">NT$349~</p>
+				<p style="padding:20px 0px 0px 0px;font-size: 14px;margin-left:290px; margin-top:90px;">NT$349~</p>
 				<a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=13&prod_id=2" class="btn btn-warning yc-btn" style="margin:80px 0px 0px 100px">點我看更多</a>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 			<div>
 				<h1 style="margin:400px 300px 0px 0px;">吉格薩</h1>
 				<h6 style="margin:0px 0px 0px 80px;font-size: 20px;">焦糖、柑橘皮、清爽的甜感和茶的尾韻。</h6>
-				<p style="padding:10px 0px 0px 0px;font-size: 14px;margin-left:275px; margin-top:100px;">NT$399~</p>
+				<p style="padding:10px 0px 0px 0px;font-size: 14px;margin-left:275px; margin-top:90px;">NT$399~</p>
 				<a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=11&prod_id=4" class="btn btn-warning yc-btn" style="margin:100px 0px 0px 80px">點我看更多</a>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 			<div>
 				<h1 style="margin:400px 40px 0px 0px;">斯里蘭卡的調酒師</h1>
 				<h6 style="margin:0px 0px 0px 100px;font-size: 20px;">焦糖核桃風味，帶有明亮的果酸，帶些許的肉桂與葡萄酒香。</h6>
-				<p style="padding:20px 0px 0px 0px;font-size: 14px;margin-left:290px; margin-top:100px;">NT$519~</p>
+				<p style="padding:20px 0px 0px 0px;font-size: 14px;margin-left:290px; margin-top:90px;">NT$519~</p>
 				<a type="button" href="http://localhost/MINORI_Coffee_last/beanList_detail_page.php?cat_id=1&sub_cat_id=16&prod_id=13" class="btn btn-warning yc-btn" style="margin:80px 0px 0px 100px">點我看更多</a>
 			</div>
 		</div>

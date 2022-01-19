@@ -243,8 +243,9 @@
             <div class="signOut-menu-container">
                 <?php if (isset($_SESSION['name'])) { ?>
                     <div class="pc-user signOut-list">
-                        <a href="javascript:;">
+                        <a href="memberData.php">
                             <?= $_SESSION['name'] ?></a>
+                        <span class="pl-2" style="color: white;">您好</span>
                     </div>
                 <?php } ?>
                 <?php if (!isset($_SESSION['name'])) { ?>
