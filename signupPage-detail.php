@@ -51,27 +51,27 @@
                         <h2 class="pc-page-title text-center">個人資料</h2>
                         <form class="row g-3" id="myForm">
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">姓名</label>
                                 <input type="text" class="form-control" id="name" value="<?= $_SESSION['name'] ?>">
                             </div>
                             <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
+                                <label for="inputPassword4" class="form-label" style="color: #CC9A06;">生日</label>
                                 <input type="text" class="form-control" id="birthdate" placeholder="請填寫您的生日">
                             </div>
                             <div class="col-md-12 mt-2">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">手機號碼</label>
                                 <input type="text" class="form-control" id="phone_number" placeholder="請填寫您的手機號碼">
                             </div>
                             <div class="col-12 mt-2">
-                                <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
+                                <label for="inputAddress" class="form-label" style="color: #CC9A06;">通訊地址</label>
                                 <input type="text" class="form-control" id="address" placeholder="請填寫您的通訊地址">
                             </div>
                             <div class="col-md-12 mt-2">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">Email(設定為帳號)</label>
                                 <input type="email" class="form-control" id="email" value="<?= $_SESSION['email'] ?>">
                             </div>
                             <div class="col-12 mt-2">
-                                <label for="inputPassword4" class="form-label" style="color: #95720C;">密碼</label>
+                                <label for="inputPassword4" class="form-label" style="color: #CC9A06;">密碼</label>
                                 <input type="password" class="form-control" id="pwd" placeholder="請輸入您的密碼">
                             </div>
                             <div class="col-12 mt-3 text-right">

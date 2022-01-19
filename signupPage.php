@@ -51,15 +51,15 @@
                         <h2 class="pc-page-title text-center">MINORI</h2>
                         <form class="row g-3" id="myForm">
                             <div class="col-md-12">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
+                                <label for="inputEmail4" class="form-label" style="color:#CC9A06;">姓名</label>
                                 <input type="text" class="form-control" id="name" placeholder="請填寫您的姓名">
                             </div>
                             <div class="col-md-12 mt-2">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">Email(設定為帳號)</label>
                                 <input type="email" class="form-control" id="email" placeholder="請填寫您的Email">
                             </div>
                             <div class="col-12 mt-2">
-                                <label for="inputPassword4" class="form-label" style="color: #95720C;">密碼</label>
+                                <label for="inputPassword4" class="form-label" style="color: #CC9A06;">密碼</label>
                                 <input type="password" class="form-control" id="pwd" placeholder="請填寫您的密碼">
                             </div>
                             <div class="col-12 mt-3 text-right">

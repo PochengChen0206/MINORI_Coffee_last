@@ -132,10 +132,9 @@
                                             <p class="yi-sold-title">店家販售豆種</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 yi-sold-img">
+                                    <div class="yi-sold-img">
                                         <div>
-                                            <a href=""><img class="yi-img" src="./img/beans_s_001.jpg" alt="...">
-                                            </a>
+                                            <a href=""><img class="yi-img" src="./img/beans_s_001.jpg" alt="..."></a>
                                             <a href=""><p class="yi-sold">耶加雪菲</p></a>
                                         </div>
                                         <div>
@@ -143,8 +142,8 @@
                                             <a href=""><p class="yi-sold">花神</p></a>
                                         </div>
                                         <div>
-                                            <a href=""> <img class="yi-img" src="./img/beans_s_009.jpg" alt="..."></a>
-                                            <a href=""><p class="yi-sold"> 藝妓</p>
+                                            <a href=""><img class="yi-img" src="./img/beans_s_012.jpg" alt="..."></a>
+                                            <a href=""><p class="yi-sold">藝妓</p></a>
                                         </div>
                                         <div>
                                             <a href=""><img class="yi-img" src="./img/beans_s_004.jpg" alt="..."></a>
@@ -159,7 +158,7 @@
                         marker.addEventListener('click', function(event) {
                             let divvv = document.querySelector("div.yifooter")
                             divvv.innerHTML = `
-                    <div class="footer_container">
+                    <div class="footer_container ">
                         <div div class="col-lg-12 footer-content">
                             <div class="footer-logo" style="width:20%">
                                 <a href=""><img src="./img/logo.png" alt="" style="width: 100%;"></a>
@@ -297,10 +296,6 @@
                     }
                     console.log(arr);
                 });
-
-
-
-
         });
     </script>
     <!--//////////////////////////////////////// script -->

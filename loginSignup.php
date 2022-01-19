@@ -51,13 +51,13 @@
                     <div class="d-flex justify-content-md-center">
                         <form class="col-md-auto">
                             <div class="form-group col-12">
-                                <label for="eamil_login" class="col-sm-2 col-form-label text-secondary">帳號</label>
+                                <label for="eamil_login" class="col-sm-2 col-form-label" style="color: #CC9A06;">帳號</label>
                                 <div class="col-12">
                                     <input type="email" class="form-control" id="email_login" placeholder="請輸入您的Email">
                                 </div>
                             </div>
                             <div class="form-group col-12">
-                                <label for="pwd_login" class="col-sm-2 col-form-label text-secondary">密碼</label>
+                                <label for="pwd_login" class="col-sm-2 col-form-label" style="color: #CC9A06;">密碼</label>
                                 <div class="col-12">
                                     <input type="password" class="form-control" id="pwd_login" placeholder="請輸入您的密碼">
                                     <a href="password_forget.php" style="text-decoration: none;">

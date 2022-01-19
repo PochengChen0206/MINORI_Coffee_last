@@ -120,15 +120,14 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="card-body">
-                                                        <a href="">
+                                                        <a href="classpage-detail.php">
                                                             <h5 class="card-title">手沖咖啡學｜成為咖啡職人</h5>
                                                         </a>
                                                         <p class="card-text">讓講究的手沖咖啡儀式融入你我的生活中
 
                                                             手沖咖啡，是一個充滿藝術的科學，從咖啡豆挑選(淺、中、深焙)、水溫、磨豆、沖煮手法，即使是同一款豆子，不同沖煮，就會因為些微的因子改變，呈現出迥然不同的味道。
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">NT$1,599</small>
-                                                        </p>
+                                                        <p class="card-text">NT$1,599</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,8 +145,7 @@
                                                         <p class="card-text">
                                                             根據人類飲食文明的經驗法則，烹調食物的原則，不外就是為了易消化、好吸收以及創造美味口感，咖啡烘焙也是如此。不當的烘焙，使人無法吸收，也將美味破壞殆盡，適當的烘焙，不但不會引起身體的不適，還能將營養成分以迷人的風味樣貌呈現。
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">NT$1,599</small>
-                                                        </p>
+                                                        <p class="card-text">NT$1,599</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -170,8 +168,7 @@
                                                         <p class="card-text">有多久沒有靜下心來，好好為自己沖一杯咖啡？
                                                             燒一壺水，研磨咖啡。溫過壺，細細地沖落。有如和自己約會，聞著咖啡的香氣，享受一杯咖啡的時光。
                                                             在所有的咖啡沖煮方式裡，手沖咖啡有著他自己最獨特的魅力。</p>
-                                                        <p class="card-text"><small class="text-muted">NT$1,599</small>
-                                                        </p>
+                                                        <p class="card-text">NT$1,599</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -189,8 +186,7 @@
                                                         <p class="card-text">你曾在喝下一口咖啡時，感到喜悅嗎? 那份喜悅可能來自記憶中的某段連結。
                                                             感官是一項很神奇的能力，讓我們分辨好壞，或是享受樂趣。
                                                             感官除了自我記憶連結外，也可作為溝通的橋樑，不論是購買、介紹還是分享，都適合建立起良好的感官能力。</p>
-                                                        <p class="card-text"><small class="text-muted">NT$1,599</small>
-                                                        </p>
+                                                        <p class="card-text">NT$1,599</p>
                                                     </div>
                                                 </div>
                                             </div>

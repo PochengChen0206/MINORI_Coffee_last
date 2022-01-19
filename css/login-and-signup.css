@@ -130,7 +130,7 @@ img{
 }
 
 .pc-page-title{
-    color: #95720C; 
+    color: var(--main-color); 
 }
 
 .pc-memberCenter {

@@ -97,23 +97,23 @@
                         <!-- <h2 class="pc-page-title text-center">個人資料</h2> -->
                         <form class="row g-3" id="myForm" accept="./renew.php" method="POST">
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">姓名</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">姓名</label>
                                 <input type="text" class="form-control" id="name" name="name" value="<?= $_SESSION['name'] ?>">
                             </div>
                             <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label" style="color: #95720C;">生日</label>
+                                <label for="inputPassword4" class="form-label" style="color: #CC9A06;">生日</label>
                                 <input type="text" class="form-control" id="birthdate" name="birthdate" value="<?= isset($_SESSION['birthdate'])?$_SESSION['birthdate']:'' ?>">
                             </div>
                             <div class="col-md-12 mt-2">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">手機號碼</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">手機號碼</label>
                                 <input type="text" class="form-control" id="phone_number" name="phone_number" value="<?= isset($_SESSION['phone_number'])?$_SESSION['phone_number']:'' ?>">
                             </div>
                             <div class="col-12 mt-2">
-                                <label for="inputAddress" class="form-label" style="color: #95720C;">通訊地址</label>
+                                <label for="inputAddress" class="form-label" style="color: #CC9A06;">通訊地址</label>
                                 <input type="text" class="form-control" id="address" name="address" value="<?= isset($_SESSION['address'])?$_SESSION['address']:'' ?>">
                             </div>
                             <div class="col-md-12 mt-2">
-                                <label for="inputEmail4" class="form-label" style="color: #95720C;">Email(設定為帳號)</label>
+                                <label for="inputEmail4" class="form-label" style="color: #CC9A06;">Email(設定為帳號)</label>
                                 <input type="email" class="form-control" id="email" name="email" value="<?= $_SESSION['email'] ?>">
                             </div>
 
