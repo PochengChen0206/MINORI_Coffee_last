@@ -153,7 +153,7 @@
                 </div>
                 <!-- list -->
                 <div class="list">
-                    <a class="list-title" href="javascript:;">關於我們</a>
+                    <a class="list-title" href="about_page.php">關於我們</a>
                 </div>
                 <div class="list">
                     <a href="javascript:;">最新消息</a>
@@ -186,7 +186,7 @@
                             <a href='beans_hot.php'>熱銷排行</a>
                         </li>
                         <li class="second-list">
-                            <a href='coffeeAccessories_page'>咖啡器材</a>
+                            <a href='coffeeAccessories_page.php'>咖啡器材</a>
                         </li>
                     </ul>
                 </div>
