@@ -59,11 +59,10 @@ $page = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
 
 //計算分頁偏移量
 $offset = ($page - 1) * $numPerPage;
-
-// 啟用的話168行的$sql 要加 LIMIT {$offset}, {$numPerPage}";
 ?>
 
 <?php require_once 'tpl/header.inc.php' ?>
+
 <!-- main page -->
 <div class="container-fluid main-page">
     <div class="row">

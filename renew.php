@@ -63,8 +63,6 @@ if (
             $_SESSION['address'] = $_POST['address'];
             $_SESSION['phone_number'] = $_POST['phone_number'];
             $_SESSION['pwd'] = $pwd;
-
-
         }
         
     } catch (PDOException $e) { //$e為錯誤訊息

@@ -174,8 +174,6 @@ $('a#check_coupon_code').click(function (event) {
     }, 'json')
 });
 
-
-
 //填入收件人資訊
 $('input#member_info').click(function (event) {
     // console.log('hi');
@@ -195,7 +193,6 @@ $('input#member_info').click(function (event) {
     }, 'json');
 });
 
-
 $('button#paymentCheck').on('click', function () {
     
     let prod_check = $('#total').text();
@@ -210,7 +207,6 @@ $('button#paymentCheck').on('click', function () {
         })
         return;
     }
-
          //判斷是否登入帳號
     let session_check = $('#check_session').val();
     if (session_check === '1') {
@@ -218,8 +214,6 @@ $('button#paymentCheck').on('click', function () {
         $('#paymentSubmit').click();
         return;
     }
-
-
         Swal.fire({
             icon: 'warning',
             title: '尚未登入帳號',
@@ -227,7 +221,6 @@ $('button#paymentCheck').on('click', function () {
             confirmButtonColor: '#CC9A06',
             footer: '<a href="loginSignup.php">登入/註冊</a>'
         })
-    
 });
 
 

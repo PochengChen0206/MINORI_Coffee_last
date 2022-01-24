@@ -148,8 +148,6 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
                                             <td>
                                             <?php
                                                 $amountTotal = $_SESSION['form']['amountTotal'];
-                                                
-
                                                 $amountTotal_m = 0;
                                                 $amountTotal_m = $amountTotal;
 
@@ -318,7 +316,6 @@ $_SESSION['form']['coupon_code'] = $_POST['coupon_code'];
                                             </td>
                                             <!-- ---------- -->
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>

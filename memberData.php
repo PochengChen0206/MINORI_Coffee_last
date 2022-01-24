@@ -112,7 +112,7 @@
                                 <label for="inputEmail4" class="form-label" style="color: #CC9A06;">Email(設定為帳號)</label>
                                 <input type="email" class="form-control" id="email" name="email" value="<?= $_SESSION['email'] ?>">
                             </div>
-
+                            <!-- 因為和填寫完整資料的設定一樣，若沒有密碼的值將會報錯 -->
                             <input type="password" id="pwd" name="pwd" value="<?= $_SESSION['pwd'] ?>" hidden>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-outline-warning px-5" id="btn-renew">儲存</button>

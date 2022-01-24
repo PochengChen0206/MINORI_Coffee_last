@@ -109,6 +109,7 @@
                                         if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                                             // 更新商品數量
                                             $count = count($_SESSION['cart']);
+                                            //這邊是將每項商品各自取出，所以要用索引值$key => 變數值$obj
                                             foreach ($_SESSION['cart'] as $key => $obj) {
                                                 // 計算小計
                                                 $total += $obj['prod_price'] * $obj['prod_qty'] * $obj['prod_times'];

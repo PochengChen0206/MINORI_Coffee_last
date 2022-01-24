@@ -1,5 +1,5 @@
 // 選擇生日
-//放在try裡面就算失敗也不會抱錯讓功能被卡住
+//放在try裡面就算失敗也不會報錯讓功能被卡住
 try{
     $('input#birthdate').datepicker({
         dateFormat: 'yy-mm-dd'
@@ -348,7 +348,6 @@ $('button#btn_login').click(function (event) {
 //登出
 $('a#logout').on('click',function(event){
     event.preventDefault();
-    console.log('hi');
 
     $.get('logout.php', function(obj){
         if(obj['success']){

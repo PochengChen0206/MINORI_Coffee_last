@@ -135,7 +135,6 @@ var swiper = new Swiper(".mySwiper", {
 let input_prod_price = $('input[name="detail_prod_price"]');
 // console.log(input_prod_price);
 
-
 //從name進行選取而非id
 $('input.prod_size').click(function(event){
   // console.log($(this).closest('.hc-process-control').index());

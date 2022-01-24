@@ -1,4 +1,5 @@
 $(document).on('change', 'select#beanList_select', function(event){
+    // window.location.search取從問號 (?) 開始的 URL的值
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     //get()是取得經由URLSearchParams將網頁變成物件後的值

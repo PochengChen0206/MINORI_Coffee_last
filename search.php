@@ -54,15 +54,11 @@ $numPerPage = 6;
 //總頁數ceil()
 $totalPages = ceil($totalRows / $numPerPage);
 
-
 //目前第幾頁(存在且大於給予頁數，否則設為第一頁)
 $page = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 1;
 
-
 //計算分頁偏移量
 $offset = ($page - 1) * $numPerPage;
-
-// 啟用的話168行的$sql 要加 LIMIT {$offset}, {$numPerPage}";
 ?>
 
 <?php require_once 'tpl/header.inc.php' ?>
